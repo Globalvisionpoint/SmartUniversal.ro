@@ -306,7 +306,7 @@
             {% endif %}
           </style>
           {%- unless page == true -%}
-            <announcement-bar class="announcement__bar--container">
+            <div class="announcement__bar--container">
               <div
                 class="announcement-bar topbar__timer--bar color-{{ block.settings.color_scheme }} {% if block.settings.custom_colors  %} custom-colors-{{ section.id }} {% endif %} {% if block.settings.link == blank %}py-1{% endif %}"
                 role="region"
@@ -379,7 +379,7 @@
                   </button>
                 {%- endif -%}
               </div>
-              <announcement-bar>
+            </div>
           {%- endunless -%}
       {%- endcase -%}
     {%- endfor -%}

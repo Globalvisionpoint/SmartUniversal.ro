@@ -63,19 +63,22 @@
 
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
+  assign price_base = current_variant.price | default: product.price | default: 0
+  assign compare_at_price_base = current_variant.compare_at_price | default: 0
 
   assign on_sale = false
-  if current_variant.compare_at_price > current_variant.price
+  if compare_at_price_base > price_base
     assign on_sale = true
   endif
 
-  assign productShortDescription = product.metafields.metaname.product_excerpt.value
-  assign productSizeGuideHandler = product.metafields.metaname.product_size_guide.value
-  assign productShippingPolicy = product.metafields.metaname.product_shipping_policy.value
+  assign product_short_description = product.metafields.metaname.product_excerpt.value
+  assign product_size_guide_handler = product.metafields.metaname.product_size_guide.value
+  assign product_shipping_policy = product.metafields.metaname.product_shipping_policy.value
+  assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
 
-  assign productCountdown = product.metafields.metaname.countdown_timer.value
-  assign todayDate = 'now' | date: '%s'
-  assign countDownDate = productCountdown | date: '%s'
+  assign product_countdown = product.metafields.metaname.countdown_timer.value
+  assign today_date = 'now' | date: '%s'
+  assign countdown_date = product_countdown | date: '%s'
 
   if section.settings.media_size == 'large'
     assign media_column = 'col-lg-7'
@@ -138,10 +141,10 @@
         {%- render 'product-page-layout-1',
           product: product,
           media_width: media_width,
-          page_width: page_width,
+          page_width: settings.page_width,
           media_height: section.settings.media_height,
-          gallery_layout: gallery_layout,
-          hide_variants: hide_variants,
+          gallery_layout: section.settings.gallery_layout,
+          hide_variants: section.settings.hide_variants,
           first_3d_model: first_3d_model
         -%}
       </div>
@@ -201,38 +204,57 @@
             {%- when 'price' -%}
               <div class="price__box_wrapper d-flex" id="price-{{ section.id }}" {{ block.shopify_attributes }}>
                 <div class="no-js-hidden">
-                  {%- render 'price',
-                    sale_badge: block.settings.sale_badge,
-                    product: product,
-                    use_variant: true,
-                    show_badges: true,
-                    price_class: 'price--large'
-                  -%}
+                  <div class="price price--large{% if on_sale %} price--on-sale{% endif %}{% unless current_variant.available %} price--sold-out{% endunless %}">
+                    <dl>
+                      <div class="price__regular"{% if on_sale %} style="display:none;"{% endif %}>
+                        <dt>
+                          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+                        </dt>
+                        <dd class="price__last">
+                          <span class="price-item price-item--regular">
+                            {{ price_base | money }}
+                          </span>
+                        </dd>
+                      </div>
+
+                      <div class="price__sale"{% unless on_sale %} style="display:none;"{% endunless %}>
+                        <dt class="price__compare">
+                          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+                        </dt>
+                        <dd class="price__compare">
+                          <s class="price-item price-item--regular">
+                            {{ compare_at_price_base | money }}
+                          </s>
+                        </dd>
+                        <dt>
+                          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
+                        </dt>
+                        <dd class="price__last">
+                          <span class="price-item price-item--sale">
+                            {{ price_base | money }}
+                          </span>
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
                 </div>
 
-                {%- if product.compare_at_price > product.price and product.available -%}
-                  {% liquid
-                    assign percentage_badge = false
-                    if block.settings.save_percentage and product.selected_or_first_available_variant.compare_at_price != null
-                      assign percentage_badge = true
-                    endif
-                  %}
-                  {%- if percentage_badge -%}
-                    <div class="save__disoucnt">
-                      <span class="discount__sale__text {% if on_sale == false %} no-js-inline {% endif %}">
-                        -<span class="sale__save--percent">
-                          {{-
-                            product.selected_or_first_available_variant.compare_at_price
-                            | minus: product.selected_or_first_available_variant.price
-                            | times: 100.0
-                            | divided_by: product.selected_or_first_available_variant.compare_at_price
-                            | replace: ',', '.'
-                            | round
-                          -}}</span
-                        >%</span
-                      >
-                    </div>
-                  {%- endif -%}
+                {%- if on_sale and block.settings.save_percentage -%}
+                  <div class="save__disoucnt">
+                    <span class="discount__sale__text">
+                      <span class="sale__save--percent">
+                        {{-
+                          compare_at_price_base
+                          | minus: price_base
+                          | times: 100.0
+                          | divided_by: compare_at_price_base
+                          | replace: ',', '.'
+                          | round
+                        -}}%
+                      </span>
+                      <span class="discount__sale__off">mai ieftin</span>
+                    </span>
+                  </div>
                 {%- endif -%}
               </div>
 
@@ -262,7 +284,7 @@
                   </modal-opener>
                 </div>
               {% else %}
-                {%- if productSizeGuideHandler != blank -%}
+                {%- if product_size_guide_handler != blank -%}
                   <div class="product_additional_information" {{ block.shopify_attributes }}>
                     <modal-opener
                       class="product-popup-modal__opener no-js-hidden"
@@ -344,9 +366,9 @@
                       {% render 'icon-caret' %}
                     </summary>
                     <div class="accordion__content rte">
-                      {%- if block.settings.productdesc == 'shortdesc' and productShortDescription != blank -%}
+                      {%- if block.settings.productdesc == 'shortdesc' and product_short_description != blank -%}
                         <div class="product__description rte">
-                          {{ productShortDescription }}
+                          {{ product_short_description }}
                         </div>
                       {%- elsif block.settings.productdesc == 'fulldesc' and product.description != blank -%}
                         {%- assign truncatewords_count = block.settings.truncatewords_count_handle -%}
@@ -367,9 +389,9 @@
                   {% endif %}
 
                   <div class="accordion__content rte">
-                    {%- if block.settings.productdesc == 'shortdesc' and productShortDescription != blank -%}
+                    {%- if block.settings.productdesc == 'shortdesc' and product_short_description != blank -%}
                       <div class="product__description rte">
-                        {{ productShortDescription }}
+                        {{ product_short_description }}
                       </div>
                     {%- elsif block.settings.productdesc == 'fulldesc' and product.description != blank -%}
                       {%- assign truncatewords_count = block.settings.truncatewords_count_handle -%}
@@ -423,7 +445,7 @@
               </div>
 
             {%- when 'countdown' -%}
-              {%- if todayDate < countDownDate -%}
+              {%- if today_date < countdown_date -%}
                 <div class="product__details_countdown">
                   <countdown-timer
                     style="--countdown-foreground: {{ block.settings.timer_foreground }} ; --countdown-background: {{ block.settings.timer_background }}"
@@ -437,7 +459,7 @@
                     </span>
                     <div
                       class="d-flex product__countdown color-{{ block.settings.color_scheme }}"
-                      data-countdown="{{ productCountdown }}"
+                      data-countdown="{{ product_countdown }}"
                     ></div>
                   </countdown-timer>
                 </div>
@@ -551,13 +573,13 @@
                       {{ product.variants | json }}
                     </script>
                     <script type="application/json" data-preorder>
-                      {%- assign firstBrackets = '{'  -%}
-                      {%- assign seconrdBrackets = '}'  -%}
-                      {{ firstBrackets }}
+                      {%- assign first_brackets = '{'  -%}
+                      {%- assign second_brackets = '}'  -%}
+                      {{ first_brackets }}
                       {%- for variant in product.variants -%}
                       "{{variant.id}}": {"qty": {{variant.inventory_quantity}}, "inventory_policy": "{{variant.inventory_policy}}"}{% unless forloop.last == true %},{% endunless %}
                         {%- endfor -%}
-                        {{ seconrdBrackets }}
+                        {{ second_brackets }}
                     </script>
                   </variant-selects>
                 {%- endif -%}
@@ -661,7 +683,6 @@
             {%- when 'rating' -%}
               {%- if product.metafields.reviews.rating.value != blank -%}
                 <div
-                  style="{{ jm_style }}"
                   class="jdgm-widget jdgm-preview-badge"
                   data-id="{{ product.id }}"
                   aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}"
@@ -818,7 +839,7 @@
     {% liquid
       assign sizepagehandle = pages[block.settings.sizeguidhandle].content
     %}
-    {%- if productSizeGuideHandler != blank -%}
+    {%- if product_size_guide_handler != blank -%}
       <modal-dialog id="PopupModal-1" class="product-popup-modal" {{ block.shopify_attributes }}>
         <div
           role="dialog"
@@ -841,9 +862,15 @@
 
           <div class="product-popup-modal__content-info pt-25">
             {%- if product.metafields.meta.product_size_guide.type == 'file_reference' -%}
-              <img src="{{ productSizeGuideHandler | img_url: "master" }}" alt="{{ "Product Size Guide" }}">
+              <img
+                src="{{ product_size_guide_handler | image_url }}"
+                alt="Product Size Guide"
+                width="{{ product_size_guide_handler.width | default: 800 }}"
+                height="{{ product_size_guide_handler.height | default: 1000 }}"
+                loading="lazy"
+              >
             {%- else -%}
-              {{ productSizeGuideHandler.content }}
+              {{ product_size_guide_handler.content }}
             {%- endif -%}
           </div>
         </div>
@@ -888,7 +915,7 @@
     {% liquid
       assign shippinghandle = pages[block.settings.shipping_page_handle].content
     %}
-    {%- if productShippingPolicy != blank -%}
+    {%- if product_shipping_policy != blank -%}
       <modal-dialog id="PopupModal-2" class="product-popup-modal modal-md" {{ block.shopify_attributes }}>
         <div
           role="dialog"
@@ -910,9 +937,15 @@
           </div>
           <div class="product-popup-modal__content-info pt-25">
             {%- if product.metafields.meta.product_shipping_policy.type == 'file_reference' -%}
-              <img src="{{ productShippingPolicy | img_url: "master" }}" alt="{{ "Product Shipping Policy" }}">
+              <img
+                src="{{ product_shipping_policy | image_url }}"
+                alt="Product Shipping Policy"
+                width="{{ product_shipping_policy.width | default: 800 }}"
+                height="{{ product_shipping_policy.height | default: 1000 }}"
+                loading="lazy"
+              >
             {%- else -%}
-              {{ productShippingPolicy }}
+              {{ product_shipping_policy }}
             {%- endif -%}
           </div>
         </div>
@@ -1043,10 +1076,10 @@
     </modal-dialog>
   {%- endfor -%}
 
-  <modal-dialog id="PopupModal-4" class="product-popup-modal back__in--stock-popup" {{ block.shopify_attributes }}>
+  <modal-dialog id="PopupModal-4" class="product-popup-modal back__in--stock-popup">
     <div
       role="dialog"
-      aria-label="{{ block.settings.text }}"
+      aria-label="{{ 'products.product.back_in_stock_notify.Popup_heading' | t }}"
       aria-modal="true"
       class="product-popup-modal__content modal-sm"
       tabindex="-1"
@@ -1162,9 +1195,8 @@
     "name": {{ product.title | json }},
     "url": {{ shop.url | append: product.url | json }},
     {%- if product.selected_or_first_available_variant.featured_media -%}
-      {%- assign media_size = product.selected_or_first_available_variant.featured_media.preview_image.width | append: 'x' -%}
       "image": [
-        {{ product.selected_or_first_available_variant.featured_media | img_url: media_size | prepend: "https:" | json }}
+        {{ product.selected_or_first_available_variant.featured_media | image_url: width: 1200 | prepend: "https:" | json }}
       ],
     {%- endif -%}
     "description": {{ product.description | strip_html | json }},

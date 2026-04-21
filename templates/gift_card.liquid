@@ -12,13 +12,13 @@
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
     {%- if settings.favicon != blank -%}
-      <link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
 
 
     {%- assign formatted_initial_value = gift_card.initial_value | money_without_trailing_zeros | strip_html -%}
 
-    <title>{{ 'gift_cards.issued.title' | t: value: formatted_initial_value, shop: shop.name }}</title>
+    <title>{{ 'gift_cards.issued.title' | t: value: formatted_initial_value, shop: 'Smart Universal' }}</title>
 
     <meta name="description" content="{{ 'gift_cards.issued.subtext' | t }}">
 
@@ -128,7 +128,7 @@
 
   <body class="gradient">
     <header class="gift-card__title">
-      <span class="h2">{{ shop.name }}</span>
+      <span class="h2">Smart Universal</span>
       <h1 class="gift-card__heading">{{ 'gift_cards.issued.subtext' | t }}</h1>
       <div class="gift-card__price">
         <p>

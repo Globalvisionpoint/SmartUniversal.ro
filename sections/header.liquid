@@ -798,7 +798,7 @@
   {
     "@context": "http://schema.org",
     "@type": "Organization",
-    "name": {{ shop.name | json }},
+    "name": "Smart Universal",
     {% if section.settings.logo %}
       {% assign image_size = section.settings.logo.width | append: 'x' %}
       "logo": {{ section.settings.logo | image_url: image_size | prepend: "https:" | json }},
@@ -823,7 +823,7 @@
     {
       "@context": "http://schema.org",
       "@type": "WebSite",
-      "name": {{ shop.name | json }},
+      "name": "Smart Universal",
       "potentialAction": {
         "@type": "SearchAction",
         "target": {{ potential_action_target | json }},

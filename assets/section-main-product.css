@@ -35,7 +35,7 @@ variant-selects {
   --alpha-button-background: 1;
 }
 
-.product-form__submit[disabled] + .shopify-payment-button {
+.product-form__submit[disabled]:not(.loading) + .shopify-payment-button {
   display: none;
 }
 
@@ -1420,6 +1420,61 @@ span.product__media-icon.motion-reduce > a {
 button.product-form__submit.loading:after {
   top: 10px;
   left: 62px;
+}
+
+.product_buy_button_form .product-form__submit.button:disabled,
+.product_buy_button_form .product-form__submit.button.loading,
+.product_buy_button_form .product-form__submit--buy-now.loading-visible,
+.product_buy_button_form .product-form__submit--buy-now[aria-disabled="true"] {
+  opacity: 1;
+  color: #fff !important;
+}
+
+.product_buy_button_form .product-form__submit.button.loading,
+.product_buy_button_form .product-form__submit--buy-now.loading-visible {
+  position: relative;
+  pointer-events: none;
+}
+
+.product_buy_button_form .product__buy_now_button {
+  display: block !important;
+  width: 100%;
+  min-height: 4.8rem;
+}
+
+.product_buy_button_form .product__buy_now_button .product-form__submit {
+  width: 100%;
+}
+
+.product_buy_button_form .product-form__submit.button.loading .action__btn--svg,
+.product_buy_button_form .product-form__submit.button.loading .cart--button-text,
+.product_buy_button_form .product-form__submit--buy-now.loading-visible .action__btn--svg,
+.product_buy_button_form .product-form__submit--buy-now.loading-visible .cart--button-text {
+  color: #fff !important;
+  visibility: visible;
+  opacity: 1;
+}
+
+.product_buy_button_form .product-form__submit.button.loading .cart--button-text,
+.product_buy_button_form .product-form__submit--buy-now.loading-visible .cart--button-text {
+  padding-right: 3rem;
+}
+
+.product_buy_button_form .product-form__submit.button.loading:after,
+.product_buy_button_form .product-form__submit--buy-now.loading-visible:after {
+  animation: loading var(--duration-long) infinite linear;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: auto;
+  right: 1.4rem;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  border: 2.5px solid rgba(255, 255, 255, 0.9);
+  border-left-color: transparent;
+  border-radius: 100%;
+  box-sizing: content-box;
 }
 .main-product__description {
   padding-top: 1.5rem;

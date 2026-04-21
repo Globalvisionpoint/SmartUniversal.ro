@@ -1,3 +1,8 @@
 {%- liquid
-  assign sale_compare_at_price = input_compare_at_price | default: product.compare_at_price | default: 0
+  assign sale_price = input_price | default: product.price | default: 0
+  assign sale_compare_at_price = input_compare_at_price | default: 0
+
+  if sale_compare_at_price <= sale_price
+    assign sale_compare_at_price = 0
+  endif
 -%}{{- sale_compare_at_price -}}

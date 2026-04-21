@@ -96,10 +96,10 @@ grid grid--{{ productShowXl }}-col-desktop grid--{{ productShowSm }}-col-tablet-
                       class="brand__logo--items__thumbnail--img"
                       width="{{ block.settings.logo.width }}"
                       height="{{ block.settings.logo.height }}"
-                      alt="{{ block.settings.logo.alt | default: shop.name | escape }}"
+                      alt="{{ block.settings.logo.alt | default: 'Smart Universal' | escape }}"
                     >
                   {%- else -%}
-                    <span class="h5">{{ shop.name }}</span>
+                    <span class="h5">Smart Universal</span>
                   {%- endif -%}
                 </a>
               </div>

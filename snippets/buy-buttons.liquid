@@ -120,7 +120,20 @@
           </div>
 
           {%- if show_dynamic_checkout -%}
-            {{ form | payment_button }}
+            <div class="product__buy_now_button w-100">
+              <button
+                type="button"
+                name="buy_now"
+                data-buy-now="true"
+                class="product-form__submit product-form__submit--buy-now button button--secondary button--medium mt-15"
+                {% if product.selected_or_first_available_variant.available == false %}
+                  disabled
+                {% endif %}
+              >
+                <span class="action__btn--svg" aria-hidden="true">⚡</span>
+                <span class="cart--button-text">Cumpără acum</span>
+              </button>
+            </div>
           {%- endif -%}
 
           <style>

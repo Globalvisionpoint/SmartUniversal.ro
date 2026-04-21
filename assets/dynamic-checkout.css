@@ -55,7 +55,8 @@
   display: none;
 }
 .shopify-payment-button__button[disabled] {
-    display: none;
+  display: block;
+  opacity: 1;
 }
 button.button__notify--product {
     width: 100%;

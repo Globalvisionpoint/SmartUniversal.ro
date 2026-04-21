@@ -30,7 +30,7 @@
 
   {% elsif template == 'password' %}
     {% capture permalinkURL %}{{ shop.url }}{% endcapture %}
-    {% capture shareTitle %}{% unless shop.description == blank %}{{ shop.description | url_param_escape }}{% else %}{{ shop.name | url_param_escape }}{% endunless %}{% endcapture %}
+    {% capture shareTitle %}{% unless shop.description == blank %}{{ shop.description | url_param_escape }}{% else %}Smart%20Universal{% endunless %}{% endcapture %}
   {% endif %}
 
   <span class="social-links">

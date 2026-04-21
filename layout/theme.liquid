@@ -22,7 +22,6 @@
   {% endif %}
 >
   <head>
- {%- render 'ecom_header' -%}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -43,7 +42,7 @@
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      {%- unless page_title contains 'Smart Universal' %} &ndash; Smart Universal{% endunless -%}
     </title>
 
     {% if page_description %}
@@ -312,11 +311,7 @@
       .full-unstyled-link,
       .product__title,
       .product-form__submit,
-      .shopify-payment-button__button,
-      .ecom__heading,
-      .ecom__element--button,
-      .ecom-banner__button,
-      .ecom__element--button-icon-text {
+      .shopify-payment-button__button {
         font-family: var(--font-heading-family) !important;
         font-weight: var(--font-heading-weight) !important;
       }
@@ -510,5 +505,5 @@
     {%- if settings.back_top_enable -%}
       {%- render 'back-to-top' -%}
     {%- endif -%}
-  {%- render "ecom_footer"-%}</body>
+  </body>
 </html>

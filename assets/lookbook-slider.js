@@ -48,10 +48,8 @@ theme.lookbookSlider = (function () {
     // Active class
     lookbookSlider.on("slideChange", function () {
       const realIndex = lookbookSlider.realIndex;
-      console.log(realIndex);
       if (lookbookHotspot.length > 0) {
         lookbookHotspot.forEach((button) => {
-          console.log(button.dataset.index);
           button.classList.remove("active");
           if (parseInt(button.dataset.index) == realIndex) {
             button.classList.add("active");

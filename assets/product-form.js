@@ -7,20 +7,35 @@ if (!customElements.get("product-form")) {
 
         this.form = this.querySelector("form");
         this.form.addEventListener("submit", this.onSubmitHandler.bind(this));
+        this.buyNowButton = this.form.querySelector('[data-buy-now="true"]');
+        this.buyNowButton?.addEventListener("click", (evt) => {
+          evt.preventDefault();
+          this.processProductAction(this.buyNowButton, true);
+        });
         this.cartNotification = document.querySelector("cart-notification");
         this.cartItems = document.querySelector("cart-items");
         this.quickViewWarpper = document.getElementById("quickViewWrapper");
-        //console.log(this.cartNotification);
       }
 
       onSubmitHandler(evt) {
         evt.preventDefault();
+        const submitButton = evt.submitter || this.form.querySelector('[name="add"]');
+        this.processProductAction(submitButton, false);
+      }
 
-        const submitButton = this.querySelector('[type="submit"]');
+      processProductAction(submitButton, redirectToCheckout = false) {
+        if (!submitButton || this.form.dataset.loading === "true") return;
 
-        submitButton.setAttribute("disabled", true);
-        submitButton.classList.add("loading");
-        // Get Cart API
+        this.form.dataset.loading = "true";
+        submitButton.setAttribute("aria-disabled", "true");
+
+        if (redirectToCheckout) {
+          submitButton.classList.add("loading-visible");
+        } else {
+          submitButton.setAttribute("disabled", true);
+          submitButton.classList.add("loading");
+        }
+
         let config = fetchConfig("javascript");
         config.headers["X-Requested-With"] = "XMLHttpRequest";
         delete config.headers["Content-Type"];
@@ -55,6 +70,12 @@ if (!customElements.get("product-form")) {
               this.handleErrorMessage(parsedState.description);
               return;
             }
+
+            if (redirectToCheckout) {
+              window.location.href = "/checkout";
+              return;
+            }
+
             if (this.cartNotification) {
               this.cartNotification.renderContents(parsedState);
             }
@@ -69,8 +90,10 @@ if (!customElements.get("product-form")) {
             console.error(e);
           })
           .finally(() => {
-            submitButton.classList.remove("loading");
+            delete this.form.dataset.loading;
+            submitButton.classList.remove("loading", "loading-visible");
             submitButton.removeAttribute("disabled");
+            submitButton.removeAttribute("aria-disabled");
             this.quickViewWarpper?.classList.remove("show__modal");
             document.body.classList.remove("overflow-hidden");
           });

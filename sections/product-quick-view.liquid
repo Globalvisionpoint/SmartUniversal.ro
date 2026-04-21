@@ -318,10 +318,10 @@ fieldset.product-form__input .form__label {
             {%- render 'price', product: product, use_variant: true, show_badges: true -%}
           </div>
 
-          {%- if product.compare_at_price > product.price and product.available -%}
+          {%- if on_sale and product.available -%}
             {% liquid
               assign percentage_badge = false
-              if block.settings.save_percentage and product.selected_or_first_available_variant.compare_at_price != null
+              if block.settings.save_percentage and product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price
                 assign percentage_badge = true
               endif
             %}
