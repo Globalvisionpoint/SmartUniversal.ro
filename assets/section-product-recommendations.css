@@ -1,0 +1,29 @@
+.product-recommendations {
+  display: block;
+}
+
+.product-recommendations__heading {
+  margin: 0;
+  margin-bottom: 3rem;
+}
+
+.product-recommendations .swiper-wrapper,
+.product-recommendations [grid-recommendation] {
+  align-items: stretch;
+}
+
+.product-recommendations .swiper-slide,
+.product-recommendations [grid-recommendation] > div {
+  height: auto;
+  display: flex;
+}
+
+.product-recommendations .swiper-slide > div,
+.product-recommendations [grid-recommendation] > div > .product__card {
+  width: 100%;
+}
+
+.product-recommendations .product__card {
+  height: 100%;
+  width: 100%;
+}

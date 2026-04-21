@@ -1,0 +1,62 @@
+{%- liquid
+  assign nweBadgeDate = product.metafields.meta.product_new_badge.value | date: '%s'
+  assign today_date = 'now' | date: '%s'
+  assign current_variant = product.selected_or_first_available_variant
+  assign price_base = current_variant.price | default: product.price | default: 0
+  assign compare_at_price_base = current_variant.compare_at_price | default: 0
+
+  assign sale_product = false
+
+  if compare_at_price_base > price_base
+    assign sale_product = true
+  endif
+
+  assign sale_text = 'products.product.on_sale' | t
+-%}
+
+<span class="product__card__badges">
+  {%- if today_date < nweBadgeDate -%}
+    <span class="badge color-{{ settings.new_badge_color_scheme }}">{{- 'products.product.new_badge' | t -}}</span>
+  {%- endif -%}
+
+  {%- if product.available and settings.preorder_badge -%}
+    {%- if product.selected_or_first_available_variant.inventory_quantity <= 0
+      and product.selected_or_first_available_variant.inventory_policy == 'continue'
+    -%}
+      <span class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}" aria-hidden="true">
+        {{- 'products.product.pre_order' | t -}}
+      </span>
+    {% endif %}
+  {% endif %}
+
+  {%- if product.available == false -%}
+    <span class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}" aria-hidden="true">
+      {{- 'products.product.sold_out' | t -}}
+    </span>
+  {%- elsif product.available and sale_product -%}
+    {% liquid
+      assign percentage_badge = sale_product
+    %}
+    {%- if percentage_badge or sale_text != blank -%}
+      <span class="badge badge--bottom-left sale-corner-badge color-{{ settings.sale_badge_color_scheme }}" aria-hidden="true">
+        {% if percentage_badge %}
+          <span class="sale__save--percent"
+            >-
+            {{-
+              compare_at_price_base
+              | minus: price_base
+              | times: 100.0
+              | divided_by: compare_at_price_base
+              | replace: ',', '.'
+              | round
+            -}}
+            %
+          </span>
+        {% endif %}
+        {% if sale_text != blank %}
+          <span class="sale__text">Reducere</span>
+        {% endif %}
+      </span>
+    {%- endif -%}
+  {%- endif -%}
+</span>

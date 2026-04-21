@@ -1,0 +1,369 @@
+.announcement-bar.topbar__timer--bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 5rem;
+}
+.announcement__button .button.button--extra--small {
+  padding: 0;
+  font-size: 1.4rem;
+  padding: 0.6rem 0.8rem;
+}
+.announcement__button a.button.button--small {
+  padding: 0.8rem 1.2rem;
+  font-size: 1.5rem;
+}
+.announcement__button .button.button--extra--medium {
+  padding: 0.8rem 1.5rem;
+}
+.announcement__bar--timer-column.text__with--timer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.announcement__bar--timer-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.announcement__bar--timer .countdown__item {
+  border: 0.1rem solid rgba(var(--color-foreground), 0.3);
+  min-width: 5rem;
+  text-align: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.announcement__bar--timer {
+  gap: 0.5rem;
+}
+.announcement__bar--timer-wrapper {
+  padding: 1rem;
+}
+.announcement--timer-close-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  aspect-ratio: 1 / 1;
+}
+.announcement--timer-close-btn > svg,
+.announcement--timer-close-btn .icon-close {
+  width: 2rem;
+  height: 2rem;
+  pointer-events: none;
+  display: block;
+}
+.announcement__bar--timer-column {
+  color: rgba(var(--color-foreground));
+}
+@media only screen and (min-width: 992px) {
+  .announcement__bar--timer-column.text__with--timer {
+    gap: 2rem;
+  }
+  .announcement__bar--timer-wrapper {
+    gap: 2rem;
+  }
+}
+.announcement__button .button svg {
+  width: 1.4rem;
+}
+@media only screen and (max-width: 749px) {
+  .announcement__bar--timer-column.text__with--timer {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .announcement__bar--timer .countdown__item.Sec {
+    display: none;
+  }
+  button.close__announcement--bar.modal__close-button.link {
+    width: 40px;
+    height: 38px;
+  }
+  .announcement__bar--timer-column.announcement__button {
+    padding-right: 3rem;
+    flex-shrink: 0;
+  }
+  .announcement__bar--timer .countdown__item {
+    padding: 0.2rem 0.3rem;
+  }
+  .announcement--timer-close-btn {
+    padding: 0 !important;
+  }
+}
+.announcement__bar--timer .countdown__item .countdown__number {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.announcement-bar.topbar__timer--bar {
+  background: linear-gradient(135deg, #b9112d 0%, #cf1f36 55%, #e13a42 100%);
+  color: #ffffff;
+  min-height: 5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 0 0 1.2rem 1.2rem;
+  box-shadow: 0 10px 22px rgba(185, 17, 45, 0.14);
+  overflow: hidden;
+}
+
+.announcement-bar.topbar__timer--bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+.announcement__bar--timer-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.4rem 4.4rem 0.4rem 0.6rem;
+}
+
+.announcement__bar--timer-column,
+.announcement__bar--timer,
+.announcement__bar--timer .countdown__item > span {
+  color: #ffffff;
+}
+
+.announcement__bar--timer-column.text__with--timer {
+  gap: 0.5rem;
+}
+
+.announcement__bar--timer-column.text__with--timer > .announcement__bar--timer:not(.d-flex) {
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.announcement__bar--timer.d-flex {
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  top: -0.18rem;
+}
+
+.announcement__bar--timer .countdown__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 4.8rem;
+  padding: 0.22rem 0.52rem 0.06rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+}
+
+.announcement__bar--timer .countdown__item .countdown__number {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.announcement__bar--timer .countdown__item > span.countdown__text {
+  margin-top: -0.02rem;
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+}
+
+.announcement__button .button {
+  min-height: 3.5rem;
+  padding: 0 !important;
+  border-radius: 999px;
+  border: 0;
+  background: linear-gradient(135deg, #d92d2f 0%, #c91f39 100%);
+  color: #ffffff;
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  box-shadow: 0 8px 18px rgba(95, 6, 20, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: stretch;
+}
+
+.announcement__button .button:hover {
+  transform: translateY(-2px);
+  color: #ffffff;
+  box-shadow: 0 16px 28px rgba(95, 6, 20, 0.24);
+  filter: brightness(1.03);
+}
+
+.announcement__button .announcement__cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 3.8rem;
+  align-self: stretch;
+  background: #b81532;
+  color: #ffffff;
+}
+
+.announcement__button .announcement__cta-icon svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.announcement__button .button .button--label-with-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0 1.35rem;
+  color: #ffffff;
+}
+
+.announcement--timer-close-btn {
+  right: 0.9rem;
+  width: 3rem;
+  height: 3rem;
+  min-width: 3rem;
+  min-height: 3rem;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  box-shadow: none;
+  opacity: 1;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.announcement--timer-close-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+  box-shadow: none;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.announcement--timer-close-btn > svg,
+.announcement--timer-close-btn .icon-close {
+  width: 1.48rem;
+  height: 1.48rem;
+}
+
+@media only screen and (max-width: 991px) {
+  .announcement-bar.topbar__timer--bar {
+    min-height: 4rem;
+    border-radius: 0 0 0.85rem 0.85rem;
+    padding: 0.2rem 0.35rem;
+  }
+
+  .announcement__bar--timer-wrapper {
+    gap: 0.25rem;
+    padding: 0.15rem 1.9rem 0.15rem 0.05rem;
+    justify-content: space-between;
+  }
+
+  .announcement__bar--timer-column.text__with--timer {
+    gap: 0.04rem;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .announcement__bar--timer-column.text__with--timer > .announcement__bar--timer:not(.d-flex) {
+    font-size: 1.08rem;
+    position: relative;
+    top: -0.08rem;
+    white-space: nowrap;
+  }
+
+  .announcement__bar--timer .countdown__item {
+    min-width: 3.65rem;
+    justify-content: flex-start;
+    padding: 0.14rem 0.22rem 0.02rem;
+    border-radius: 0.7rem;
+  }
+
+  .announcement__button {
+    margin-left: auto;
+    padding-left: 1rem;
+    transform: translateX(0.9rem);
+  }
+
+  .announcement__button .button {
+    min-height: 2.9rem;
+    padding: 0 !important;
+    font-size: 0.86rem;
+  }
+
+  .announcement__button .announcement__cta-icon {
+    flex-basis: 2.75rem;
+  }
+
+  .announcement__button .announcement__cta-icon svg {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  .announcement__button .button .button--label-with-icon {
+    padding: 0 0.85rem;
+  }
+
+  .announcement--timer-close-btn {
+    right: 0.55rem;
+    width: 2.55rem;
+    height: 2.55rem;
+    min-width: 2.55rem;
+    min-height: 2.55rem;
+    padding: 0 !important;
+  }
+
+  .announcement--timer-close-btn > svg,
+  .announcement--timer-close-btn .icon-close {
+    width: 1.22rem;
+    height: 1.22rem;
+  }
+}
+
+@media only screen and (max-width: 749px) {
+  .announcement__bar--timer-wrapper {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .announcement__bar--timer-column.text__with--timer {
+    width: auto;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .announcement__bar--timer.d-flex {
+    gap: 0.25rem;
+    top: -0.32rem;
+  }
+
+  .announcement__bar--timer .countdown__item {
+    min-width: 3.1rem;
+    justify-content: flex-start;
+    padding: 0.1rem 0.14rem 0.01rem;
+  }
+
+  .announcement__bar--timer .countdown__item .countdown__number {
+    font-size: 1.16rem;
+  }
+
+  .announcement__bar--timer .countdown__item > span.countdown__text {
+    font-size: 0.48rem;
+    margin-top: 0.06rem;
+  }
+}

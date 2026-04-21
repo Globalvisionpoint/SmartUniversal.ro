@@ -1,0 +1,72 @@
+<a
+  {% if collection.all_products_count > 0 %}
+    href="{{ collection.url }}"
+  {% endif %}
+  class="{% if image != blank %} card--media{% else %}{% if media_aspect_ratio != 'adapt' %} card--stretch{% endif %}{% endif %} collection__card"
+>
+  {%- if image != blank -%}
+    <div class="collection-card--media__wrapper {{ image_width }} card--client-height  {% if round_corner %}rounded--image-1 {% endif %}">
+      <div
+        class="media media--{{ media_aspect_ratio }} media--hover-effect overflow-hidden"
+        {% if media_aspect_ratio == 'adapt' %}
+          style="padding-bottom: {{ 1 | divided_by: image.aspect_ratio | times: 100 }}%;"
+        {% endif %}
+      >
+        <img
+          srcset="
+            {%- if image.width >= 165 -%}{{ image | image_url: width: 165, format: 'webp' }} 165w,{%- endif -%}
+            {%- if image.width >= 280 -%}{{ image | image_url: width: 280, format: 'webp' }} 280w,{%- endif -%}
+            {%- if image.width >= 400 -%}{{ image | image_url: width: 400, format: 'webp' }} 400w,{%- endif -%}
+            {%- if image.width >= 550 -%}{{ image | image_url: width: 550, format: 'webp' }} 550w,{%- endif -%}
+            {%- if image.width >= 750 -%}{{ image | image_url: width: 750, format: 'webp' }} 750w,{%- endif -%}
+            {%- if image.width >= 900 -%}{{ image | image_url: width: 900, format: 'webp' }} 900w,{%- endif -%}
+          "
+          src="{{ image | image_url: width: 400, format: 'webp' }}"
+          sizes="(min-width: {{ settings.container_lg_width }}px) {{ settings.container_lg_width | minus: 100 | divided_by: 3 }}px, (min-width: 750px) calc((100vw - 130px) / 3), calc(100vw - 30px)"
+          alt="{{ collection.title | escape }}"
+          height="{{ image.height }}"
+          width="{{ image.width }}"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  {%- else -%}
+    <div
+      class="placeholder_svg_parent media--{{ media_aspect_ratio }} card--client-height  {% if round_corner %}rounded--image-1 {% endif %}"
+      {% if media_aspect_ratio == 'adapt' %}
+        style="padding-bottom: 100%"
+      {% endif %}
+    >
+      {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+      {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg-2' }}
+    </div>
+  {%- endif -%}
+  <div
+    class="
+      product__categories--content card--style-1 {% if show_icon %} d-flex justify-content-between align-items-center {% endif %}
+      {% unless section.settings.show_icon %} text-{{ section.settings.card_alignment }} {% endunless %}
+    "
+  >
+    <div class="product__categories--content__left">
+      {%- if collection != blank -%}
+        <h3 class="product__categories--content__maintitle h5">{{ collection.title }}</h3>
+      {%- else -%}
+        <h3 class="product__categories--content__maintitle h5">{{ 'sections.collection_list.default_title' | t }}</h3>
+      {%- endif -%}
+      {%- if show_product_items -%}
+        <span class="product__categories--content__subtitle">
+          {{- collection.products_count }}
+          {{ 'sections.collection_list.items' | t -}}
+        </span>
+      {%- endif -%}
+    </div>
+
+    {%- if show_icon -%}
+      <div class="product__categories--icon">
+        <span class="product__categories--icon__link">
+          {% render 'icon-arrow-right' %}
+        </span>
+      </div>
+    {%- endif -%}
+  </div>
+</a>

@@ -1,0 +1,44 @@
+.badge-stock {
+  line-height: 1;
+  background: var(--color-button);
+  color: var(--color-button-text);
+  display: inline-flex;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 0.3rem 1rem;
+  height: 2rem;
+  max-width: 100%;
+}
+.badge-stock-dot {
+  width: 6px;
+  height: 6px;
+  display: block;
+  flex: none;
+  background: currentColor;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+.badge-out-of-stock {
+  color: rgba(var(--color-foreground, #922c2c));
+  background: rgba(var(--color-background, #f7e5e5));
+}
+.badge-stock-in {
+    color: rgb(255 255 255);
+    background: rgb(255 255 255);
+}
+.product--card-stock-badge.badge-stock {
+    padding: 0;
+}
+.badge-stock-sucess {
+    color: rgba(var(--success-text-color));
+}
+.badge-stock-warning {
+    color: rgba(var(--warning-text-color));
+}
+.product--card-stock-badge .badge-stock-dot {
+    width: 0.8rem;
+    height: 0.8rem;
+}
+.product--inventory-stocky-label.badge-stock {
+    line-height: 1.2;
+}

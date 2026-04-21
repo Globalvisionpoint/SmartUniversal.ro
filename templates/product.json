@@ -1,0 +1,294 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "disabled": true,
+      "settings": {
+        "container": "container-fluid",
+        "image_overlay_opacity": 0,
+        "show_page_title": true,
+        "heading_size": "h1",
+        "show_breadcrumb_navigation": true,
+        "text_center": "center",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "mobile_padding_top": 30,
+        "mobile_padding_bottom": 30,
+        "color_scheme": "background-2",
+        "custom_colors": false,
+        "foreground": "#121212",
+        "background": "#f7f8fc"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "d563cb6b-8466-4cf0-8cd4-34ce1b371973": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "4add1bd5-3d4d-4c4e-9f65-5e23cc0e1ff4": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "0e3f7ebe-d784-4350-a83b-af960997d3d5": {
+          "type": "inventory",
+          "settings": {
+            "progress_bar": false,
+            "progress_bg_color": "#f5f5f5",
+            "colors_accent_1": "#ee2761",
+            "gradient_accent_1": ""
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "sale_badge": true,
+            "save_percentage": true
+          }
+        },
+        "53de2819-ab0a-47a4-aeca-1e575e63ae70": {
+          "type": "countdown",
+          "disabled": true,
+          "settings": {
+            "countdown_label": "Hurry up! Sale ends in",
+            "icon_enable": true,
+            "timer_background": "#ee2761",
+            "timer_foreground": "#ffffff"
+          }
+        },
+        "variant_picker_gYNLwq": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_color_swatch": true,
+            "choose_options_name": "Color",
+            "color_option_style": "image",
+            "color_option_design": "square"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "quantity__button": true,
+            "preorder_button": true,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true,
+            "cart_icon_type": "cart",
+            "wishlist_btn": false,
+            "compare_btn": false,
+            "guarantee_safe_checkout": false,
+            "safe_checkout_text": "PLATA ONLINE CU CARDUL SAU ÎN NUMERAR LA LIVRARE"
+          }
+        },
+        "0a478e9c-d23b-4b8b-b309-62919d0eb667": {
+          "type": "share",
+          "settings": {
+            "share_label": "Trimite Link-ul Produsului",
+            "share_link": true,
+            "facebook_share": false,
+            "twitter_share": false,
+            "pinterest_share": false
+          }
+        },
+        "d0e5cb3f-bc16-499b-bb44-24e33b8e8d49": {
+          "type": "complementary",
+          "disabled": true,
+          "settings": {
+            "block_heading": "Pairs well with",
+            "make_collapsible_row": true,
+            "icon": "price_tag",
+            "products_per_page": 3,
+            "product_list_limit": 10,
+            "image_ratio": "adapt",
+            "enable_quick_add": true,
+            "show_vendor": false,
+            "show_product_rating": false
+          }
+        },
+        "4da3a3dc-a122-42f1-ac3a-ff8d5edd3467": {
+          "type": "popup_contact_form",
+          "disabled": true,
+          "settings": {
+            "contact_form_label": "Întreabă despre acest produs!"
+          }
+        }
+      },
+      "block_order": [
+        "d563cb6b-8466-4cf0-8cd4-34ce1b371973",
+        "title",
+        "4add1bd5-3d4d-4c4e-9f65-5e23cc0e1ff4",
+        "0e3f7ebe-d784-4350-a83b-af960997d3d5",
+        "price",
+        "53de2819-ab0a-47a4-aeca-1e575e63ae70",
+        "variant_picker_gYNLwq",
+        "buy_buttons",
+        "0a478e9c-d23b-4b8b-b309-62919d0eb667",
+        "d0e5cb3f-bc16-499b-bb44-24e33b8e8d49",
+        "4da3a3dc-a122-42f1-ac3a-ff8d5edd3467"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "gallery_layout": "thumbnail_slider",
+        "media_size": "large",
+        "media_height": "adapt",
+        "mobile_thumbnails": "show",
+        "hide_variants": false,
+        "enable_sticky_info": true,
+        "enable_video_looping": true,
+        "sticky_enable": true,
+        "padding_top": 35,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "product-tab-section": {
+      "type": "product-details-tabs",
+      "blocks": {
+        "f84995d4-4425-4260-8691-caca2d18c7f1": {
+          "type": "product_description",
+          "settings": {
+            "header": "Descriere și specificații"
+          }
+        },
+        "8a5ab9db-2caf-48ef-810e-28477b5602e4": {
+          "type": "reviews",
+          "disabled": true,
+          "settings": {
+            "header": "Product Reviews",
+            "custom_liquid_review": ""
+          }
+        },
+        "38c2eeac-86dd-480c-ab1e-82181ed6c61b": {
+          "type": "custom_content",
+          "disabled": true,
+          "settings": {
+            "header": "Privacy policy",
+            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.</p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.</p>",
+            "content_page": ""
+          }
+        },
+        "0894f4ae-75c9-43b8-a78e-59b3d3cb5e99": {
+          "type": "unique_tab",
+          "disabled": true,
+          "settings": {
+            "header": "Tab heading",
+            "unique_tab_liquid": "{{ product.metafields.meta.unique_tab.value }}"
+          }
+        },
+        "8142d0c0-5d12-45ce-a675-5a72696f6a51": {
+          "type": "unique_tab",
+          "disabled": true,
+          "settings": {
+            "header": "Tab heading",
+            "unique_tab_liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "f84995d4-4425-4260-8691-caca2d18c7f1",
+        "8a5ab9db-2caf-48ef-810e-28477b5602e4",
+        "38c2eeac-86dd-480c-ab1e-82181ed6c61b",
+        "0894f4ae-75c9-43b8-a78e-59b3d3cb5e99",
+        "8142d0c0-5d12-45ce-a675-5a72696f6a51"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 40,
+        "margin_top": 0,
+        "margin_bottom": 80,
+        "mobile_margin_top": 0,
+        "mobile_margin_bottom": 0
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "container": "container",
+        "heading": "S-ar putea să îți placă și...",
+        "products_to_show": 8,
+        "product_column": "5",
+        "product_column_laptop": "4",
+        "product_column_tablet": "3",
+        "product_column_mobile": "2",
+        "card_style": "style_2",
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "color_swatches": false,
+        "show_badges": true,
+        "show_cart_button": true,
+        "show_preorder_button": true,
+        "show_quick_view_button": true,
+        "show_compare_view_button": true,
+        "show_wishlist_button": true,
+        "show_title": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_countdown": false,
+        "show_product_rating": false,
+        "inventory_status": false,
+        "product_card_radius": true,
+        "product_card_spacing": true,
+        "product_card_color_scheme": "background-2",
+        "slider_enable": true,
+        "auto_rotate": true,
+        "autoplay_time": 2,
+        "show_pagination": true,
+        "show_navigation": true,
+        "slider_loop": true,
+        "padding_top": 0,
+        "padding_bottom": 95,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 65
+      }
+    },
+    "recent-viewed-products": {
+      "type": "recently_viewed_product",
+      "settings": {
+        "container": "container",
+        "heading": "Produs vizualizat recent",
+        "products_show_on_xl": 5,
+        "products_show_on_lg": 4,
+        "products_show_on_md": 3,
+        "products_show_on_sm": 2,
+        "show_pagination": false,
+        "show_navigation": true,
+        "slider_loop": false,
+        "slider_rows": "1",
+        "padding_top": 0,
+        "padding_bottom": 90,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "product-tab-section",
+    "product-recommendations",
+    "recent-viewed-products"
+  ]
+}
