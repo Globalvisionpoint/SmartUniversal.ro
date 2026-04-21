@@ -766,7 +766,7 @@
           "type": "product_tab",
           "settings": {
             "title": "Animale",
-            "collection": "animale",
+            "collection": "gradina-copy",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
@@ -779,7 +779,7 @@
           "type": "product_tab",
           "settings": {
             "title": "Auto-Moto",
-            "collection": "auto-moto",
+            "collection": "decoratiuni-copy",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
@@ -792,7 +792,7 @@
           "type": "product_tab",
           "settings": {
             "title": "Casa",
-            "collection": "frontpage",
+            "collection": "casa",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
@@ -805,7 +805,7 @@
           "type": "product_tab",
           "settings": {
             "title": "Decoratiuni",
-            "collection": "decoratiuni",
+            "collection": "casa-copy",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
@@ -818,7 +818,7 @@
           "type": "product_tab",
           "settings": {
             "title": "Gradina",
-            "collection": "gradina",
+            "collection": "auto-moto-copy",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
@@ -831,7 +831,7 @@
           "type": "product_tab",
           "settings": {
             "title": "Jucarii",
-            "collection": "jucarii",
+            "collection": "animale-copy",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
