@@ -355,6 +355,119 @@ for (var i = 0; i < compare.length; i++) {
         [class*="shopify-pc__banner__btns"] a:hover {
           filter: brightness(1.06) !important;
         }
+
+        /* ── Preferences panel (desktop) ── */
+        [class*="shopify-pc__prefs__dialog"],
+        .shopify-pc__prefs__dialog {
+          max-width: 52rem !important;
+          width: min(52rem, calc(100vw - 3rem)) !important;
+          max-height: 90vh !important;
+          overflow: hidden !important;
+          display: flex !important;
+          flex-direction: column !important;
+          border-radius: 1.2rem !important;
+          background: rgb(var(--color-background) / 0.92) !important;
+          color: rgb(var(--color-foreground)) !important;
+          border: 1px solid rgb(var(--color-foreground) / 0.16) !important;
+          box-shadow: 0 1rem 3rem rgb(0 0 0 / 0.22) !important;
+          -webkit-backdrop-filter: blur(14px) saturate(130%) !important;
+          backdrop-filter: blur(14px) saturate(130%) !important;
+          padding: 0 !important;
+        }
+
+        [class*="shopify-pc__prefs__header"],
+        .shopify-pc__prefs__header {
+          padding: 1.2rem 1.6rem 0.8rem !important;
+          flex-shrink: 0 !important;
+        }
+
+        [class*="shopify-pc__prefs__header"] h2,
+        [class*="shopify-pc__prefs__header"] h3,
+        .shopify-pc__prefs__header h2,
+        .shopify-pc__prefs__header h3 {
+          font-size: 1.55rem !important;
+          font-weight: 700 !important;
+          margin: 0 0 0.3rem !important;
+          color: rgb(var(--color-foreground)) !important;
+        }
+
+        [class*="shopify-pc__prefs__header"] p,
+        .shopify-pc__prefs__header p {
+          font-size: 1.2rem !important;
+          margin: 0 !important;
+          line-height: 1.5 !important;
+          color: rgb(var(--color-foreground) / 0.88) !important;
+        }
+
+        [class*="shopify-pc__prefs__content"],
+        .shopify-pc__prefs__content {
+          overflow-y: auto !important;
+          flex: 1 1 auto !important;
+          padding: 0.6rem 1.6rem !important;
+        }
+
+        [class*="shopify-pc__prefs__section"],
+        .shopify-pc__prefs__section {
+          border-top: 1px solid rgb(var(--color-foreground) / 0.1) !important;
+          padding: 0.8rem 0 !important;
+        }
+
+        [class*="shopify-pc__prefs__section"] h3,
+        .shopify-pc__prefs__section h3 {
+          font-size: 1.3rem !important;
+          font-weight: 600 !important;
+          margin: 0 0 0.25rem !important;
+          color: rgb(var(--color-foreground)) !important;
+        }
+
+        [class*="shopify-pc__prefs__section"] p,
+        .shopify-pc__prefs__section p {
+          font-size: 1.1rem !important;
+          line-height: 1.5 !important;
+          margin: 0 !important;
+          color: rgb(var(--color-foreground) / 0.82) !important;
+        }
+
+        [class*="shopify-pc__prefs__btns"],
+        .shopify-pc__prefs__btns,
+        [class*="shopify-pc__prefs__footer"],
+        .shopify-pc__prefs__footer {
+          flex-shrink: 0 !important;
+          display: flex !important;
+          flex-wrap: nowrap !important;
+          gap: 0.7rem !important;
+          justify-content: flex-end !important;
+          padding: 0.9rem 1.6rem !important;
+          border-top: 1px solid rgb(var(--color-foreground) / 0.1) !important;
+          margin: 0 !important;
+        }
+
+        [class*="shopify-pc__prefs__btns"] button,
+        [class*="shopify-pc__prefs__btns"] a,
+        .shopify-pc__prefs__btns button,
+        .shopify-pc__prefs__btns a,
+        [class*="shopify-pc__prefs__footer"] button,
+        [class*="shopify-pc__prefs__footer"] a,
+        .shopify-pc__prefs__footer button,
+        .shopify-pc__prefs__footer a {
+          min-height: 3rem !important;
+          padding: 0.7rem 1.3rem !important;
+          font-size: 1.1rem !important;
+          font-weight: 600 !important;
+          border-radius: 0.7rem !important;
+          white-space: nowrap !important;
+          border: 1px solid rgb(var(--color-button) / 0.7) !important;
+          background: rgb(var(--color-button)) !important;
+          color: rgb(var(--color-button-text)) !important;
+          margin: 0 !important;
+        }
+
+        [class*="shopify-pc__prefs__btns"] button:hover,
+        [class*="shopify-pc__prefs__btns"] a:hover,
+        [class*="shopify-pc__prefs__footer"] button:hover,
+        [class*="shopify-pc__prefs__footer"] a:hover {
+          filter: brightness(1.06) !important;
+        }
       }
 
       @media screen and (max-width: 989px) {
@@ -435,6 +548,125 @@ for (var i = 0; i < compare.length; i++) {
         [class*="shopify-pc__banner__dialog"] a {
           margin-top: 0 !important;
           margin-bottom: 0 !important;
+        }
+
+        /* ── Preferences panel (mobile) ── */
+        [class*="shopify-pc__prefs__dialog"],
+        .shopify-pc__prefs__dialog {
+          max-width: calc(100vw - 1.6rem) !important;
+          width: calc(100vw - 1.6rem) !important;
+          max-height: 88vh !important;
+          overflow: hidden !important;
+          display: flex !important;
+          flex-direction: column !important;
+          border-radius: 1rem !important;
+          background: rgb(var(--color-background) / 0.93) !important;
+          color: rgb(var(--color-foreground)) !important;
+          border: 1px solid rgb(var(--color-foreground) / 0.16) !important;
+          box-shadow: 0 0.6rem 2rem rgb(0 0 0 / 0.22) !important;
+          -webkit-backdrop-filter: blur(12px) saturate(125%) !important;
+          backdrop-filter: blur(12px) saturate(125%) !important;
+          padding: 0 !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          left: 0 !important;
+          right: 0 !important;
+          box-sizing: border-box !important;
+        }
+
+        [class*="shopify-pc__prefs__header"],
+        .shopify-pc__prefs__header {
+          padding: 0.9rem 1rem 0.6rem !important;
+          flex-shrink: 0 !important;
+        }
+
+        [class*="shopify-pc__prefs__header"] h2,
+        [class*="shopify-pc__prefs__header"] h3,
+        .shopify-pc__prefs__header h2,
+        .shopify-pc__prefs__header h3 {
+          font-size: 1.3rem !important;
+          font-weight: 700 !important;
+          margin: 0 0 0.2rem !important;
+          color: rgb(var(--color-foreground)) !important;
+        }
+
+        [class*="shopify-pc__prefs__header"] p,
+        .shopify-pc__prefs__header p {
+          font-size: 1.1rem !important;
+          margin: 0 !important;
+          line-height: 1.45 !important;
+          color: rgb(var(--color-foreground) / 0.88) !important;
+        }
+
+        [class*="shopify-pc__prefs__content"],
+        .shopify-pc__prefs__content {
+          overflow-y: auto !important;
+          flex: 1 1 auto !important;
+          padding: 0.4rem 1rem !important;
+          -webkit-overflow-scrolling: touch !important;
+        }
+
+        [class*="shopify-pc__prefs__section"],
+        .shopify-pc__prefs__section {
+          border-top: 1px solid rgb(var(--color-foreground) / 0.1) !important;
+          padding: 0.6rem 0 !important;
+        }
+
+        [class*="shopify-pc__prefs__section"] h3,
+        .shopify-pc__prefs__section h3 {
+          font-size: 1.2rem !important;
+          font-weight: 600 !important;
+          margin: 0 0 0.2rem !important;
+          color: rgb(var(--color-foreground)) !important;
+        }
+
+        [class*="shopify-pc__prefs__section"] p,
+        .shopify-pc__prefs__section p {
+          font-size: 1rem !important;
+          line-height: 1.45 !important;
+          margin: 0 !important;
+          color: rgb(var(--color-foreground) / 0.82) !important;
+        }
+
+        [class*="shopify-pc__prefs__btns"],
+        .shopify-pc__prefs__btns,
+        [class*="shopify-pc__prefs__footer"],
+        .shopify-pc__prefs__footer {
+          flex-shrink: 0 !important;
+          display: flex !important;
+          flex-wrap: nowrap !important;
+          gap: 0.5rem !important;
+          justify-content: flex-end !important;
+          padding: 0.65rem 1rem !important;
+          border-top: 1px solid rgb(var(--color-foreground) / 0.1) !important;
+          margin: 0 !important;
+        }
+
+        [class*="shopify-pc__prefs__btns"] button,
+        [class*="shopify-pc__prefs__btns"] a,
+        .shopify-pc__prefs__btns button,
+        .shopify-pc__prefs__btns a,
+        [class*="shopify-pc__prefs__footer"] button,
+        [class*="shopify-pc__prefs__footer"] a,
+        .shopify-pc__prefs__footer button,
+        .shopify-pc__prefs__footer a {
+          min-height: 2.45rem !important;
+          padding: 0.5rem 0.9rem !important;
+          font-size: 0.95rem !important;
+          font-weight: 600 !important;
+          border-radius: 0.6rem !important;
+          white-space: nowrap !important;
+          border: 1px solid rgb(var(--color-button) / 0.7) !important;
+          background: rgb(var(--color-button)) !important;
+          color: rgb(var(--color-button-text)) !important;
+          margin: 0 !important;
+        }
+
+        [class*="shopify-pc__prefs__btns"] button:hover,
+        [class*="shopify-pc__prefs__btns"] a:hover,
+        [class*="shopify-pc__prefs__footer"] button:hover,
+        [class*="shopify-pc__prefs__footer"] a:hover {
+          filter: brightness(1.06) !important;
         }
       }
     `;
