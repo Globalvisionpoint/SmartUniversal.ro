@@ -67,7 +67,7 @@
           "type": "link_list",
           "settings": {
             "heading": "Suport clienți",
-            "menu": "suport-clienti"
+            "menu": "customer-account-main-menu"
           }
         },
         "6c12f5ad-1f2b-4d5d-a59e-5931a27ed7cc": {
@@ -81,7 +81,6 @@
           "type": "image",
           "settings": {
             "heading": "",
-            "image": "shopify://shop_images/image_056c5a9e-2205-40ac-aee6-7c3c5a11b90b.png",
             "image_width": 140,
             "link": "https://anpc.ro/ce-este-sal/"
           }
@@ -90,7 +89,6 @@
           "type": "image",
           "settings": {
             "heading": "",
-            "image": "shopify://shop_images/image_d935f632-e88c-44a5-bfcb-fcaf2ab1ec0c.png",
             "image_width": 140,
             "link": "https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO"
           }
