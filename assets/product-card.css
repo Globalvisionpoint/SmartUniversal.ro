@@ -859,13 +859,21 @@ button.product__card__actions__btn.loading {
 }
 
 .product__card .product__card__price dl {
-  min-height: 5.4rem;
+  min-height: 6rem;
   justify-content: flex-end;
 }
 
 .product__card .product__card__price.price--on-sale .price__sale {
   flex-direction: column;
   gap: 0.05rem;
+  min-height: 6rem;
+  justify-content: flex-end;
+}
+
+.product__card .product__card__price .price__regular {
+  min-height: 6rem;
+  display: flex;
+  align-items: flex-end;
 }
 
 .product__card .product__card__price .price-item--regular {
@@ -883,6 +891,8 @@ button.product__card__actions__btn.loading {
 
 .product__card .product__card__price.price--on-sale .price-item--regular {
   font-size: 1.15rem;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .product__card .product__card--wishlist-btn,
