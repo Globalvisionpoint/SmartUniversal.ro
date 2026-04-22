@@ -864,14 +864,20 @@ button.product__card__actions__btn.loading {
 }
 
 .product__card .product__card__price .price-item--regular {
-  font-size: 1.15rem;
+  font-size: 1.8rem;
   line-height: 1;
   margin-bottom: 0;
+  color: #e21c23;
+  font-weight: 700;
 }
 
 .product__card .product__card__price .price-item--sale {
   font-size: 1.8rem;
   line-height: 1.05;
+}
+
+.product__card .product__card__price.price--on-sale .price-item--regular {
+  font-size: 1.15rem;
 }
 
 .product__card .product__card--wishlist-btn,
