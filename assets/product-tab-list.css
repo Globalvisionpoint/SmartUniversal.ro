@@ -5,6 +5,11 @@
     padding: 0;
     list-style: none;
 }
+@media only screen and (min-width: 750px) {
+  .product_tab_list {
+    justify-content: center;
+  }
+}
 @media only screen and (max-width: 767px) {
   .product_tab_list {
     margin-bottom: 20px;
