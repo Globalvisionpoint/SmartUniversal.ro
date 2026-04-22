@@ -490,6 +490,58 @@ for (var i = 0; i < compare.length; i++) {
           padding: 0.35rem 0.7rem !important;
           font-size: 0.9rem !important;
         }
+
+        /* ── Checkbox toggle rows (Necesar, Personalizare, etc.) ── */
+        [class*="shopify-pc__prefs__toggle"],
+        .shopify-pc__prefs__toggle {
+          display: flex !important;
+          align-items: center !important;
+          gap: 0.5rem !important;
+          padding: 0.4rem 0 !important;
+          margin: 0 !important;
+        }
+
+        [class*="shopify-pc__prefs__toggle"] input[type="checkbox"],
+        .shopify-pc__prefs__toggle input[type="checkbox"],
+        [class*="shopify-pc__prefs__toggle"] input[type="checkbox"] + label::before,
+        [class*="shopify-pc__prefs__checkbox"],
+        .shopify-pc__prefs__checkbox {
+          width: 1.4rem !important;
+          height: 1.4rem !important;
+          min-width: 1.4rem !important;
+          min-height: 1.4rem !important;
+          flex-shrink: 0 !important;
+        }
+
+        [class*="shopify-pc__prefs__toggle"] label,
+        .shopify-pc__prefs__toggle label,
+        [class*="shopify-pc__prefs__toggle-label"],
+        .shopify-pc__prefs__toggle-label {
+          font-size: 1rem !important;
+          font-weight: 600 !important;
+          line-height: 1.3 !important;
+          margin: 0 !important;
+        }
+
+        [class*="shopify-pc__prefs__section"],
+        .shopify-pc__prefs__section {
+          padding: 0.35rem 0 !important;
+          margin: 0 !important;
+        }
+
+        [class*="shopify-pc__prefs__section"] h3,
+        .shopify-pc__prefs__section h3 {
+          font-size: 1rem !important;
+          font-weight: 600 !important;
+          margin: 0 0 0.15rem !important;
+        }
+
+        [class*="shopify-pc__prefs__section"] p,
+        .shopify-pc__prefs__section p {
+          font-size: 0.88rem !important;
+          line-height: 1.4 !important;
+          margin: 0 !important;
+        }
       }
     `;
 
