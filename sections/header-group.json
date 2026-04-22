@@ -286,8 +286,8 @@
       "settings": {
         "container": "container-fluid",
         "show_offset": false,
-        "logo": "shopify://shop_images/trebuie-sa-fie-logo-de-pus-pe-bara-de-header.png",
-        "logo_width": 200,
+        "logo": "shopify://shop_images/logo_scris.png",
+        "logo_width": 120,
         "menu": "categorii",
         "header_design": "logo__left--menu-bottom",
         "border_hide_on_home_page": false,
