@@ -958,6 +958,37 @@ button.product__card__actions__btn.loading {
 }
 
 @media only screen and (max-width: 749px) {
+  .product__card {
+    padding: 0.8rem;
+  }
+
+  .product__card__thumbnail {
+    margin-bottom: 0.4rem;
+    padding: 0.8rem;
+  }
+
+  .product__card__content {
+    gap: 0.1rem;
+  }
+
+  .product__card__title {
+    min-height: 5.8rem;
+    margin: 0;
+  }
+
+  .product__card .product__card__price {
+    min-height: 6.4rem;
+  }
+
+  .product__card .product__card__price dl {
+    min-height: 4.8rem;
+  }
+
+  .product__card .product-card-action-buttons {
+    padding-top: 0.6rem;
+    margin-bottom: -0.8rem;
+  }
+
   .product__card__badges .sale-corner-badge {
     width: 6.7rem;
     height: 6.7rem;
