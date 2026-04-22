@@ -68,7 +68,13 @@ button.button__notify--product {
   margin-top: 1.2rem;
 }
 
-.product .shopify-payment-button__button--unbranded {
+.product .product__buy_now_button .product-popup-modal__opener {
+  display: block;
+  width: 100%;
+}
+
+.product .shopify-payment-button__button--unbranded,
+.product .button__notify--product {
   position: relative;
   width: 100%;
   min-height: 5.3rem;
@@ -86,7 +92,8 @@ button.button__notify--product {
   isolation: isolate;
 }
 
-.product .shopify-payment-button__button--unbranded::before {
+.product .shopify-payment-button__button--unbranded::before,
+.product .button__notify--product::before {
   content: '⚡';
   position: absolute;
   left: 1.15rem;
@@ -106,7 +113,8 @@ button.button__notify--product {
   z-index: 1;
 }
 
-.product .shopify-payment-button__button--unbranded::after {
+.product .shopify-payment-button__button--unbranded::after,
+.product .button__notify--product::after {
   content: '';
   position: absolute;
   left: 5rem;
@@ -120,7 +128,9 @@ button.button__notify--product {
 }
 
 .product .shopify-payment-button__button--unbranded:hover,
-.product .shopify-payment-button__button--unbranded:hover:not([disabled]) {
+.product .shopify-payment-button__button--unbranded:hover:not([disabled]),
+.product .button__notify--product:hover,
+.product .button__notify--product:hover:not([disabled]) {
   background: linear-gradient(135deg, #e22038 0%, #cf1d38 52%, #bb1732 100%) !important;
   color: #ffffff !important;
   box-shadow: 0 14px 26px rgba(201, 31, 57, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.16) !important;
@@ -128,20 +138,23 @@ button.button__notify--product {
 }
 
 @media only screen and (max-width: 749px) {
-  .product .shopify-payment-button__button--unbranded {
+  .product .shopify-payment-button__button--unbranded,
+  .product .button__notify--product {
     min-height: 4.8rem;
     padding: 0 1.1rem 0 4.8rem !important;
     font-size: 1rem;
   }
 
-  .product .shopify-payment-button__button--unbranded::before {
+  .product .shopify-payment-button__button--unbranded::before,
+  .product .button__notify--product::before {
     left: 1rem;
     width: 2.5rem;
     height: 2.5rem;
     font-size: 1.25rem;
   }
 
-  .product .shopify-payment-button__button--unbranded::after {
+  .product .shopify-payment-button__button--unbranded::after,
+  .product .button__notify--product::after {
     left: 4.45rem;
     right: 0.8rem;
     height: 56%;
