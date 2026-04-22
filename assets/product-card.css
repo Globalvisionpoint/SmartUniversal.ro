@@ -959,12 +959,12 @@ button.product__card__actions__btn.loading {
 
 @media only screen and (max-width: 749px) {
   .product__card {
-    padding: 0.6rem;
+    padding: 0.45rem;
   }
 
   .product__card__thumbnail {
-    margin-bottom: 0.2rem;
-    padding: 0.6rem;
+    margin-bottom: 0.1rem;
+    padding: 0.45rem;
   }
 
   .product__card__content {
@@ -972,21 +972,21 @@ button.product__card__actions__btn.loading {
   }
 
   .product__card__title {
-    min-height: 4.9rem;
+    min-height: 4.2rem;
     margin: 0;
   }
 
   .product__card .product__card__price {
-    min-height: 5.6rem;
+    min-height: 4.9rem;
   }
 
   .product__card .product__card__price dl {
-    min-height: 4.2rem;
+    min-height: 3.7rem;
   }
 
   .product__card .product-card-action-buttons {
-    padding-top: 0.3rem;
-    margin-bottom: -0.6rem;
+    padding-top: 0.1rem;
+    margin-bottom: -0.45rem;
   }
 
   .product__card__badges .sale-corner-badge {
