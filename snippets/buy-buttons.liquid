@@ -119,7 +119,7 @@
             </div>
           </div>
 
-          {%- if show_dynamic_checkout -%}
+          {%- if show_dynamic_checkout and current_variant.available -%}
             <div class="product__buy_now_button w-100">
               <button
                 type="button"
@@ -133,6 +133,26 @@
                 <span class="action__btn--svg" aria-hidden="true">⚡</span>
                 <span class="cart--button-text">Cumpără acum</span>
               </button>
+            </div>
+          {%- elsif current_variant.available == false -%}
+            <div
+              id="notify__me--available-{{ section.id }}"
+              class="product__buy_now_button w-100 notify__me--available-{{ section.id }}"
+            >
+              <modal-opener
+                class="product-popup-modal__opener"
+                data-modal="#PopupModal-4"
+                {{ block.shopify_attributes }}
+              >
+                <button
+                  id="ProductPopup-notify"
+                  class="button__notify--product button button--secondary button--medium mt-15"
+                  type="button"
+                  aria-haspopup="dialog"
+                >
+                  {{ 'products.product.back_in_stock_notify.button' | t }}
+                </button>
+              </modal-opener>
             </div>
           {%- endif -%}
 
@@ -265,25 +285,6 @@
     </div>
   {%- endif -%}
 
-  <div
-    id="notify__me--available-{{ section.id }}"
-    class="notify__me--available-{{ section.id }} {% if current_variant.available == true %}no-js-inline{% endif %}"
-  >
-    <modal-opener
-      class="product-popup-modal__opener"
-      data-modal="#PopupModal-4"
-      {{ block.shopify_attributes }}
-    >
-      <button
-        id="ProductPopup-notify"
-        class="button__notify--product mb-30 "
-        type="button"
-        aria-haspopup="dialog"
-      >
-        {{ 'products.product.back_in_stock_notify.button' | t }}
-      </button>
-    </modal-opener>
-  </div>
   {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
 
   {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities
