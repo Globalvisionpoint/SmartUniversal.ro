@@ -72,6 +72,9 @@ class VariantSelects extends HTMLElement {
     let notifyMeAvailableWrapperList = document.querySelectorAll(
       `.notify__me--available-${this.dataset.section}`
     );
+    let buyNowAvailableWrapperList = document.querySelectorAll(
+      `.buy_now__available-${this.dataset.section}`
+    );
 
     if (notifyMeAvailableWrapperList.length > 0) {
       notifyMeAvailableWrapperList.forEach((notifyMeAvailableWrapper) => {
@@ -79,13 +82,29 @@ class VariantSelects extends HTMLElement {
           let soldOurtProductURL = document.querySelector(
             ".soldout__product_url"
           );
-          soldOurtProductURL.value = `${this.dataset.origin}${this.dataset.url}?variant=${this.currentVariant.id}`;
+          if (soldOurtProductURL) {
+            soldOurtProductURL.value = `${this.dataset.origin}${this.dataset.url}?variant=${this.currentVariant.id}`;
+          }
           if (notifyMeAvailableWrapper) {
             notifyMeAvailableWrapper.classList.remove("no-js-inline");
+          }
+          if (buyNowAvailableWrapperList.length > 0) {
+            buyNowAvailableWrapperList.forEach((buyNowAvailableWrapper) => {
+              if (buyNowAvailableWrapper) {
+                buyNowAvailableWrapper.classList.add("no-js-inline");
+              }
+            });
           }
         } else {
           if (notifyMeAvailableWrapper) {
             notifyMeAvailableWrapper.classList.add("no-js-inline");
+          }
+          if (buyNowAvailableWrapperList.length > 0) {
+            buyNowAvailableWrapperList.forEach((buyNowAvailableWrapper) => {
+              if (buyNowAvailableWrapper) {
+                buyNowAvailableWrapper.classList.remove("no-js-inline");
+              }
+            });
           }
         }
       });
