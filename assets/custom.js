@@ -436,6 +436,60 @@ for (var i = 0; i < compare.length; i++) {
           margin-top: 0 !important;
           margin-bottom: 0 !important;
         }
+
+        /* ── Preferences panel – compact sizes (mobile) ── */
+        [class*="shopify-pc__prefs__dialog"],
+        .shopify-pc__prefs__dialog {
+          max-height: 90vh !important;
+          overflow: hidden !important;
+          display: flex !important;
+          flex-direction: column !important;
+          box-sizing: border-box !important;
+        }
+
+        [class*="shopify-pc__prefs__dialog"] h2,
+        [class*="shopify-pc__prefs__dialog"] h3,
+        .shopify-pc__prefs__dialog h2,
+        .shopify-pc__prefs__dialog h3 {
+          font-size: 1.15rem !important;
+          line-height: 1.35 !important;
+          margin-bottom: 0.3rem !important;
+        }
+
+        [class*="shopify-pc__prefs__dialog"] p,
+        .shopify-pc__prefs__dialog p {
+          font-size: 1rem !important;
+          line-height: 1.4 !important;
+          margin-bottom: 0.2rem !important;
+        }
+
+        [class*="shopify-pc__prefs__content"],
+        .shopify-pc__prefs__content {
+          overflow-y: auto !important;
+          flex: 1 1 auto !important;
+          -webkit-overflow-scrolling: touch !important;
+        }
+
+        [class*="shopify-pc__prefs__btns"] button,
+        [class*="shopify-pc__prefs__btns"] a,
+        .shopify-pc__prefs__btns button,
+        .shopify-pc__prefs__btns a,
+        [class*="shopify-pc__prefs__footer"] button,
+        [class*="shopify-pc__prefs__footer"] a,
+        .shopify-pc__prefs__footer button,
+        .shopify-pc__prefs__footer a {
+          min-height: 2rem !important;
+          padding: 0.35rem 0.7rem !important;
+          font-size: 0.88rem !important;
+          margin: 0 !important;
+        }
+
+        [class*="shopify-pc__prefs__dialog"] button:not([class*="close"]):not([class*="toggle"]),
+        .shopify-pc__prefs__dialog button:not([class*="close"]):not([class*="toggle"]) {
+          min-height: 2rem !important;
+          padding: 0.35rem 0.7rem !important;
+          font-size: 0.9rem !important;
+        }
       }
     `;
 
