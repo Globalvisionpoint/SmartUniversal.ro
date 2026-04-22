@@ -81,6 +81,7 @@
           "type": "image",
           "settings": {
             "heading": "",
+            "image": "shopify://shop_images/image_056c5a9e-2205-40ac-aee6-7c3c5a11b90b.png",
             "image_width": 140,
             "link": "https://anpc.ro/ce-este-sal/"
           }
@@ -89,6 +90,7 @@
           "type": "image",
           "settings": {
             "heading": "",
+            "image": "shopify://shop_images/image_d935f632-e88c-44a5-bfcb-fcaf2ab1ec0c.png",
             "image_width": 140,
             "link": "https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO"
           }
