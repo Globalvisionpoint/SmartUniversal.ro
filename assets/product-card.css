@@ -858,6 +858,11 @@ button.product__card__actions__btn.loading {
   margin-top: 0;
 }
 
+.product__card .product__card__price dl {
+  min-height: 5.4rem;
+  justify-content: flex-end;
+}
+
 .product__card .product__card__price.price--on-sale .price__sale {
   flex-direction: column;
   gap: 0.05rem;
