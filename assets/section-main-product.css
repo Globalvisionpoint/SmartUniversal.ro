@@ -587,9 +587,14 @@ variant-selects {
 
 .product .price__box_wrapper .price--on-sale .price-item--regular {
   color: #909090;
+  font-size: clamp(2.2rem, 3.4vw, 3rem);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  display: inline-block;
   text-decoration-line: line-through;
   text-decoration-color: #e21c23;
-  text-decoration-thickness: 1.5px;
+  text-decoration-thickness: 1.2px;
 }
 
 @media screen and (max-width: 575px) {
@@ -623,6 +628,10 @@ variant-selects {
     font-size: 2.9rem;
     font-weight: 700;
     color: #e21c23;
+  }
+
+  .product .price__box_wrapper .price--on-sale .price-item--regular {
+    font-size: 2rem;
   }
 }
 
