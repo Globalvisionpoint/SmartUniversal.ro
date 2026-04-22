@@ -257,6 +257,7 @@
   color: rgba(var(--color-foreground));
   visibility: visible !important;
   opacity: 1 !important;
+  min-height: 8rem;
 }
 
 .product__card__badges {
@@ -293,9 +294,9 @@
 }
 
 .product__card__price .price-item--regular {
-  color: rgba(var(--color-foreground));
-  font-size: 1.35rem;
-  font-weight: 500;
+  color: #e21c23;
+  font-size: 2.05rem;
+  font-weight: 700;
   text-decoration: none;
 }
 
