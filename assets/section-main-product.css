@@ -1015,7 +1015,7 @@ span.product__media-icon.motion-reduce > a {
   .product--thumbnail .product__media-item .product__modal-opener,
   .product--thumbnail_slider .product__media-item .product__modal-opener,
   .product--stacked .product__media-item .product__modal-opener {
-    width: 88%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
