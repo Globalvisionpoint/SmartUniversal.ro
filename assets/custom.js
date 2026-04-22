@@ -279,6 +279,12 @@ for (var i = 0; i < compare.length; i++) {
           margin-right: auto !important;
           left: 0 !important;
           right: 0 !important;
+          background: rgb(var(--color-background) / 0.88) !important;
+          color: rgb(var(--color-foreground)) !important;
+          border: 1px solid rgb(var(--color-foreground) / 0.16) !important;
+          box-shadow: 0 0.8rem 2.4rem rgb(0 0 0 / 0.18) !important;
+          -webkit-backdrop-filter: blur(14px) saturate(130%) !important;
+          backdrop-filter: blur(14px) saturate(130%) !important;
         }
 
         .shopify-pc__banner__body,
@@ -294,16 +300,19 @@ for (var i = 0; i < compare.length; i++) {
         [class*="shopify-pc__banner__dialog"] h2,
         [class*="shopify-pc__banner__dialog"] h3 {
           margin: 0 0 0.55rem !important;
-          font-size: 1.28rem !important;
-          line-height: 1.34 !important;
+          font-size: 1.65rem !important;
+          line-height: 1.38 !important;
+          color: rgb(var(--color-foreground)) !important;
+          font-weight: 700 !important;
         }
 
         .shopify-pc__banner__dialog p,
         [class*="shopify-pc__banner__dialog"] p {
           margin: 0 !important;
-          font-size: 1rem !important;
-          line-height: 1.34 !important;
-          white-space: nowrap !important;
+          font-size: 1.3rem !important;
+          line-height: 1.5 !important;
+          white-space: normal !important;
+          color: rgb(var(--color-foreground) / 0.9) !important;
         }
 
         .shopify-pc__banner__btns,
@@ -330,10 +339,21 @@ for (var i = 0; i < compare.length; i++) {
         [class*="shopify-pc__banner__btns"] button,
         [class*="shopify-pc__banner__btns"] a {
           min-height: 3rem !important;
-          padding: 0.68rem 1.25rem !important;
-          font-size: 1rem !important;
+          padding: 0.78rem 1.35rem !important;
+          font-size: 1.15rem !important;
           line-height: 1.2 !important;
           border-radius: 0.7rem !important;
+          border: 1px solid rgb(var(--color-button) / 0.7) !important;
+          background: rgb(var(--color-button)) !important;
+          color: rgb(var(--color-button-text)) !important;
+          font-weight: 600 !important;
+        }
+
+        .shopify-pc__banner__btns button:hover,
+        .shopify-pc__banner__btns a:hover,
+        [class*="shopify-pc__banner__btns"] button:hover,
+        [class*="shopify-pc__banner__btns"] a:hover {
+          filter: brightness(1.06) !important;
         }
       }
 
@@ -349,22 +369,31 @@ for (var i = 0; i < compare.length; i++) {
           left: 0 !important;
           right: 0 !important;
           box-sizing: border-box !important;
+          background: rgb(var(--color-background) / 0.9) !important;
+          color: rgb(var(--color-foreground)) !important;
+          border: 1px solid rgb(var(--color-foreground) / 0.16) !important;
+          box-shadow: 0 0.6rem 1.8rem rgb(0 0 0 / 0.2) !important;
+          -webkit-backdrop-filter: blur(12px) saturate(125%) !important;
+          backdrop-filter: blur(12px) saturate(125%) !important;
         }
 
         .shopify-pc__banner__dialog h2,
         .shopify-pc__banner__dialog h3,
         [class*="shopify-pc__banner__dialog"] h2,
         [class*="shopify-pc__banner__dialog"] h3 {
-          font-size: 1.14rem !important;
-          line-height: 1.32 !important;
+          font-size: 1.42rem !important;
+          line-height: 1.4 !important;
           margin-bottom: 0.4rem !important;
+          color: rgb(var(--color-foreground)) !important;
+          font-weight: 700 !important;
         }
 
         .shopify-pc__banner__dialog p,
         [class*="shopify-pc__banner__dialog"] p {
-          font-size: 1.02rem !important;
-          line-height: 1.32 !important;
+          font-size: 1.2rem !important;
+          line-height: 1.5 !important;
           margin-bottom: 0.2rem !important;
+          color: rgb(var(--color-foreground) / 0.92) !important;
         }
 
         .shopify-pc__banner__btns,
@@ -378,10 +407,22 @@ for (var i = 0; i < compare.length; i++) {
         .shopify-pc__banner__btns a,
         [class*="shopify-pc__banner__btns"] button,
         [class*="shopify-pc__banner__btns"] a {
-          min-height: 1.95rem !important;
-          padding: 0.32rem 0.78rem !important;
-          font-size: 0.8rem !important;
+          min-height: 2.45rem !important;
+          padding: 0.5rem 0.95rem !important;
+          font-size: 0.98rem !important;
           margin: 0 !important;
+          border-radius: 0.6rem !important;
+          border: 1px solid rgb(var(--color-button) / 0.7) !important;
+          background: rgb(var(--color-button)) !important;
+          color: rgb(var(--color-button-text)) !important;
+          font-weight: 600 !important;
+        }
+
+        .shopify-pc__banner__btns button:hover,
+        .shopify-pc__banner__btns a:hover,
+        [class*="shopify-pc__banner__btns"] button:hover,
+        [class*="shopify-pc__banner__btns"] a:hover {
+          filter: brightness(1.06) !important;
         }
 
         .shopify-pc__banner__btns > *,
