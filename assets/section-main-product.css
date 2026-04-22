@@ -1473,11 +1473,6 @@ button.product-form__submit.loading:after {
   width: 100%;
 }
 
-.product_buy_button_form .product__buy_now_button .product-popup-modal__opener {
-  display: block;
-  width: 100%;
-}
-
 .product_buy_button_form .product-form__submit.button.loading .action__btn--svg,
 .product_buy_button_form .product-form__submit.button.loading .cart--button-text,
 .product_buy_button_form .product-form__submit--buy-now.loading-visible .action__btn--svg,

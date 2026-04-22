@@ -119,11 +119,8 @@
             </div>
           </div>
 
-          {%- if show_dynamic_checkout -%}
-            <div
-              id="buy_now__available-{{ section.id }}"
-              class="product__buy_now_button w-100 buy_now__available-{{ section.id }}{% unless current_variant.available %} no-js-inline{% endunless %}"
-            >
+          {%- if show_dynamic_checkout and current_variant.available -%}
+            <div class="product__buy_now_button w-100">
               <button
                 type="button"
                 name="buy_now"
@@ -137,10 +134,10 @@
                 <span class="cart--button-text">Cumpără acum</span>
               </button>
             </div>
-
+          {%- elsif current_variant.available == false -%}
             <div
               id="notify__me--available-{{ section.id }}"
-              class="product__buy_now_button w-100 notify__me--available-{{ section.id }}{% if current_variant.available %} no-js-inline{% endif %}"
+              class="product__buy_now_button w-100 notify__me--available-{{ section.id }}"
             >
               <modal-opener
                 class="product-popup-modal__opener"
@@ -149,12 +146,11 @@
               >
                 <button
                   id="ProductPopup-notify"
-                  class="button__notify--product product-form__submit product-form__submit--buy-now button button--secondary button--medium mt-15"
+                  class="button__notify--product button button--secondary button--medium mt-15"
                   type="button"
                   aria-haspopup="dialog"
                 >
-                  <span class="action__btn--svg" aria-hidden="true">⚡</span>
-                  <span class="cart--button-text">{{ 'products.product.back_in_stock_notify.button' | t }}</span>
+                  {{ 'products.product.back_in_stock_notify.button' | t }}
                 </button>
               </modal-opener>
             </div>
