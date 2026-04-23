@@ -206,7 +206,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "decoratiuni-copy",
-            "image": "shopify://shop_images/genereaza-o-imagine-cu-3-produse-din-categoria-auto-moto-fara-decor-pentru-magazinul-meu-online-sa-pun-ca-iconita-la-categorie.png"
+            "image": "shopify://shop_images/categoria_auto.png"
           }
         },
         "eea2dda5-ab2a-4274-ab2a-630bb6578f27": {
@@ -532,7 +532,6 @@
         "banner_GzpWFj": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/5_48147115-bf0c-4560-8202-c20df0aa6c95.jpg",
             "title": "Casti Bluetooth",
             "text": "Connectare bluetooth si powerbank",
             "link_label": "Cumpără Acum!",
@@ -552,7 +551,6 @@
         "template--21086911725848__f3e2e88d-5f15-4991-8a35-a6362a460113-banner-1": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/UpscaleImage_5_20240324_29205f1f-2222-4a18-a543-8ca059c13d05.png",
             "title": "Tableta Android",
             "text": "4GB Ram, 64 GB ROM, Husa, Mouse, Tastatura, Stilou, Incarcator si cablu.",
             "link_label": "Cumpără Acum!",
@@ -572,7 +570,6 @@
         "template--21086911725848__f3e2e88d-5f15-4991-8a35-a6362a460113-banner-2": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/2tradus_e9489b18-46d0-4236-948b-430401b2e975.jpg",
             "title": "Baby Monitor",
             "text": "Camera video cu urmarire inteligenta a obiectivului, display si apel video",
             "link_label": "Cumpără Acum!",
@@ -592,7 +589,6 @@
         "banner_RiLqNe": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/UpscaleImage_8_20240307_81ea04ac-6bed-41c7-8976-a46996a8e093.png",
             "title": "Camera Auto 4K",
             "text": "Camera Auto DVR 4K/2K/1080p si Camera Spate 1080p",
             "link_label": "Cumpără Acum!",
