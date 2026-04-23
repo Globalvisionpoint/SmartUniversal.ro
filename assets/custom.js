@@ -256,6 +256,58 @@ for (var i = 0; i < compare.length; i++) {
 });
 
 (function () {
+  function hideCookiePrivacyUi() {
+    var dialogs = document.querySelectorAll(
+      ".shopify-pc__banner__dialog, [class*='shopify-pc__banner__dialog'], .shopify-pc__prefs__dialog, [class*='shopify-pc__prefs__dialog']"
+    );
+
+    dialogs.forEach(function (el) {
+      el.setAttribute("hidden", "hidden");
+      el.setAttribute("aria-hidden", "true");
+      el.style.setProperty("display", "none", "important");
+    });
+
+    var overlays = document.querySelectorAll(
+      ".shopify-pc__overlay, [class*='shopify-pc__overlay'], .shopify-pc__backdrop, [class*='shopify-pc__backdrop']"
+    );
+
+    overlays.forEach(function (el) {
+      el.style.setProperty("display", "none", "important");
+    });
+  }
+
+  function bindCookieBannerImmediateDismiss() {
+    if (window.__cookieBannerImmediateDismissBound) return;
+    window.__cookieBannerImmediateDismissBound = true;
+
+    document.addEventListener(
+      "click",
+      function (event) {
+        var button = event.target.closest(
+          ".shopify-pc__banner__btns button, .shopify-pc__banner__btns a, [class*='shopify-pc__banner__btns'] button, [class*='shopify-pc__banner__btns'] a, [class*='shopify-pc__prefs__btns'] button, [class*='shopify-pc__prefs__btns'] a, [class*='shopify-pc__prefs__footer'] button, [class*='shopify-pc__prefs__footer'] a"
+        );
+
+        if (!button) return;
+
+        var label = (button.textContent || "").toLowerCase().trim();
+        var shouldDismiss =
+          label.includes("accept") ||
+          label.includes("accepta") ||
+          label.includes("accep") ||
+          label.includes("refuz") ||
+          label.includes("decline") ||
+          label.includes("save") ||
+          label.includes("salveaz");
+
+        if (!shouldDismiss) return;
+
+        setTimeout(hideCookiePrivacyUi, 40);
+        setTimeout(hideCookiePrivacyUi, 220);
+      },
+      true
+    );
+  }
+
   function injectDesktopCookieBannerStyles() {
     if (document.getElementById("desktop-cookie-banner-style")) return;
 
@@ -573,9 +625,13 @@ for (var i = 0; i < compare.length; i++) {
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", injectDesktopCookieBannerStyles);
+    document.addEventListener("DOMContentLoaded", function () {
+      injectDesktopCookieBannerStyles();
+      bindCookieBannerImmediateDismiss();
+    });
   } else {
     injectDesktopCookieBannerStyles();
+    bindCookieBannerImmediateDismiss();
   }
 })();
 
