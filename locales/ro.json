@@ -24,7 +24,7 @@
       "remove_title": "Eliminați {{ title }}",
       "new_subtotal": "Subtotal nou",
       "note": "Comandați instrucțiuni speciale",
-      "checkout": "Verifică",
+      "checkout": "Finalizează",
       "empty": "Coșul tău este gol",
       "cart_error": "A apărut o eroare la actualizarea coșului. Vă rugăm să încercați din nou.",
       "cart_quantity_error_html": "Puteți adăuga numai [cantitate] din acest articol în coș.",
