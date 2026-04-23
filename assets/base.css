@@ -15,6 +15,13 @@
 
 /* base CSS */
 
+@media screen and (max-width: 749px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
 .no-js:not(html) {
   display: none !important;
 }
