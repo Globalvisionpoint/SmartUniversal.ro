@@ -336,20 +336,57 @@ div#cart-notification {
   background: #ffffff;
 }
 
+#mini-cart-drawer .cart-notification-product__info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 #mini-cart-drawer .cart-notification-product__image {
   border-radius: 0.9rem;
   border-color: rgba(18, 18, 18, 0.1);
 }
 
 #mini-cart-drawer .cart-notification-product__name {
-  font-size: 1.8rem;
+  font-size: 1.95rem;
   line-height: 1.25;
   color: #101010;
 }
 
+#mini-cart-drawer .cart-notification-product__name a {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
 #mini-cart-drawer .cart__item_price .price,
 #mini-cart-drawer .cart-item__discounted-prices .price {
+  font-size: 1.2rem;
   color: #c91f39;
+  font-weight: 700;
+}
+
+#mini-cart-drawer .cart-notification-product .cart__item--footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.8rem;
+}
+
+#mini-cart-drawer .cart-notification-product .cart__item--footer .quantity {
+  margin-top: 0;
+  flex: 0 0 auto;
+}
+
+#mini-cart-drawer .cart-notification-product cart-remove-button-2 {
+  margin-left: auto;
+  min-width: max-content;
+}
+
+#mini-cart-drawer .cart-notification-product .cart-close-icon .link {
+  font-size: 1.1rem;
   font-weight: 700;
 }
 
@@ -370,14 +407,27 @@ div#cart-notification {
   }
 
   #mini-cart-drawer .cart-notification-product__name {
-    font-size: 1.02rem;
+    font-size: 1.2rem;
     line-height: 1.35;
     margin-bottom: 0.35rem;
   }
 
   #mini-cart-drawer .cart__item_price .price,
   #mini-cart-drawer .cart-item__discounted-prices .price {
-    font-size: 1.05rem;
+    font-size: 1.18rem;
+  }
+
+  #mini-cart-drawer .cart-notification-product .cart__item--footer {
+    flex-wrap: wrap;
+  }
+
+  #mini-cart-drawer .cart-notification-product cart-remove-button-2 {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  #mini-cart-drawer .cart-notification-product .cart-close-icon .link {
+    text-align: right;
   }
 
   #mini-cart-drawer .totals__subtotal {
