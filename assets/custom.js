@@ -287,6 +287,15 @@ for (var i = 0; i < compare.length; i++) {
           backdrop-filter: blur(14px) saturate(130%) !important;
         }
 
+        .shopify-pc__banner__dialog[hidden],
+        [class*="shopify-pc__banner__dialog"][hidden],
+        .shopify-pc__banner__dialog[aria-hidden="true"],
+        [class*="shopify-pc__banner__dialog"][aria-hidden="true"],
+        .shopify-pc__banner__dialog[class*="hidden"],
+        [class*="shopify-pc__banner__dialog"][class*="hidden"] {
+          display: none !important;
+        }
+
         .shopify-pc__banner__body,
         [class*="shopify-pc__banner__body"],
         .shopify-pc__banner__content,
@@ -375,6 +384,21 @@ for (var i = 0; i < compare.length; i++) {
           box-shadow: 0 0.6rem 1.8rem rgb(0 0 0 / 0.2) !important;
           -webkit-backdrop-filter: blur(12px) saturate(125%) !important;
           backdrop-filter: blur(12px) saturate(125%) !important;
+        }
+
+        .shopify-pc__banner__dialog[hidden],
+        [class*="shopify-pc__banner__dialog"][hidden],
+        .shopify-pc__banner__dialog[aria-hidden="true"],
+        [class*="shopify-pc__banner__dialog"][aria-hidden="true"],
+        .shopify-pc__banner__dialog[class*="hidden"],
+        [class*="shopify-pc__banner__dialog"][class*="hidden"],
+        [class*="shopify-pc__prefs__dialog"][hidden],
+        [class*="shopify-pc__prefs__dialog"][aria-hidden="true"],
+        [class*="shopify-pc__prefs__dialog"][class*="hidden"],
+        .shopify-pc__prefs__dialog[hidden],
+        .shopify-pc__prefs__dialog[aria-hidden="true"],
+        .shopify-pc__prefs__dialog[class*="hidden"] {
+          display: none !important;
         }
 
         .shopify-pc__banner__dialog h2,
