@@ -1,10 +1,30 @@
 theme.announcement = (function () {
+  const closeButtonLabel = "Inchide";
+
+  function ensureAccessibleCloseButtons(root = document) {
+    root
+      .querySelectorAll(".close__announcement--bar")
+      .forEach((button) => {
+        button.setAttribute("aria-label", closeButtonLabel);
+        button.setAttribute("title", closeButtonLabel);
+
+        if (!button.querySelector(".visually-hidden")) {
+          const srText = document.createElement("span");
+          srText.className = "visually-hidden";
+          srText.textContent = closeButtonLabel;
+          button.appendChild(srText);
+        }
+      });
+  }
+
   function announcementModule(element) {
     const announcement = {
       open: document.getElementById("announcement-more-info"),
       close: document.querySelector(".close__announcement--bar"),
       wrapper: document.querySelector(".announcement-collapsible-content"),
     };
+
+    ensureAccessibleCloseButtons();
 
     // Hide the announcement bar
     const hide = () => {
@@ -48,10 +68,23 @@ class announmentBar extends HTMLElement {
     this.addEventListener("click", this.onRemoveAnnouncement);
   }
   onRemoveAnnouncement(event) {
-    let evtTargetElement = event.target;
-    if (evtTargetElement.classList.contains("announcement--timer-close-btn")) {
-      evtTargetElement.closest(".announcement-bar").remove();
+    const closeButton = event.target.closest(".announcement--timer-close-btn");
+    if (closeButton) {
+      closeButton.closest(".announcement-bar").remove();
     }
   }
 }
 customElements.define("announcement-bar", announmentBar);
+
+document.addEventListener("DOMContentLoaded", () => {
+  ensureAccessibleCloseButtons();
+
+  const announcementObserver = new MutationObserver(() => {
+    ensureAccessibleCloseButtons();
+  });
+
+  announcementObserver.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
+});

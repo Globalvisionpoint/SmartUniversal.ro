@@ -374,7 +374,9 @@
         let merchantTitleRetryId;
 
         const ensureMerchantWidgetAccessibility = function () {
-          const merchantFrame = document.getElementById('merchantwidgetiframe');
+          const merchantFrame = document.querySelector(
+            '#merchantwidgetiframe, iframe[src*="google.com/shopping/merchant"], iframe[src*="google.com/shopping/merchantverse"]'
+          );
           if (merchantFrame) {
             if (merchantFrame.getAttribute('title') !== merchantWidgetTitle) {
               merchantFrame.setAttribute('title', merchantWidgetTitle);
