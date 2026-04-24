@@ -190,11 +190,13 @@
 
     {% render 'price', product: product_card_product, price_class: price_class %}
 
-       {% if settings.color_swatches %}
-      {% if color_swatches %}
-        {% render 'product-card-color-swatch', product: product_card_product, current_variant: variant %}
+    <div class="product__card__swatches">
+      {% if settings.color_swatches %}
+        {% if color_swatches %}
+          {% render 'product-card-color-swatch', product: product_card_product, current_variant: variant %}
+        {% endif %}
       {% endif %}
-    {% endif %}
+    </div>
 
     
     {%- if show_rating and product_card_product.metafields.reviews.rating.value != blank -%}
