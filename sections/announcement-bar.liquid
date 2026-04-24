@@ -380,13 +380,14 @@
                   {%- endif -%}
                 </div>
                 {%- if block.settings.enable_close_btn -%}
+                  {%- assign timer_close_label_id = 'announcement-timer-close-label-' | append: section.id | append: '-' | append: forloop.index -%}
+                  <span id="{{ timer_close_label_id }}" class="visually-hidden">Inchide</span>
                   <button
                     type="button"
                     class="close__announcement--bar link announcement--timer-close-btn"
-                    aria-label="Inchide"
-                    title="{{ 'accessibility.close' | t | default: 'Inchide' }}"
+                    aria-labelledby="{{ timer_close_label_id }}"
+                    title="Inchide"
                   >
-                    Inchide
                     <span class="announcement-close-button__icon" aria-hidden="true">
                       {%- render 'icon-close' -%}
                     </span>

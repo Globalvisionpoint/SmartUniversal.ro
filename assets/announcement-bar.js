@@ -1,12 +1,3 @@
-const announcementCloseButtonLabel = "Inchide";
-
-function ensureAccessibleCloseButtons(root = document) {
-  root.querySelectorAll(".close__announcement--bar").forEach((button) => {
-    button.setAttribute("aria-label", announcementCloseButtonLabel);
-    button.setAttribute("title", announcementCloseButtonLabel);
-  });
-}
-
 function getAnnouncementElements() {
   return {
     openButton: document.getElementById("announcement-more-info"),
@@ -32,9 +23,7 @@ function showAnnouncementPanel() {
   slideDown(wrapper);
 }
 
-theme.announcement = function announcementModule() {
-  ensureAccessibleCloseButtons();
-};
+theme.announcement = function announcementModule() {};
 
 document.addEventListener("click", (event) => {
   const openButton = event.target.closest("#announcement-more-info");
@@ -70,15 +59,3 @@ document.addEventListener("click", (event) => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  ensureAccessibleCloseButtons();
-
-  const announcementObserver = new MutationObserver(() => {
-    ensureAccessibleCloseButtons();
-  });
-
-  announcementObserver.observe(document.body, {
-    childList: true,
-    subtree: true,
-  });
-});
