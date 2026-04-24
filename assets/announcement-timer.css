@@ -54,23 +54,20 @@
   justify-content: center;
   line-height: 1;
   aspect-ratio: 1 / 1;
-}
-.announcement-close-button__label {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
   overflow: hidden;
-  border: 0;
-  clip: rect(0 0 0 0);
   white-space: nowrap;
+  text-indent: -9999px;
+  color: transparent;
 }
 .announcement-close-button__icon {
+  position: absolute;
+  inset: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  text-indent: 0;
+  color: #ffffff;
 }
 .announcement--timer-close-btn > svg,
 .announcement--timer-close-btn .icon-close,

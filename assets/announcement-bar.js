@@ -4,13 +4,6 @@ function ensureAccessibleCloseButtons(root = document) {
   root.querySelectorAll(".close__announcement--bar").forEach((button) => {
     button.setAttribute("aria-label", announcementCloseButtonLabel);
     button.setAttribute("title", announcementCloseButtonLabel);
-
-    if (!button.querySelector(".visually-hidden")) {
-      const srText = document.createElement("span");
-      srText.className = "visually-hidden";
-      srText.textContent = announcementCloseButtonLabel;
-      button.appendChild(srText);
-    }
   });
 }
 
