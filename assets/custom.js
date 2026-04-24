@@ -220,6 +220,32 @@ theme.collectionSlider = (function () {
   return sliderProduct;
 })();
 
+(function () {
+  function normalizeProductTabHeadings(root) {
+    (root || document).querySelectorAll('.tab_content').forEach(function (container) {
+      if (container.querySelector('h1, h2')) return;
+
+      var firstH3 = container.querySelector('h3');
+      if (!firstH3) return;
+
+      var h2 = document.createElement('h2');
+      Array.from(firstH3.attributes).forEach(function (attr) {
+        h2.setAttribute(attr.name, attr.value);
+      });
+      h2.innerHTML = firstH3.innerHTML;
+      firstH3.replaceWith(h2);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    normalizeProductTabHeadings(document);
+  });
+
+  document.addEventListener('shopify:section:load', function (event) {
+    normalizeProductTabHeadings(event.target || document);
+  });
+})();
+
 document.addEventListener("DOMContentLoaded", function () {
   let sections = new theme.Sections(),
     headerSearchModule = new theme.Sections(),
