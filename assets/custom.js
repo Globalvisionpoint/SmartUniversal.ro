@@ -258,15 +258,45 @@ theme.collectionSlider = (function () {
       .forEach(function (frame) {
         var originalSrc = frame.getAttribute('src') || '';
         var noCookieSrc = toNoCookieYoutube(originalSrc);
-        if (noCookieSrc !== originalSrc) {
-          frame.setAttribute('src', noCookieSrc);
-        }
+        if (!noCookieSrc) return;
+
+        if (frame.dataset.youtubePrepared === 'true') return;
+        frame.dataset.youtubePrepared = 'true';
+        frame.dataset.youtubeSrc = noCookieSrc;
+        frame.removeAttribute('src');
+        frame.setAttribute('src', 'about:blank');
+        frame.style.display = 'none';
 
         if (!frame.getAttribute('title')) {
           frame.setAttribute('title', 'Video produs');
         }
         frame.setAttribute('loading', 'lazy');
         frame.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+
+        var playButton = document.createElement('button');
+        playButton.type = 'button';
+        playButton.className = 'youtube-consent-play';
+        playButton.textContent = 'Reda video';
+        playButton.setAttribute('aria-label', 'Reda video YouTube');
+        playButton.style.display = 'inline-flex';
+        playButton.style.alignItems = 'center';
+        playButton.style.justifyContent = 'center';
+        playButton.style.padding = '10px 16px';
+        playButton.style.borderRadius = '10px';
+        playButton.style.border = '1px solid #e5e7eb';
+        playButton.style.background = '#111827';
+        playButton.style.color = '#fff';
+        playButton.style.fontWeight = '600';
+        playButton.style.cursor = 'pointer';
+        playButton.style.margin = '8px 0 14px';
+
+        playButton.addEventListener('click', function () {
+          frame.setAttribute('src', frame.dataset.youtubeSrc || noCookieSrc);
+          frame.style.display = '';
+          playButton.remove();
+        });
+
+        frame.parentNode.insertBefore(playButton, frame);
       });
   }
 
