@@ -508,7 +508,7 @@ variant-selects {
   min-height: 7.2rem;
   padding: 0.7rem;
   border-radius: 50%;
-  background: #e10f0f;
+  background: #9f1010;
   color: rgba(var(--color-background));
   text-align: center;
   font-weight: 700;
@@ -586,7 +586,7 @@ variant-selects {
 }
 
 .product .price__box_wrapper .price--on-sale .price-item--regular {
-  color: #909090;
+  color: #595959;
   font-size: clamp(2rem, 3vw, 2.7rem);
   font-weight: 500;
   line-height: 1;
@@ -654,7 +654,7 @@ variant-selects {
 }
 
 .product-variant-inventory .in_stock__title {
-  color: #2e9d45;
+  color: #14532d;
 }
 
 .product-variant-inventory .out__of_stock {
