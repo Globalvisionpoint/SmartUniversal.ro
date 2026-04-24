@@ -431,9 +431,31 @@
           document.head.appendChild(script);
         };
 
-        ['pointerdown', 'keydown', 'touchstart', 'click'].forEach(function (eventName) {
-          window.addEventListener(eventName, loadMerchantWidget, { once: true, passive: true });
+        const launcher = document.createElement('button');
+        launcher.type = 'button';
+        launcher.className = 'merchant-widget-launcher';
+        launcher.textContent = 'Vezi rating magazin';
+        launcher.setAttribute('aria-label', 'Deschide widget-ul de recenzii magazin');
+        launcher.style.position = 'fixed';
+        launcher.style.right = '20px';
+        launcher.style.bottom = '20px';
+        launcher.style.zIndex = '2147483646';
+        launcher.style.border = 'none';
+        launcher.style.borderRadius = '999px';
+        launcher.style.padding = '10px 14px';
+        launcher.style.fontSize = '13px';
+        launcher.style.fontWeight = '600';
+        launcher.style.cursor = 'pointer';
+        launcher.style.background = '#1f2937';
+        launcher.style.color = '#ffffff';
+        launcher.style.boxShadow = '0 8px 20px rgba(0,0,0,0.18)';
+
+        launcher.addEventListener('click', function () {
+          loadMerchantWidget();
+          launcher.remove();
         });
+
+        document.body.appendChild(launcher);
       });
     </script>
 </head>
