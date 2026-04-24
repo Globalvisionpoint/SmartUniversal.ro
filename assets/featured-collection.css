@@ -152,18 +152,37 @@
 }
 
 [data-section-type='product-slider'] .product__card__title {
-  min-height: 6.8rem;
+  min-height: 5.4rem;
 }
 
 [data-section-type='product-slider'] .product__card__swatches {
-  min-height: 4rem;
+  min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+[data-section-type='product-slider'] .product__card__swatches.has-swatches {
+  min-height: 2.6rem;
+}
+
 [data-section-type='product-slider'] .product__card__swatches .product--color-swatch-wrapper {
   margin-top: 0;
+}
+
+[data-section-type='product-slider'] .product__card__title a {
+  -webkit-line-clamp: 3;
+}
+
+[data-section-type='product-slider'] .product__card__price {
+  min-height: 5rem;
+}
+
+[data-section-type='product-slider'] .product__card__price.price--on-sale .price__sale {
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: baseline;
 }
 
 .featured--collection-card .placeholder_svg_parent {
