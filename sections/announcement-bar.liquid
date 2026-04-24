@@ -207,9 +207,11 @@
                         <button
                           type="button"
                           class="close__announcement--bar modal__close-button link"
-                          aria-label="{{ 'accessibility.close' | t }}"
+                          aria-label="{{ 'accessibility.close' | t | default: 'Inchide' }}"
+                          title="{{ 'accessibility.close' | t | default: 'Inchide' }}"
                         >
                           {%- render 'icon-close' -%}
+                          <span class="visually-hidden">{{ 'accessibility.close' | t | default: 'Inchide' }}</span>
                         </button>
                       </div>
                     </div>
@@ -381,9 +383,11 @@
                   <button
                     type="button"
                     class="close__announcement--bar link announcement--timer-close-btn"
-                    aria-label="{{ 'accessibility.close' | t }}"
+                    aria-label="{{ 'accessibility.close' | t | default: 'Inchide' }}"
+                    title="{{ 'accessibility.close' | t | default: 'Inchide' }}"
                   >
                     {%- render 'icon-close' -%}
+                    <span class="visually-hidden">{{ 'accessibility.close' | t | default: 'Inchide' }}</span>
                   </button>
                 {%- endif -%}
               </div>

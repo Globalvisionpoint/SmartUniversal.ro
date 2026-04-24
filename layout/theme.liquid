@@ -370,13 +370,31 @@
 
       window.addEventListener('load', function () {
         let merchantWidgetLoaded = false;
+        const merchantWidgetTitle = 'Merchant reviews widget';
+        let merchantTitleRetryId;
 
         const ensureMerchantWidgetAccessibility = function () {
           const merchantFrame = document.getElementById('merchantwidgetiframe');
-          if (merchantFrame && !merchantFrame.getAttribute('title')) {
-            merchantFrame.setAttribute('title', 'Merchant reviews widget');
+          if (merchantFrame) {
+            if (merchantFrame.getAttribute('title') !== merchantWidgetTitle) {
+              merchantFrame.setAttribute('title', merchantWidgetTitle);
+            }
+            return merchantFrame.getAttribute('title') === merchantWidgetTitle;
           }
-          return Boolean(merchantFrame);
+          return false;
+        };
+
+        const startMerchantTitleRetries = function () {
+          let remainingAttempts = 20;
+          window.clearInterval(merchantTitleRetryId);
+          merchantTitleRetryId = window.setInterval(function () {
+            const hasAccessibleTitle = ensureMerchantWidgetAccessibility();
+            remainingAttempts -= 1;
+
+            if (hasAccessibleTitle || remainingAttempts <= 0) {
+              window.clearInterval(merchantTitleRetryId);
+            }
+          }, 500);
         };
 
         const loadMerchantWidget = function () {
@@ -392,16 +410,15 @@
                 position: 'RIGHT_BOTTOM'
               });
               ensureMerchantWidgetAccessibility();
-              setTimeout(ensureMerchantWidgetAccessibility, 1200);
+              window.setTimeout(ensureMerchantWidgetAccessibility, 1200);
+              startMerchantTitleRetries();
             }
           };
           document.head.appendChild(script);
         };
 
         const merchantObserver = new MutationObserver(function () {
-          if (ensureMerchantWidgetAccessibility()) {
-            merchantObserver.disconnect();
-          }
+          ensureMerchantWidgetAccessibility();
         });
         merchantObserver.observe(document.body, { childList: true, subtree: true });
 
