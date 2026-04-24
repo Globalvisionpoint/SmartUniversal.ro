@@ -226,7 +226,12 @@
                             {{ badge_block.shopify_attributes }}
                           >
                             {%- if badge_block.settings.image != blank -%}
-                              <a href="{{ badge_block.settings.link }}" target="_blank" rel="noopener noreferrer">
+                              <a
+                                href="{{ badge_block.settings.link }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="{% if badge_block.settings.image.alt != blank %}{{ badge_block.settings.image.alt | escape }}{% else %}Badge de incredere{% endif %}"
+                              >
                                 <img
                                   srcset="{{ badge_block.settings.image | image_url: width: badge_width_2x }} 2x, {{ badge_block.settings.image | image_url: width: badge_width }} 1x"
                                   src="{{ badge_block.settings.image | image_url: width: badge_width }}"

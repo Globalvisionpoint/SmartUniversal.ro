@@ -204,7 +204,11 @@
                   <div class="{{ container }} announcement-collapsible__inner">
                     <div class="announcement-collapsible-content-close">
                       <div class="announcement-collapsible-content-close-inner {{ container }} d-flex justify-content-end align-items-center">
-                        <button type="button" class="close__announcement--bar modal__close-button link">
+                        <button
+                          type="button"
+                          class="close__announcement--bar modal__close-button link"
+                          aria-label="{{ 'accessibility.close' | t }}"
+                        >
                           {%- render 'icon-close' -%}
                         </button>
                       </div>
@@ -374,7 +378,11 @@
                   {%- endif -%}
                 </div>
                 {%- if block.settings.enable_close_btn -%}
-                  <button type="button" class="close__announcement--bar link announcement--timer-close-btn">
+                  <button
+                    type="button"
+                    class="close__announcement--bar link announcement--timer-close-btn"
+                    aria-label="{{ 'accessibility.close' | t }}"
+                  >
                     {%- render 'icon-close' -%}
                   </button>
                 {%- endif -%}
