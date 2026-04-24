@@ -105,8 +105,13 @@
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'product_description' -%}
+            {%- liquid
+              assign product_description_sanitized = product.description
+              assign product_description_sanitized = product_description_sanitized | replace: 'https://www.youtube.com/embed/', 'https://www.youtube-nocookie.com/embed/'
+              assign product_description_sanitized = product_description_sanitized | replace: '//www.youtube.com/embed/', '//www.youtube-nocookie.com/embed/'
+            -%}
             <div id="product_all" class="tab_pane active {% if forloop.first == true %} show {% endif %}">
-              {{ product.description }}
+              {{ product_description_sanitized }}
             </div>
           {%- when 'reviews' -%}
             <div id="product_new" class="tab_pane {% if forloop.first == true %} show {% endif %}">
