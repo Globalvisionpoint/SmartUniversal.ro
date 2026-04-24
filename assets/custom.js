@@ -247,6 +247,12 @@ theme.collectionSlider = (function () {
 })();
 
 (function () {
+  function extractYoutubeId(url) {
+    if (!url) return '';
+    var match = url.match(/embed\/([^?&#"']+)/);
+    return match ? match[1] : '';
+  }
+
   function toNoCookieYoutube(url) {
     if (!url || url.indexOf('youtube.com/embed/') === -1) return url;
     return url.replace('://www.youtube.com/embed/', '://www.youtube-nocookie.com/embed/');
@@ -254,21 +260,74 @@ theme.collectionSlider = (function () {
 
   function hardenYoutubeEmbeds(root) {
     (root || document)
-      .querySelectorAll('iframe[src*="youtube.com/embed/"]')
+      .querySelectorAll('iframe[src*="youtube.com/embed/"], iframe[src*="youtube-nocookie.com/embed/"]')
       .forEach(function (frame) {
         var originalSrc = frame.getAttribute('src') || '';
         var noCookieSrc = toNoCookieYoutube(originalSrc);
         if (!noCookieSrc) return;
 
-        if (noCookieSrc !== originalSrc) {
-          frame.setAttribute('src', noCookieSrc);
-        }
+        if (frame.dataset.youtubeLite === 'true') return;
+        frame.dataset.youtubeLite = 'true';
+
+        var videoId = extractYoutubeId(noCookieSrc);
+        if (!videoId) return;
+
+        var width = parseInt(frame.getAttribute('width') || '16', 10);
+        var height = parseInt(frame.getAttribute('height') || '9', 10);
+        var ratio = width > 0 && height > 0 ? (height / width) * 100 : 56.25;
 
         if (!frame.getAttribute('title')) {
           frame.setAttribute('title', 'Video produs');
         }
         frame.setAttribute('loading', 'lazy');
         frame.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+
+        var wrapper = document.createElement('div');
+        wrapper.className = 'youtube-lite-wrapper';
+        wrapper.style.position = 'relative';
+        wrapper.style.width = '100%';
+        wrapper.style.paddingTop = ratio + '%';
+        wrapper.style.backgroundImage = "url('https://i.ytimg.com/vi/" + videoId + "/hqdefault.jpg')";
+        wrapper.style.backgroundSize = 'cover';
+        wrapper.style.backgroundPosition = 'center';
+        wrapper.style.borderRadius = '10px';
+        wrapper.style.overflow = 'hidden';
+        wrapper.style.cursor = 'pointer';
+        wrapper.style.maxWidth = width > 16 ? width + 'px' : '100%';
+
+        var play = document.createElement('button');
+        play.type = 'button';
+        play.className = 'youtube-lite-play';
+        play.setAttribute('aria-label', 'Reda video YouTube');
+        play.style.position = 'absolute';
+        play.style.inset = '0';
+        play.style.width = '100%';
+        play.style.height = '100%';
+        play.style.border = '0';
+        play.style.background = 'linear-gradient(to bottom, rgba(0,0,0,0.08), rgba(0,0,0,0.35))';
+        play.style.color = '#fff';
+        play.style.display = 'flex';
+        play.style.alignItems = 'center';
+        play.style.justifyContent = 'center';
+        play.style.fontSize = '1.1rem';
+        play.style.fontWeight = '700';
+        play.style.cursor = 'pointer';
+        play.innerHTML = '<span style="display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:rgba(17,24,39,.82)"><span aria-hidden="true" style="font-size:1.25rem">▶</span> Reda video</span>';
+
+        play.addEventListener('click', function () {
+          frame.setAttribute('src', noCookieSrc + (noCookieSrc.indexOf('?') === -1 ? '?' : '&') + 'autoplay=1');
+          frame.style.position = 'absolute';
+          frame.style.inset = '0';
+          frame.style.width = '100%';
+          frame.style.height = '100%';
+          frame.style.border = '0';
+          wrapper.innerHTML = '';
+          wrapper.appendChild(frame);
+        });
+
+        wrapper.appendChild(play);
+        frame.parentNode.insertBefore(wrapper, frame);
+        frame.remove();
       });
   }
 

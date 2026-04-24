@@ -368,95 +368,102 @@
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 
-      const merchantWidgetTitle = 'Merchant reviews widget';
-      let merchantTitleRetryId;
+      const merchantWidgetEnabled = false;
+      if (!merchantWidgetEnabled) {
+        window.__merchantWidgetDisabled = true;
+      }
 
-      const ensureMerchantWidgetAccessibility = function () {
-        const merchantFrame = document.querySelector(
-          '#merchantwidgetiframe, iframe[src*="google.com/shopping/merchant"], iframe[src*="google.com/shopping/merchantverse"]'
-        );
-        if (merchantFrame) {
-          if (merchantFrame.getAttribute('title') !== merchantWidgetTitle) {
-            merchantFrame.setAttribute('title', merchantWidgetTitle);
-          }
-          return merchantFrame.getAttribute('title') === merchantWidgetTitle;
-        }
-        return false;
-      };
+      if (merchantWidgetEnabled) {
+        const merchantWidgetTitle = 'Merchant reviews widget';
+        let merchantTitleRetryId;
 
-      const startMerchantTitleRetries = function () {
-        let remainingAttempts = 20;
-        window.clearInterval(merchantTitleRetryId);
-        merchantTitleRetryId = window.setInterval(function () {
-          const hasAccessibleTitle = ensureMerchantWidgetAccessibility();
-          remainingAttempts -= 1;
-
-          if (hasAccessibleTitle || remainingAttempts <= 0) {
-            window.clearInterval(merchantTitleRetryId);
-          }
-        }, 500);
-      };
-
-      const merchantObserver = new MutationObserver(function () {
-        ensureMerchantWidgetAccessibility();
-      });
-
-      merchantObserver.observe(document.documentElement, {
-        childList: true,
-        subtree: true,
-        attributes: true,
-        attributeFilter: ['title', 'src', 'id']
-      });
-
-      window.addEventListener('load', function () {
-        let merchantWidgetLoaded = false;
-
-        const loadMerchantWidget = function () {
-          if (merchantWidgetLoaded) return;
-          merchantWidgetLoaded = true;
-
-          const script = document.createElement('script');
-          script.src = 'https://www.gstatic.com/shopping/merchant/merchantwidget.js';
-          script.async = true;
-          script.onload = function () {
-            if (window.merchantwidget) {
-              merchantwidget.start({
-                position: 'RIGHT_BOTTOM'
-              });
-              ensureMerchantWidgetAccessibility();
-              window.setTimeout(ensureMerchantWidgetAccessibility, 1200);
-              startMerchantTitleRetries();
+        const ensureMerchantWidgetAccessibility = function () {
+          const merchantFrame = document.querySelector(
+            '#merchantwidgetiframe, iframe[src*="google.com/shopping/merchant"], iframe[src*="google.com/shopping/merchantverse"]'
+          );
+          if (merchantFrame) {
+            if (merchantFrame.getAttribute('title') !== merchantWidgetTitle) {
+              merchantFrame.setAttribute('title', merchantWidgetTitle);
             }
-          };
-          document.head.appendChild(script);
+            return merchantFrame.getAttribute('title') === merchantWidgetTitle;
+          }
+          return false;
         };
 
-        const launcher = document.createElement('button');
-        launcher.type = 'button';
-        launcher.className = 'merchant-widget-launcher';
-        launcher.textContent = 'Vezi rating magazin';
-        launcher.setAttribute('aria-label', 'Deschide widget-ul de recenzii magazin');
-        launcher.style.position = 'fixed';
-        launcher.style.right = '20px';
-        launcher.style.bottom = '20px';
-        launcher.style.zIndex = '2147483646';
-        launcher.style.border = 'none';
-        launcher.style.borderRadius = '999px';
-        launcher.style.padding = '10px 14px';
-        launcher.style.fontSize = '13px';
-        launcher.style.fontWeight = '600';
-        launcher.style.cursor = 'pointer';
-        launcher.style.background = '#1f2937';
-        launcher.style.color = '#ffffff';
-        launcher.style.boxShadow = '0 8px 20px rgba(0,0,0,0.18)';
+        const startMerchantTitleRetries = function () {
+          let remainingAttempts = 20;
+          window.clearInterval(merchantTitleRetryId);
+          merchantTitleRetryId = window.setInterval(function () {
+            const hasAccessibleTitle = ensureMerchantWidgetAccessibility();
+            remainingAttempts -= 1;
 
-        launcher.addEventListener('click', function () {
-          loadMerchantWidget();
-          launcher.remove();
+            if (hasAccessibleTitle || remainingAttempts <= 0) {
+              window.clearInterval(merchantTitleRetryId);
+            }
+          }, 500);
+        };
+
+        const merchantObserver = new MutationObserver(function () {
+          ensureMerchantWidgetAccessibility();
         });
 
-        document.body.appendChild(launcher);
-      });
+        merchantObserver.observe(document.documentElement, {
+          childList: true,
+          subtree: true,
+          attributes: true,
+          attributeFilter: ['title', 'src', 'id']
+        });
+
+        window.addEventListener('load', function () {
+          let merchantWidgetLoaded = false;
+
+          const loadMerchantWidget = function () {
+            if (merchantWidgetLoaded) return;
+            merchantWidgetLoaded = true;
+
+            const script = document.createElement('script');
+            script.src = 'https://www.gstatic.com/shopping/merchant/merchantwidget.js';
+            script.async = true;
+            script.onload = function () {
+              if (window.merchantwidget) {
+                merchantwidget.start({
+                  position: 'RIGHT_BOTTOM'
+                });
+                ensureMerchantWidgetAccessibility();
+                window.setTimeout(ensureMerchantWidgetAccessibility, 1200);
+                startMerchantTitleRetries();
+              }
+            };
+            document.head.appendChild(script);
+          };
+
+          const launcher = document.createElement('button');
+          launcher.type = 'button';
+          launcher.className = 'merchant-widget-launcher';
+          launcher.textContent = 'Vezi rating magazin';
+          launcher.setAttribute('aria-label', 'Deschide widget-ul de recenzii magazin');
+          launcher.style.position = 'fixed';
+          launcher.style.right = '20px';
+          launcher.style.bottom = '20px';
+          launcher.style.zIndex = '2147483646';
+          launcher.style.border = 'none';
+          launcher.style.borderRadius = '999px';
+          launcher.style.padding = '10px 14px';
+          launcher.style.fontSize = '13px';
+          launcher.style.fontWeight = '600';
+          launcher.style.cursor = 'pointer';
+          launcher.style.background = '#1f2937';
+          launcher.style.color = '#ffffff';
+          launcher.style.boxShadow = '0 8px 20px rgba(0,0,0,0.18)';
+
+          launcher.addEventListener('click', function () {
+            loadMerchantWidget();
+            launcher.remove();
+          });
+
+          document.body.appendChild(launcher);
+        });
+      }
     </script>
 </head>
 
