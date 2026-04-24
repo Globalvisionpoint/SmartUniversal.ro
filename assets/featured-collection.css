@@ -141,6 +141,72 @@
   border-radius: 1rem;
   overflow: hidden;
 }
+
+[data-section-type='product-slider'] .row > .col {
+  display: flex;
+}
+
+[data-section-type='product-slider'] .row > .col > .product__card {
+  width: 100%;
+  height: 100%;
+}
+
+[data-section-type='product-slider'] .product__card__title {
+  min-height: 4.8rem;
+}
+
+[data-section-type='product-slider'] .product__card__swatches {
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-section-type='product-slider'] .product__card__swatches.has-swatches {
+  min-height: 2.6rem;
+}
+
+[data-section-type='product-slider'] .product__card__swatches .product--color-swatch-wrapper {
+  margin-top: 0;
+}
+
+[data-section-type='product-slider'] .product__card__title a {
+  -webkit-line-clamp: 3;
+}
+
+[data-section-type='product-slider'] .product__card__price {
+  min-height: 3.6rem;
+}
+
+[data-section-type='product-slider'] .product__card__price dl {
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+[data-section-type='product-slider'] .product__card__price dd {
+  margin: 0;
+}
+
+[data-section-type='product-slider'] .product__card__price.price--on-sale .price__sale {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: baseline;
+  line-height: 1.2;
+}
+
+[data-section-type='product-slider'] .product__card__price .price-item--regular,
+[data-section-type='product-slider'] .product__card__price .price-item--sale {
+  line-height: 1.1;
+}
+
+[data-section-type='product-slider'] .product__card__content {
+  gap: 0.1rem;
+}
+
 .featured--collection-card .placeholder_svg_parent {
   height: calc(100% - 2rem);
   padding: 0 !important;
