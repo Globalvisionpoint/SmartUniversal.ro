@@ -1,80 +1,81 @@
-theme.announcement = (function () {
-  const closeButtonLabel = "Inchide";
+const announcementCloseButtonLabel = "Inchide";
 
-  function ensureAccessibleCloseButtons(root = document) {
-    root
-      .querySelectorAll(".close__announcement--bar")
-      .forEach((button) => {
-        button.setAttribute("aria-label", closeButtonLabel);
-        button.setAttribute("title", closeButtonLabel);
+function ensureAccessibleCloseButtons(root = document) {
+  root.querySelectorAll(".close__announcement--bar").forEach((button) => {
+    button.setAttribute("aria-label", announcementCloseButtonLabel);
+    button.setAttribute("title", announcementCloseButtonLabel);
 
-        if (!button.querySelector(".visually-hidden")) {
-          const srText = document.createElement("span");
-          srText.className = "visually-hidden";
-          srText.textContent = closeButtonLabel;
-          button.appendChild(srText);
-        }
-      });
+    if (!button.querySelector(".visually-hidden")) {
+      const srText = document.createElement("span");
+      srText.className = "visually-hidden";
+      srText.textContent = announcementCloseButtonLabel;
+      button.appendChild(srText);
+    }
+  });
+}
+
+function getAnnouncementElements() {
+  return {
+    openButton: document.getElementById("announcement-more-info"),
+    wrapper: document.querySelector(".announcement-collapsible-content"),
+  };
+}
+
+function hideAnnouncementPanel() {
+  const { openButton, wrapper } = getAnnouncementElements();
+  if (!openButton || !wrapper) return;
+
+  wrapper.classList.remove("open");
+  openButton.classList.remove("show--dropdown");
+  slideUp(wrapper);
+}
+
+function showAnnouncementPanel() {
+  const { openButton, wrapper } = getAnnouncementElements();
+  if (!openButton || !wrapper) return;
+
+  wrapper.classList.add("open");
+  openButton.classList.add("show--dropdown");
+  slideDown(wrapper);
+}
+
+theme.announcement = function announcementModule() {
+  ensureAccessibleCloseButtons();
+};
+
+document.addEventListener("click", (event) => {
+  const openButton = event.target.closest("#announcement-more-info");
+  if (openButton) {
+    event.preventDefault();
+    const { wrapper } = getAnnouncementElements();
+    if (!wrapper) return;
+
+    if (wrapper.classList.contains("open")) {
+      hideAnnouncementPanel();
+    } else {
+      showAnnouncementPanel();
+    }
+    return;
   }
 
-  function announcementModule(element) {
-    const announcement = {
-      open: document.getElementById("announcement-more-info"),
-      close: document.querySelector(".close__announcement--bar"),
-      wrapper: document.querySelector(".announcement-collapsible-content"),
-    };
-
-    ensureAccessibleCloseButtons();
-
-    // Hide the announcement bar
-    const hide = () => {
-      announcement.wrapper.classList.remove("open");
-      announcement.open.classList.remove("show--dropdown");
-      slideUp(announcement.wrapper);
-    };
-
-    // open the announcement bar
-    const open = () => {
-      announcement.wrapper.classList.add("open");
-      announcement.open.classList.add("show--dropdown");
-      slideDown(announcement.wrapper);
-    };
-
-    // Click open event
-    announcement.open?.addEventListener("click", (event) => {
-      event.preventDefault();
-      let isOpen = announcement.wrapper.classList.contains("open")
-        ? true
-        : false;
-      if (isOpen) {
-        hide();
-      } else {
-        open();
-      }
-    });
-
-    // Click close event
-    announcement.close?.addEventListener("click", (event) => {
-      event.preventDefault();
-      hide();
-    });
+  const collapsibleCloseButton = event.target.closest(
+    ".announcement-collapsible-content .close__announcement--bar"
+  );
+  if (collapsibleCloseButton) {
+    event.preventDefault();
+    hideAnnouncementPanel();
+    return;
   }
-  return announcementModule;
-})();
 
-class announmentBar extends HTMLElement {
-  constructor() {
-    super();
-    this.addEventListener("click", this.onRemoveAnnouncement);
-  }
-  onRemoveAnnouncement(event) {
-    const closeButton = event.target.closest(".announcement--timer-close-btn");
-    if (closeButton) {
-      closeButton.closest(".announcement-bar").remove();
+  const timerCloseButton = event.target.closest(".announcement--timer-close-btn");
+  if (timerCloseButton) {
+    event.preventDefault();
+    const announcementBar = timerCloseButton.closest(".announcement__bar--container");
+    if (announcementBar) {
+      announcementBar.remove();
     }
   }
-}
-customElements.define("announcement-bar", announmentBar);
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   ensureAccessibleCloseButtons();

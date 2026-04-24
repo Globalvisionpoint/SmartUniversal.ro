@@ -422,7 +422,12 @@
         const merchantObserver = new MutationObserver(function () {
           ensureMerchantWidgetAccessibility();
         });
-        merchantObserver.observe(document.body, { childList: true, subtree: true });
+        merchantObserver.observe(document.body, {
+          childList: true,
+          subtree: true,
+          attributes: true,
+          attributeFilter: ['title', 'src', 'id']
+        });
 
         ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (eventName) {
           window.addEventListener(eventName, loadMerchantWidget, { once: true, passive: true });
