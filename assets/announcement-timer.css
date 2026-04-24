@@ -55,8 +55,26 @@
   line-height: 1;
   aspect-ratio: 1 / 1;
 }
+.announcement-close-button__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.announcement-close-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
 .announcement--timer-close-btn > svg,
-.announcement--timer-close-btn .icon-close {
+.announcement--timer-close-btn .icon-close,
+.announcement-close-button__icon > svg {
   width: 2rem;
   height: 2rem;
   pointer-events: none;
@@ -256,7 +274,8 @@
 }
 
 .announcement--timer-close-btn > svg,
-.announcement--timer-close-btn .icon-close {
+.announcement--timer-close-btn .icon-close,
+.announcement-close-button__icon > svg {
   width: 1.48rem;
   height: 1.48rem;
 }
@@ -329,7 +348,8 @@
   }
 
   .announcement--timer-close-btn > svg,
-  .announcement--timer-close-btn .icon-close {
+  .announcement--timer-close-btn .icon-close,
+  .announcement-close-button__icon > svg {
     width: 1.22rem;
     height: 1.22rem;
   }
