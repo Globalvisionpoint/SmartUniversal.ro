@@ -371,6 +371,14 @@
       window.addEventListener('load', function () {
         let merchantWidgetLoaded = false;
 
+        const ensureMerchantWidgetAccessibility = function () {
+          const merchantFrame = document.getElementById('merchantwidgetiframe');
+          if (merchantFrame && !merchantFrame.getAttribute('title')) {
+            merchantFrame.setAttribute('title', 'Merchant reviews widget');
+          }
+          return Boolean(merchantFrame);
+        };
+
         const loadMerchantWidget = function () {
           if (merchantWidgetLoaded) return;
           merchantWidgetLoaded = true;
@@ -383,10 +391,19 @@
               merchantwidget.start({
                 position: 'RIGHT_BOTTOM'
               });
+              ensureMerchantWidgetAccessibility();
+              setTimeout(ensureMerchantWidgetAccessibility, 1200);
             }
           };
           document.head.appendChild(script);
         };
+
+        const merchantObserver = new MutationObserver(function () {
+          if (ensureMerchantWidgetAccessibility()) {
+            merchantObserver.disconnect();
+          }
+        });
+        merchantObserver.observe(document.body, { childList: true, subtree: true });
 
         ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (eventName) {
           window.addEventListener(eventName, loadMerchantWidget, { once: true, passive: true });
