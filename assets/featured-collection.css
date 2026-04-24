@@ -163,7 +163,7 @@
 }
 
 [data-section-type='product-slider'] .product__card__swatches.has-swatches {
-  min-height: 2.6rem;
+  min-height: 1.8rem;
 }
 
 [data-section-type='product-slider'] .product__card__swatches .product--color-swatch-wrapper {
@@ -176,6 +176,7 @@
 
 [data-section-type='product-slider'] .product__card__price {
   min-height: 3.6rem;
+  margin-top: 0.7rem;
 }
 
 [data-section-type='product-slider'] .product__card__price dl {
@@ -205,6 +206,10 @@
 
 [data-section-type='product-slider'] .product__card__content {
   gap: 0.1rem;
+}
+
+[data-section-type='product-slider'] .product__card .product-card-action-buttons {
+  padding-top: 0.5rem;
 }
 
 .featured--collection-card .placeholder_svg_parent {
