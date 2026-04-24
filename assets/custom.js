@@ -253,6 +253,42 @@ theme.collectionSlider = (function () {
     return match ? match[1] : '';
   }
 
+  function buildAutoplayYoutubeUrl(url) {
+    if (!url) return url;
+
+    try {
+      var parsed = new URL(url, window.location.origin);
+      parsed.searchParams.set('autoplay', '1');
+      parsed.searchParams.set('playsinline', '1');
+      parsed.searchParams.set('enablejsapi', '1');
+      parsed.searchParams.set('rel', '0');
+      parsed.searchParams.set('modestbranding', '1');
+      parsed.searchParams.set('origin', window.location.origin);
+      return parsed.toString();
+    } catch (error) {
+      var separator = url.indexOf('?') === -1 ? '?' : '&';
+      return url + separator + 'autoplay=1&playsinline=1&enablejsapi=1&rel=0&modestbranding=1';
+    }
+  }
+
+  function triggerYoutubePlayback(frame) {
+    if (!frame || !frame.contentWindow) return;
+
+    var commands = [
+      '{"event":"command","func":"playVideo","args":""}',
+      '{"event":"command","func":"unMute","args":""}'
+    ];
+
+    commands.forEach(function (command) {
+      try {
+        frame.contentWindow.postMessage(command, 'https://www.youtube-nocookie.com');
+        frame.contentWindow.postMessage(command, '*');
+      } catch (error) {
+        // Ignore cross-origin timing issues while the iframe is still booting.
+      }
+    });
+  }
+
   function toNoCookieYoutube(url) {
     if (!url || url.indexOf('youtube.com/embed/') === -1) return url;
     return url.replace('://www.youtube.com/embed/', '://www.youtube-nocookie.com/embed/');
@@ -315,12 +351,32 @@ theme.collectionSlider = (function () {
         play.innerHTML = '<span style="display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:rgba(17,24,39,.82)"><span aria-hidden="true" style="font-size:1.25rem">▶</span> Reda video</span>';
 
         play.addEventListener('click', function () {
-          frame.setAttribute('src', noCookieSrc + (noCookieSrc.indexOf('?') === -1 ? '?' : '&') + 'autoplay=1');
+          var autoplaySrc = buildAutoplayYoutubeUrl(noCookieSrc);
+
+          frame.setAttribute('src', autoplaySrc);
+          frame.setAttribute(
+            'allow',
+            'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+          );
+          frame.setAttribute('allowfullscreen', '');
+          frame.setAttribute('loading', 'eager');
           frame.style.position = 'absolute';
           frame.style.inset = '0';
           frame.style.width = '100%';
           frame.style.height = '100%';
           frame.style.border = '0';
+
+          frame.addEventListener(
+            'load',
+            function () {
+              triggerYoutubePlayback(frame);
+              window.setTimeout(function () {
+                triggerYoutubePlayback(frame);
+              }, 500);
+            },
+            { once: true }
+          );
+
           wrapper.innerHTML = '';
           wrapper.appendChild(frame);
         });
