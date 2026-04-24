@@ -1,57 +1,61 @@
-theme.announcement = (function () {
-  function announcementModule(element) {
-    const announcement = {
-      open: document.getElementById("announcement-more-info"),
-      close: document.querySelector(".close__announcement--bar"),
-      wrapper: document.querySelector(".announcement-collapsible-content"),
-    };
+function getAnnouncementElements() {
+  return {
+    openButton: document.getElementById("announcement-more-info"),
+    wrapper: document.querySelector(".announcement-collapsible-content"),
+  };
+}
 
-    // Hide the announcement bar
-    const hide = () => {
-      announcement.wrapper.classList.remove("open");
-      announcement.open.classList.remove("show--dropdown");
-      slideUp(announcement.wrapper);
-    };
+function hideAnnouncementPanel() {
+  const { openButton, wrapper } = getAnnouncementElements();
+  if (!openButton || !wrapper) return;
 
-    // open the announcement bar
-    const open = () => {
-      announcement.wrapper.classList.add("open");
-      announcement.open.classList.add("show--dropdown");
-      slideDown(announcement.wrapper);
-    };
+  wrapper.classList.remove("open");
+  openButton.classList.remove("show--dropdown");
+  slideUp(wrapper);
+}
 
-    // Click open event
-    announcement.open?.addEventListener("click", (event) => {
-      event.preventDefault();
-      let isOpen = announcement.wrapper.classList.contains("open")
-        ? true
-        : false;
-      if (isOpen) {
-        hide();
-      } else {
-        open();
-      }
-    });
+function showAnnouncementPanel() {
+  const { openButton, wrapper } = getAnnouncementElements();
+  if (!openButton || !wrapper) return;
 
-    // Click close event
-    announcement.close?.addEventListener("click", (event) => {
-      event.preventDefault();
-      hide();
-    });
+  wrapper.classList.add("open");
+  openButton.classList.add("show--dropdown");
+  slideDown(wrapper);
+}
+
+theme.announcement = function announcementModule() {};
+
+document.addEventListener("click", (event) => {
+  const openButton = event.target.closest("#announcement-more-info");
+  if (openButton) {
+    event.preventDefault();
+    const { wrapper } = getAnnouncementElements();
+    if (!wrapper) return;
+
+    if (wrapper.classList.contains("open")) {
+      hideAnnouncementPanel();
+    } else {
+      showAnnouncementPanel();
+    }
+    return;
   }
-  return announcementModule;
-})();
 
-class announmentBar extends HTMLElement {
-  constructor() {
-    super();
-    this.addEventListener("click", this.onRemoveAnnouncement);
+  const collapsibleCloseButton = event.target.closest(
+    ".announcement-collapsible-content .close__announcement--bar"
+  );
+  if (collapsibleCloseButton) {
+    event.preventDefault();
+    hideAnnouncementPanel();
+    return;
   }
-  onRemoveAnnouncement(event) {
-    let evtTargetElement = event.target;
-    if (evtTargetElement.classList.contains("announcement--timer-close-btn")) {
-      evtTargetElement.closest(".announcement-bar").remove();
+
+  const timerCloseButton = event.target.closest(".announcement--timer-close-btn");
+  if (timerCloseButton) {
+    event.preventDefault();
+    const announcementBar = timerCloseButton.closest(".announcement__bar--container");
+    if (announcementBar) {
+      announcementBar.remove();
     }
   }
-}
-customElements.define("announcement-bar", announmentBar);
+});
+
