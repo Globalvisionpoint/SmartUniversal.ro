@@ -2361,6 +2361,13 @@ input:-moz-placeholder {
   width:100%
 }
 
+.collection--button,
+.loadMoreWrapper,
+.button--wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .collection--button .button,
 .collection--button .button.button--secondary,
 #loadMoreBtn.button,
@@ -2371,11 +2378,14 @@ input:-moz-placeholder {
 .section[data-section-type="product-slider"] a.button.button--large,
 .section[data-section-type="product-slider"] .button.button--secondary {
   position: relative;
-  display: inline-flex !important;
+  display: flex !important;
   align-items: center;
   justify-content: center;
+  width: fit-content;
   min-height: 4.9rem;
   min-width: 18.5rem;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 2.4rem 0 5.1rem !important;
   background: linear-gradient(135deg, #d71f35 0%, #e12c2d 100%) !important;
   color: #ffffff !important;
