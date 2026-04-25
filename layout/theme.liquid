@@ -582,7 +582,9 @@
       <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    <script src="{{ 'faq-collapse.js' | asset_url }}" defer="defer"></script>
+    {%- if content_for_layout contains 'data-section-type="faq-collapse"' -%}
+      <script src="{{ 'faq-collapse.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
 
     {%- if settings.show_wishlist_button -%}
       <script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
@@ -610,9 +612,13 @@
 
     <script src="{{ 'color-swatch-variant.js' | asset_url }}" defer="defer"></script>
 
-    <script src="{{ 'lookbook-slider.js' | asset_url }}" defer="defer"></script>
+    {%- if content_for_layout contains 'data-section-type="lookbook"' -%}
+      <script src="{{ 'lookbook-slider.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
 
-    <script src="{{ 'timeline-slider.js' | asset_url }}" defer="defer"></script>
+    {%- if content_for_layout contains 'data-section-type="timeline"' -%}
+      <script src="{{ 'timeline-slider.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
 
     {%- if settings.back_top_enable -%}
       {%- render 'back-to-top' -%}
