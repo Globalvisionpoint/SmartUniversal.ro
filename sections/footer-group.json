@@ -218,6 +218,7 @@
         "f8c0bbcb-d708-4cc1-ab84-cd1caa700308",
         "77395d1d-95ba-4bd1-af42-79086a37cfed"
       ],
+      "disabled": true,
       "settings": {
         "display": "enable",
         "show_home_page": true,
