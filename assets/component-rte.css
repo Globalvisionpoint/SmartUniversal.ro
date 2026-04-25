@@ -28,6 +28,21 @@
   max-width: 100%;
 }
 
+.product__description img,
+.product__description .rte img {
+  display: block;
+  width: min(100%, 600px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 989px) {
+  .product__description img,
+  .product__description .rte img {
+    width: min(100%, 300px);
+  }
+}
+
 .rte ul {
   padding-left: 2rem;
 }
