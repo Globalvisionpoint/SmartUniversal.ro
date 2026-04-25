@@ -29,6 +29,33 @@
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
+    {%- if request.page_type == 'product' -%}
+      {%- assign _lcp_media = product.selected_or_first_available_variant.featured_media -%}
+      {%- if _lcp_media != null and _lcp_media.media_type == 'image' -%}
+        <link rel="preload" as="image"
+          href="{{ _lcp_media | image_url: width: 800, format: 'webp' }}"
+          imagesrcset="{{ _lcp_media | image_url: width: 400, format: 'webp' }} 493w, {{ _lcp_media | image_url: width: 550, format: 'webp' }} 823w, {{ _lcp_media | image_url: width: 800, format: 'webp' }} 1100w"
+          imagesizes="(min-width: 990px) 50vw, 100vw"
+          fetchpriority="high">
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if request.page_type == 'index' -%}
+      {%- for section in template.sections -%}
+        {%- if section.type contains 'slideshow' -%}
+          {%- assign _lcp_slide = section.blocks.first -%}
+          {%- if _lcp_slide != null and _lcp_slide.settings.image != blank -%}
+            <link rel="preload" as="image"
+              href="{{ _lcp_slide.settings.image | image_url: width: 750 }}"
+              imagesrcset="{{ _lcp_slide.settings.image | image_url: width: 375 }} 375w, {{ _lcp_slide.settings.image | image_url: width: 750 }} 750w, {{ _lcp_slide.settings.image | image_url: width: 1100 }} 1100w"
+              imagesizes="100vw"
+              fetchpriority="high">
+          {%- endif -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -61,7 +88,6 @@
 
     <script src="{{ 'slideshow.js' | asset_url }}" defer="defer"></script>
 
-    <script src="{{ 'tab-active.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'counter-up.js' | asset_url }}" defer="defer"></script>
 
     {%- unless template.name == 'product' -%}
@@ -350,9 +376,24 @@
       }
     {% endstyle %}
 
-    {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
-    {{ 'glightbox.min.css' | asset_url | stylesheet_tag }}
-    {{ 'base.css' | asset_url | stylesheet_tag }}
+    <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}" media="print" onload="this.media='all'">
+    <noscript>{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}</noscript>
+    <link rel="stylesheet" href="{{ 'glightbox.min.css' | asset_url }}" media="print" onload="this.media='all'">
+    <noscript>{{ 'glightbox.min.css' | asset_url | stylesheet_tag }}</noscript>
+    <link rel="stylesheet" href="{{ 'base.css' | asset_url }}" media="print" onload="this.media='all'">
+    <noscript>{{ 'base.css' | asset_url | stylesheet_tag }}</noscript>
+    <style>
+      /* Critical above-fold styles inlined to prevent FOUC */
+      *,*::before,*::after{box-sizing:inherit}
+      html{box-sizing:border-box;font-size:62.5%;height:100%}
+      body{margin:0;min-height:100%;font-size:1.4rem;letter-spacing:.06rem}
+      .no-js:not(html){display:none!important}
+      html.no-js .no-js:not(html){display:block!important}
+      .visually-hidden{position:absolute!important;overflow:hidden;width:1px;height:1px;margin:-1px;padding:0;border:0;clip:rect(0 0 0 0);word-wrap:normal!important}
+      img,svg{display:block;max-width:100%}
+      img{height:auto}
+      .icon{display:inline-block;vertical-align:middle}
+    </style>
     {%- if theme_rtl -%}
       {{ 'rtl.css' | asset_url | stylesheet_tag }}
     {%- endif -%}

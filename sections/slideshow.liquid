@@ -1,4 +1,4 @@
-{%- liquid
+﻿{%- liquid
   assign theme_rtl = false
   if settings.enable_rtl and settings.langauges_rtl == blank
     assign theme_rtl = true
@@ -29,6 +29,9 @@
 -%}
 
 {{ 'slideshow.css' | asset_url | stylesheet_tag }}
+<style>
+  .swiper-slide:not(.swiper-slide-active) .slideshow__media > img { visibility: hidden; }
+</style>
 
 {%- style -%}
     {%- if section.settings.slide_height == 'adapt_image' and section.blocks.first.settings.image != blank -%}
@@ -219,7 +222,7 @@
                     "
                     sizes="100vw"
                     src="{{ block.settings.image | image_url: width: 1500 }}"
-                    loading="lazy"
+                    {%- unless lcp_image_done -%}{%- assign lcp_image_done = true -%}loading="eager" fetchpriority="high"{%- else -%}loading="lazy"{%- endunless -%}
                     alt="{{ block.settings.image.alt | escape }}"
                     width="{{ block.settings.image.width }}"
                     height="{{ block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round }}"
