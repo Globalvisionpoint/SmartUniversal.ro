@@ -80,15 +80,21 @@
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
 
-    <script src="{{ 'loadMore.js' | asset_url }}" defer="defer"></script>
+    {%- if content_for_layout contains 'load-more-product' -%}
+      <script src="{{ 'loadMore.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
 
     <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
 
     <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
 
-    <script src="{{ 'slideshow.js' | asset_url }}" defer="defer"></script>
+    {%- if content_for_layout contains 'data-section-type="slideShow"' -%}
+      <script src="{{ 'slideshow.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
 
-    <script src="{{ 'counter-up.js' | asset_url }}" defer="defer"></script>
+    {%- if content_for_layout contains 'data-section-type="counter_up"' -%}
+      <script src="{{ 'counter-up.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
 
     {%- unless template.name == 'product' -%}
       <script src="{{ 'product-variant.js' | asset_url }}" defer="defer"></script>
