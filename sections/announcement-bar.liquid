@@ -15,12 +15,9 @@
 %}
 <script src="{{ 'announcement-bar.js' | asset_url }}" defer="defer"></script>
 {%- if section.settings.announcement_enable and section.blocks.size >= 1 -%}
-  <link rel="stylesheet" href="{{ 'announcement-bar.css' | asset_url }}" media="print" onload="this.media='all'">
-  <noscript>{{ 'announcement-bar.css' | asset_url | stylesheet_tag }}</noscript>
-  <link rel="stylesheet" href="{{ 'announcement-timer.css' | asset_url }}" media="print" onload="this.media='all'">
-  <noscript>{{ 'announcement-timer.css' | asset_url | stylesheet_tag }}</noscript>
-  <link rel="stylesheet" href="{{ 'component-list-social.css' | asset_url }}" media="print" onload="this.media='all'">
-  <noscript>{{ 'component-list-social.css' | asset_url | stylesheet_tag }}</noscript>
+  {{ 'announcement-bar.css' | asset_url | stylesheet_tag }}
+  {{ 'announcement-timer.css' | asset_url | stylesheet_tag }}
+  {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
   <link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
   <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
@@ -388,7 +385,6 @@
                   <button
                     type="button"
                     class="close__announcement--bar link announcement--timer-close-btn"
-                    aria-label="Inchide"
                     aria-labelledby="{{ timer_close_label_id }}"
                     title="Inchide"
                   >

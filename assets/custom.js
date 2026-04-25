@@ -433,11 +433,7 @@ theme.collectionSlider = (function () {
 
   function applyBestPracticesBoost(root) {
     hardenYoutubeEmbeds(root);
-
-    // Keep the image-upgrade pass off mobile where it costs more in reflow and bytes than it saves.
-    if (window.innerWidth >= 990) {
-      upgradeImageResolution(root);
-    }
+    upgradeImageResolution(root);
   }
 
   document.addEventListener('DOMContentLoaded', function () {

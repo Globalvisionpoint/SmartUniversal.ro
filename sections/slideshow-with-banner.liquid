@@ -1,4 +1,4 @@
-﻿{%- liquid
+{%- liquid
   assign theme_rtl = false
   if settings.enable_rtl and settings.langauges_rtl == blank
     assign theme_rtl = true
@@ -196,7 +196,7 @@
                           "
                           sizes="100vw"
                           src="{{ block.settings.image | image_url: width: 1500 }}"
-                          {%- unless lcp_image_done -%}{%- assign lcp_image_done = true -%}loading="eager" fetchpriority="high"{%- else -%}loading="lazy"{%- endunless -%}
+                          loading="lazy"
                           alt="{{ block.settings.image.alt | escape }}"
                           width="{{ block.settings.image.width }}"
                           height="{{ block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round }}"
@@ -221,7 +221,7 @@
                           src="{{ block.settings.image2 | image_url: width: 1500 }}"
                           loading="lazy"
                           alt="{{ block.settings.image2.alt | escape }}"
-                            {%- unless lcp_image_done -%}{%- assign lcp_image_done = true -%}loading="eager" fetchpriority="high"{%- else -%}loading="lazy"{%- endunless -%}
+                          width="{{ block.settings.image2.width }}"
                           height="{{ block.settings.image2.width | divided_by: block.settings.image2.aspect_ratio | round }}"
                         >
                       </div>

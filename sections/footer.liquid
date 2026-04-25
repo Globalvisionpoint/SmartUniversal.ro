@@ -226,48 +226,21 @@
                             {{ badge_block.shopify_attributes }}
                           >
                             {%- if badge_block.settings.image != blank -%}
-                              {%- assign badge_link = badge_block.settings.link | default: '' | strip -%}
-                              {%- assign badge_label = badge_block.settings.image.alt | default: '' | strip -%}
-                              {%- if badge_label == blank -%}
-                                {%- if badge_link contains 'anpc.ro' -%}
-                                  {%- assign badge_label = 'Verificare ANPC' -%}
-                                {%- elsif badge_link contains 'europa.eu/consumers/odr' -%}
-                                  {%- assign badge_label = 'Platforma SOL' -%}
-                                {%- elsif badge_link != blank -%}
-                                  {%- assign badge_label = 'Badge de incredere ' | append: forloop.index -%}
-                                {%- else -%}
-                                  {%- assign badge_label = 'Badge de incredere' -%}
-                                {%- endif -%}
-                              {%- endif -%}
-
-                              {%- if badge_link != blank -%}
-                                <a
-                                  href="{{ badge_link }}"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  aria-label="{{ badge_label | escape }}"
+                              <a
+                                href="{{ badge_block.settings.link }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="{% if badge_block.settings.image.alt != blank %}{{ badge_block.settings.image.alt | escape }}{% else %}Badge de incredere{% endif %}"
+                              >
+                                <img
+                                  srcset="{{ badge_block.settings.image | image_url: width: badge_width_2x }} 2x, {{ badge_block.settings.image | image_url: width: badge_width }} 1x"
+                                  src="{{ badge_block.settings.image | image_url: width: badge_width }}"
+                                  alt="{{ badge_block.settings.image.alt | escape }}"
+                                  loading="lazy"
+                                  width="{{ badge_width }}"
+                                  height="{{ badge_width | divided_by: badge_block.settings.image.aspect_ratio | round }}"
                                 >
-                                  <img
-                                    srcset="{{ badge_block.settings.image | image_url: width: badge_width_2x }} 2x, {{ badge_block.settings.image | image_url: width: badge_width }} 1x"
-                                    src="{{ badge_block.settings.image | image_url: width: badge_width }}"
-                                    alt="{{ badge_block.settings.image.alt | escape }}"
-                                    loading="lazy"
-                                    width="{{ badge_width }}"
-                                    height="{{ badge_width | divided_by: badge_block.settings.image.aspect_ratio | round }}"
-                                  >
-                                </a>
-                              {%- else -%}
-                                <span aria-label="{{ badge_label | escape }}" role="img">
-                                  <img
-                                    srcset="{{ badge_block.settings.image | image_url: width: badge_width_2x }} 2x, {{ badge_block.settings.image | image_url: width: badge_width }} 1x"
-                                    src="{{ badge_block.settings.image | image_url: width: badge_width }}"
-                                    alt="{{ badge_block.settings.image.alt | escape }}"
-                                    loading="lazy"
-                                    width="{{ badge_width }}"
-                                    height="{{ badge_width | divided_by: badge_block.settings.image.aspect_ratio | round }}"
-                                  >
-                                </span>
-                              {%- endif -%}
+                              </a>
                             {%- endif -%}
                           </div>
                         {%- endif -%}
