@@ -75,3 +75,24 @@
 li.product_tab_list__li + li.product_tab_list__li {
     margin-left: 3rem;
 }
+
+/* Hard cap media inside product tabs content */
+.tab_content .tab_pane img,
+.tab_content .tab_pane video,
+.tab_content .tab_pane iframe {
+  display: block;
+  width: min(100%, 300px) !important;
+  max-width: 300px !important;
+  height: auto !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 989px) {
+  .tab_content .tab_pane img,
+  .tab_content .tab_pane video,
+  .tab_content .tab_pane iframe {
+    width: min(100%, 100px) !important;
+    max-width: 100px !important;
+  }
+}
