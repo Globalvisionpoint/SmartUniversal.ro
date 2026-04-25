@@ -388,8 +388,10 @@
       <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}" media="print" onload="this.media='all'">
       <noscript>{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}</noscript>
     {%- endif -%}
-    <link rel="stylesheet" href="{{ 'glightbox.min.css' | asset_url }}" media="print" onload="this.media='all'">
-    <noscript>{{ 'glightbox.min.css' | asset_url | stylesheet_tag }}</noscript>
+    {%- if content_for_layout contains 'glightbox' -%}
+      <link rel="stylesheet" href="{{ 'glightbox.min.css' | asset_url }}" media="print" onload="this.media='all'">
+      <noscript>{{ 'glightbox.min.css' | asset_url | stylesheet_tag }}</noscript>
+    {%- endif -%}
     {{ 'base.css' | asset_url | stylesheet_tag }}
     <style>
       /* Critical above-fold styles inlined to prevent FOUC */
