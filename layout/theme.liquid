@@ -84,7 +84,9 @@
       <script src="{{ 'loadMore.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
+    {%- if content_for_layout contains 'swiper' -%}
+      <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
 
     <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
 
@@ -382,8 +384,10 @@
       }
     {% endstyle %}
 
-    <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}" media="print" onload="this.media='all'">
-    <noscript>{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}</noscript>
+    {%- if content_for_layout contains 'swiper' -%}
+      <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}" media="print" onload="this.media='all'">
+      <noscript>{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}</noscript>
+    {%- endif -%}
     <link rel="stylesheet" href="{{ 'glightbox.min.css' | asset_url }}" media="print" onload="this.media='all'">
     <noscript>{{ 'glightbox.min.css' | asset_url | stylesheet_tag }}</noscript>
     {{ 'base.css' | asset_url | stylesheet_tag }}
