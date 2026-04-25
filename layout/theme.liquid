@@ -380,8 +380,7 @@
     <noscript>{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}</noscript>
     <link rel="stylesheet" href="{{ 'glightbox.min.css' | asset_url }}" media="print" onload="this.media='all'">
     <noscript>{{ 'glightbox.min.css' | asset_url | stylesheet_tag }}</noscript>
-    <link rel="stylesheet" href="{{ 'base.css' | asset_url }}" media="print" onload="this.media='all'">
-    <noscript>{{ 'base.css' | asset_url | stylesheet_tag }}</noscript>
+    {{ 'base.css' | asset_url | stylesheet_tag }}
     <style>
       /* Critical above-fold styles inlined to prevent FOUC */
       *,*::before,*::after{box-sizing:inherit}
