@@ -142,9 +142,12 @@
       "
       src="{{ media | image_url: width: 900, format: 'webp' }}"
       sizes="(min-width: {{ page_width }}px) {{ page_width | minus: 60 | times: media_width | round }}px, (min-width: 990px) calc({{ media_width | times: 100 | round }}vw - 5rem), (min-width: 750px) calc((100vw - 3rem) / 2), calc(100vw - 3rem)"
-      {% unless lazy_load == false %}
+      {% if lazy_load == false or position == 1 %}
+        loading="eager"
+        fetchpriority="high"
+      {% else %}
         loading="lazy"
-      {% endunless %}
+      {% endif %}
       width="973"
       height="{{ 973 | divided_by: media.preview_image.aspect_ratio | ceil }}"
       alt="{{ media.preview_image.alt | escape }}"
@@ -211,9 +214,12 @@
         (min-width: 992px) calc({{ media_width | times: 100 | round }}vw - 5rem), (min-width: 767px) calc((100vw - 5rem) / 2), calc(100vw - 3rem)
         {%- endif -%}
       "
-      {% unless lazy_load == false %}
+      {% if lazy_load == false or position == 1 %}
+        loading="eager"
+        fetchpriority="high"
+      {% else %}
         loading="lazy"
-      {% endunless %}
+      {% endif %}
       width="973"
       height="{{ 973 | divided_by: media.preview_image.aspect_ratio | ceil }}"
       alt="{{ media.preview_image.alt | escape }}"
