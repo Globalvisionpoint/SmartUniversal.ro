@@ -13,22 +13,8 @@
     endfor
   endif
 %}
+<script src="{{ 'announcement-bar.js' | asset_url }}" defer="defer"></script>
 {%- if section.settings.announcement_enable and section.blocks.size >= 1 -%}
-  <script src="{{ 'announcement-bar.js' | asset_url }}" defer="defer"></script>
-  <style>
-    #shopify-section-announcement-bar {
-      visibility: hidden;
-    }
-    html.announcement-ready #shopify-section-announcement-bar {
-      visibility: visible;
-    }
-  </style>
-  <script>
-    window.addEventListener('load', function () {
-      document.documentElement.classList.add('announcement-ready');
-    });
-  </script>
-  <noscript><style>#shopify-section-announcement-bar{visibility:visible}</style></noscript>
   <link rel="stylesheet" href="{{ 'announcement-bar.css' | asset_url }}" media="print" onload="this.media='all'">
   <noscript>{{ 'announcement-bar.css' | asset_url | stylesheet_tag }}</noscript>
   <link rel="stylesheet" href="{{ 'announcement-timer.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -80,22 +66,6 @@
                font-weight: 400;
                gap:  0.5rem;
              }
-            .announcement__cta-button {
-              display: inline-flex;
-              align-items: center;
-              gap: 0.6rem;
-            }
-            .announcement__cta-icon {
-              display: inline-flex;
-              align-items: center;
-              color: currentColor;
-              line-height: 1;
-            }
-            .announcement__cta-icon svg {
-              width: 1.6rem;
-              height: 1.6rem;
-              display: block;
-            }
              @media only screen and (min-width: 992px) {
                .button--announcement {
                  padding: 0.2rem 1rem;
