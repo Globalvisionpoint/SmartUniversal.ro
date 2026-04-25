@@ -32,8 +32,10 @@
   endif
 -%}
 
-{{ 'slideshow.css' | asset_url | stylesheet_tag }}
-{{ 'slideshow-with-banner.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'slideshow.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'slideshow.css' | asset_url | stylesheet_tag }}</noscript>
+<link rel="stylesheet" href="{{ 'slideshow-with-banner.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'slideshow-with-banner.css' | asset_url | stylesheet_tag }}</noscript>
 
 {%- style -%}
   {%- if section.settings.slide_height == 'adapt_image' and section.blocks.first.settings.image != blank -%}
@@ -166,6 +168,7 @@
                     endcase
                   -%}
 
+                  {%- assign is_first_slide = forloop.first -%}
                   <div class="swiper-slide" {{ block.shopify_attributes }}>
                     {% if block.settings.enble_entire_link and block.settings.button_link %}
                       <a
@@ -196,7 +199,7 @@
                           "
                           sizes="100vw"
                           src="{{ block.settings.image | image_url: width: 1500 }}"
-                          loading="lazy"
+                          {% if is_first_slide %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
                           alt="{{ block.settings.image.alt | escape }}"
                           width="{{ block.settings.image.width }}"
                           height="{{ block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round }}"
