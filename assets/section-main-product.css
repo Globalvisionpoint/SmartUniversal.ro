@@ -470,14 +470,23 @@ variant-selects {
 
 .product__media_container .product__media,
 .product__media_container .deferred-media {
-  aspect-ratio: 1 / 1;
   height: auto !important;
   min-height: 0;
 }
 
-.product__media_container .product__media.main--product__media--adapt,
-.product__media_container .deferred-media.media {
+.product__media_container .product__media {
+  aspect-ratio: 1 / 1;
+}
+
+.product__media_container .product__media.main--product__media--adapt {
   padding-top: 100% !important;
+}
+
+@media screen and (min-width: 750px) {
+  .product__media_container .deferred-media {
+    border-radius: 2rem;
+    overflow: hidden;
+  }
 }
 
 .product__media_container .product__media > img,
