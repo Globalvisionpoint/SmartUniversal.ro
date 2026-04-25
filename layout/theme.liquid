@@ -40,6 +40,22 @@
       {%- endif -%}
     {%- endif -%}
 
+    {%- if request.page_type == 'index' -%}
+      {%- for section in template.sections -%}
+        {%- if section.type contains 'slideshow' -%}
+          {%- assign _lcp_slide = section.blocks.first -%}
+          {%- if _lcp_slide != null and _lcp_slide.settings.image != blank -%}
+            <link rel="preload" as="image"
+              href="{{ _lcp_slide.settings.image | image_url: width: 750 }}"
+              imagesrcset="{{ _lcp_slide.settings.image | image_url: width: 375 }} 375w, {{ _lcp_slide.settings.image | image_url: width: 750 }} 750w, {{ _lcp_slide.settings.image | image_url: width: 1100 }} 1100w"
+              imagesizes="100vw"
+              fetchpriority="high">
+          {%- endif -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
