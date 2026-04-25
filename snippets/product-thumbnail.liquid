@@ -28,14 +28,13 @@
     >
       <img
         srcset="
+          {% if media.preview_image.width >= 100 %}{{ media.preview_image | image_url: width: 100, format: 'webp' }} 100w,{% endif %}
           {% if media.preview_image.width >= 493 %}{{ media.preview_image | image_url: width: 240, format: 'webp' }} 493w,{% endif %}
-          {% if media.preview_image.width >= 600 %}{{ media.preview_image | image_url: width: 320, format: 'webp' }} 600w,{% endif %}
-          {% if media.preview_image.width >= 713 %}{{ media.preview_image | image_url: width: 400, format: 'webp' }} 713w,{% endif %}
-          {% if media.preview_image.width >= 823 %}{{ media.preview_image | image_url: width: 600, format: 'webp' }} 600w,{% endif %}
-          {{ media.preview_image | image_url: width: 600, format: 'webp' }} 600w
+          {% if media.preview_image.width >= 823 %}{{ media.preview_image | image_url: width: 300, format: 'webp' }} 300w,{% endif %}
+          {{ media.preview_image | image_url: width: 300, format: 'webp' }} 300w
         "
-        src="{{ media | image_url: width: 600, format: 'webp' }}"
-        sizes="(min-width: 990px) 600px, 300px"
+        src="{{ media | image_url: width: 300, format: 'webp' }}"
+        sizes="(min-width: 990px) 300px, 100px"
         {% if lazy_load == false or position == 1 %}
           loading="eager"
           fetchpriority="high"
@@ -64,14 +63,13 @@
     >
       <img
         srcset="
+          {% if media.preview_image.width >= 100 %}{{ media.preview_image | image_url: width: 100, format: 'webp' }} 100w,{% endif %}
           {% if media.preview_image.width >= 493 %}{{ media.preview_image | image_url: width: 240, format: 'webp' }} 493w,{% endif %}
-          {% if media.preview_image.width >= 600 %}{{ media.preview_image | image_url: width: 320, format: 'webp' }} 600w,{% endif %}
-          {% if media.preview_image.width >= 713 %}{{ media.preview_image | image_url: width: 400, format: 'webp' }} 713w,{% endif %}
-          {% if media.preview_image.width >= 823 %}{{ media.preview_image | image_url: width: 600, format: 'webp' }} 600w,{% endif %}
-          {{ media.preview_image | image_url: width: 600, format: 'webp' }} 600w
+          {% if media.preview_image.width >= 823 %}{{ media.preview_image | image_url: width: 300, format: 'webp' }} 300w,{% endif %}
+          {{ media.preview_image | image_url: width: 300, format: 'webp' }} 300w
         "
-        src="{{ media | image_url: width: 600, format: 'webp' }}"
-        sizes="(min-width: 990px) 600px, 300px"
+        src="{{ media | image_url: width: 300, format: 'webp' }}"
+        sizes="(min-width: 990px) 300px, 100px"
         {% if lazy_load == false or position == 1 %}
           loading="eager"
           fetchpriority="high"
@@ -113,14 +111,13 @@
   >
     <img
       srcset="
+        {% if media.preview_image.width >= 100 %}{{ media.preview_image | image_url: width: 100, format: 'webp' }} 100w,{% endif %}
         {% if media.preview_image.width >= 493 %}{{ media.preview_image | image_url: width: 240, format: 'webp' }} 493w,{% endif %}
-        {% if media.preview_image.width >= 600 %}{{ media.preview_image | image_url: width: 320, format: 'webp' }} 600w,{% endif %}
-        {% if media.preview_image.width >= 713 %}{{ media.preview_image | image_url: width: 400, format: 'webp' }} 713w,{% endif %}
-        {% if media.preview_image.width >= 823 %}{{ media.preview_image | image_url: width: 600, format: 'webp' }} 600w,{% endif %}
-        {{ media.preview_image | image_url: width: 600, format: 'webp' }} 600w
+        {% if media.preview_image.width >= 823 %}{{ media.preview_image | image_url: width: 300, format: 'webp' }} 300w,{% endif %}
+        {{ media.preview_image | image_url: width: 300, format: 'webp' }} 300w
       "
-      src="{{ media | image_url: width: 600, format: 'webp' }}"
-      sizes="(min-width: 990px) 600px, 300px"
+      src="{{ media | image_url: width: 300, format: 'webp' }}"
+      sizes="(min-width: 990px) 300px, 100px"
       {% if lazy_load == false or position == 1 %}
         loading="eager"
         fetchpriority="high"
@@ -172,14 +169,13 @@
     </span>
     <img
       srcset="
+        {% if media.preview_image.width >= 100 %}{{ media.preview_image | image_url: width: 100, format: 'webp' }} 100w,{% endif %}
         {% if media.preview_image.width >= 493 %}{{ media.preview_image | image_url: width: 240, format: 'webp' }} 493w,{% endif %}
-        {% if media.preview_image.width >= 600 %}{{ media.preview_image | image_url: width: 320, format: 'webp' }} 600w,{% endif %}
-        {% if media.preview_image.width >= 713 %}{{ media.preview_image | image_url: width: 400, format: 'webp' }} 713w,{% endif %}
-        {% if media.preview_image.width >= 823 %}{{ media.preview_image | image_url: width: 600, format: 'webp' }} 600w,{% endif %}
-        {{ media.preview_image | image_url: width: 600, format: 'webp' }} 600w
+        {% if media.preview_image.width >= 823 %}{{ media.preview_image | image_url: width: 300, format: 'webp' }} 300w,{% endif %}
+        {{ media.preview_image | image_url: width: 300, format: 'webp' }} 300w
       "
-      src="{{ media | image_url: width: 600, format: 'webp' }}"
-      sizes="(min-width: 990px) 600px, 300px"
+      src="{{ media | image_url: width: 300, format: 'webp' }}"
+      sizes="(min-width: 990px) 300px, 100px"
       {% if lazy_load == false or position == 1 %}
         loading="eager"
         fetchpriority="high"

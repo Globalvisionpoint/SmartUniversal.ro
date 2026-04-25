@@ -6,13 +6,12 @@
         assign second_img_position = second_img_position | plus: 1
       -%}
   <img
-       srcset="{%- if product_card_product.featured_media.width >= 165 -%}{{ product_card_product.featured_media | image_url: width: 165, format: 'webp' }} 165w,{%- endif -%}
-               {%- if product_card_product.featured_media.width >= 240 -%}{{ product_card_product.featured_media | image_url: width: 240, format: 'webp' }} 240w,{%- endif -%}
-            {%- if product_card_product.featured_media.width >= 300 -%}{{ product_card_product.featured_media | image_url: width: 300, format: 'webp' }} 300w,{%- endif -%}
-            {%- if product_card_product.featured_media.width >= 420 -%}{{ product_card_product.featured_media | image_url: width: 420, format: 'webp' }} 420w,{%- endif -%}
-            {%- if product_card_product.featured_media.width >= 600 -%}{{ product_card_product.featured_media | image_url: width: 600, format: 'webp' }} 600w{%- endif -%}"
-       src="{{ product_card_product.featured_media | image_url: width: 300, format: 'webp' }}"
-       sizes="(min-width: 990px) 600px, 300px"
+       srcset="{%- if product_card_product.featured_media.width >= 100 -%}{{ product_card_product.featured_media | image_url: width: 100, format: 'webp' }} 100w,{%- endif -%}
+            {%- if product_card_product.featured_media.width >= 165 -%}{{ product_card_product.featured_media | image_url: width: 165, format: 'webp' }} 165w,{%- endif -%}
+            {%- if product_card_product.featured_media.width >= 240 -%}{{ product_card_product.featured_media | image_url: width: 240, format: 'webp' }} 240w,{%- endif -%}
+            {%- if product_card_product.featured_media.width >= 300 -%}{{ product_card_product.featured_media | image_url: width: 300, format: 'webp' }} 300w{%- endif -%}"
+       src="{{ product_card_product.featured_media | image_url: width: 100, format: 'webp' }}"
+       sizes="(min-width: 990px) 300px, 100px"
        alt="{{ product_card_product.featured_media.alt | escape }}"
        loading="lazy"
        class="motion-reduce"
@@ -24,13 +23,12 @@
 
   {%- if product_card_product.media[second_img_position] != nil and show_secondary_image -%}
   <img
-       srcset="{%- if product_card_product.media[second_img_position].width >= 165 -%}{{ product_card_product.media[second_img_position] | image_url: width: 165, format: 'webp' }} 165w,{%- endif -%}
-               {%- if product_card_product.media[second_img_position].width >= 240 -%}{{ product_card_product.media[second_img_position] | image_url: width: 240, format: 'webp' }} 240w,{%- endif -%}
-            {%- if product_card_product.media[second_img_position].width >= 300 -%}{{ product_card_product.media[second_img_position] | image_url: width: 300, format: 'webp' }} 300w,{%- endif -%}
-            {%- if product_card_product.media[second_img_position].width >= 420 -%}{{ product_card_product.media[second_img_position] | image_url: width: 420, format: 'webp' }} 420w,{%- endif -%}
-            {%- if product_card_product.media[second_img_position].width >= 600 -%}{{ product_card_product.media[second_img_position] | image_url: width: 600, format: 'webp' }} 600w{%- endif -%}"
-       src="{{ product_card_product.media[second_img_position] | image_url: width: 300, format: 'webp' }}"
-       sizes="(min-width: 990px) 600px, 300px"
+       srcset="{%- if product_card_product.media[second_img_position].width >= 100 -%}{{ product_card_product.media[second_img_position] | image_url: width: 100, format: 'webp' }} 100w,{%- endif -%}
+            {%- if product_card_product.media[second_img_position].width >= 165 -%}{{ product_card_product.media[second_img_position] | image_url: width: 165, format: 'webp' }} 165w,{%- endif -%}
+            {%- if product_card_product.media[second_img_position].width >= 240 -%}{{ product_card_product.media[second_img_position] | image_url: width: 240, format: 'webp' }} 240w,{%- endif -%}
+            {%- if product_card_product.media[second_img_position].width >= 300 -%}{{ product_card_product.media[second_img_position] | image_url: width: 300, format: 'webp' }} 300w{%- endif -%}"
+       src="{{ product_card_product.media[second_img_position] | image_url: width: 100, format: 'webp' }}"
+       sizes="(min-width: 990px) 300px, 100px"
        alt="{{ product_card_product.media[second_img_position].alt | escape }}"
        loading="lazy"
        class="motion-reduce secondary__img"
