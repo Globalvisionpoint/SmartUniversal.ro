@@ -129,9 +129,19 @@
       padding-top: 0 !important;
     }
 
+    #shopify-section-{{ section.id }} {
+      margin-top: -1.4rem !important;
+    }
+
     @media only screen and (min-width: 750px) {
       #shopify-section-{{ section.id }} {
-        margin-top: -1rem !important;
+        margin-top: -1.2rem !important;
+      }
+    }
+
+    @media only screen and (max-width: 749px) {
+      #shopify-section-{{ section.id }} {
+        margin-top: -1.6rem !important;
       }
     }
   {%- endif -%}
