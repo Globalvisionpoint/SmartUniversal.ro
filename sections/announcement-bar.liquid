@@ -13,8 +13,8 @@
     endfor
   endif
 %}
-<script src="{{ 'announcement-bar.js' | asset_url }}" defer="defer"></script>
-{%- if section.settings.announcement_enable and section.blocks.size >= 1 -%}
+{%- if false and section.settings.announcement_enable and section.blocks.size >= 1 -%}
+  <script src="{{ 'announcement-bar.js' | asset_url }}" defer="defer"></script>
   <link rel="stylesheet" href="{{ 'announcement-bar.css' | asset_url }}" media="print" onload="this.media='all'">
   <noscript>{{ 'announcement-bar.css' | asset_url | stylesheet_tag }}</noscript>
   <link rel="stylesheet" href="{{ 'announcement-timer.css' | asset_url }}" media="print" onload="this.media='all'">
