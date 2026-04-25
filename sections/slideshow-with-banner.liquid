@@ -120,6 +120,16 @@
       object-fit: cover;
       object-position: center center;
   }
+
+  {%- if section.settings.padding_top == 0 -%}
+    #shopify-section-{{ section.id }},
+    #shopify-section-{{ section.id }} .hero__slider--section,
+    #shopify-section-{{ section.id }} .section-{{ section.id }}-padding {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+  {%- endif -%}
+
   @media only screen and (min-width: 750px){
     .hero__slider--section.section-{{ section.id }}-padding{
       --pagnation-color: {{  section.settings.pagination_background.red }}, {{  section.settings.pagination_background.green }}, {{  section.settings.pagination_background.blue }};
