@@ -218,6 +218,16 @@ a.collection__card {
   display: none;
 }
 
+.text-center.mt-40 {
+  display: flex;
+  justify-content: center;
+}
+
+.text-center.mt-40 > a {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .collection__list--slider-nav {
   display: flex;
   gap: 1.5rem;
