@@ -28,24 +28,6 @@
   max-width: 100%;
 }
 
-.product__description img,
-.product__description .rte img {
-  display: block;
-  width: min(100%, 300px) !important;
-  max-width: 300px !important;
-  height: auto !important;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media screen and (max-width: 989px) {
-  .product__description img,
-  .product__description .rte img {
-    width: min(100%, 100px) !important;
-    max-width: 100px !important;
-  }
-}
-
 .rte ul {
   padding-left: 2rem;
 }

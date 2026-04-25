@@ -6,12 +6,14 @@
         assign second_img_position = second_img_position | plus: 1
       -%}
   <img
-       srcset="{%- if product_card_product.featured_media.width >= 100 -%}{{ product_card_product.featured_media | image_url: width: 100, format: 'webp' }} 100w,{%- endif -%}
-            {%- if product_card_product.featured_media.width >= 165 -%}{{ product_card_product.featured_media | image_url: width: 165, format: 'webp' }} 165w,{%- endif -%}
-            {%- if product_card_product.featured_media.width >= 240 -%}{{ product_card_product.featured_media | image_url: width: 240, format: 'webp' }} 240w,{%- endif -%}
-            {%- if product_card_product.featured_media.width >= 300 -%}{{ product_card_product.featured_media | image_url: width: 300, format: 'webp' }} 300w{%- endif -%}"
-       src="{{ product_card_product.featured_media | image_url: width: 100, format: 'webp' }}"
-       sizes="(min-width: 990px) 300px, 100px"
+       srcset="{%- if product_card_product.featured_media.width >= 165 -%}{{ product_card_product.featured_media | image_url: width: 165, format: 'webp' }} 165w,{%- endif -%}
+               {%- if product_card_product.featured_media.width >= 240 -%}{{ product_card_product.featured_media | image_url: width: 240, format: 'webp' }} 240w,{%- endif -%}
+               {%- if product_card_product.featured_media.width >= 320 -%}{{ product_card_product.featured_media | image_url: width: 320, format: 'webp' }} 320w,{%- endif -%}
+               {%- if product_card_product.featured_media.width >= 400 -%}{{ product_card_product.featured_media | image_url: width: 400, format: 'webp' }} 400w,{%- endif -%}
+               {%- if product_card_product.featured_media.width >= 550 -%}{{ product_card_product.featured_media | image_url: width: 550, format: 'webp' }} 550w,{%- endif -%}
+               {%- if product_card_product.featured_media.width >= 800 -%}{{ product_card_product.featured_media | image_url: width: 800, format: 'webp' }} 800w{%- endif -%}"
+       src="{{ product_card_product.featured_media | image_url: width: 400, format: 'webp' }}"
+       sizes="(min-width: {{ settings.container_lg_width }}px) {{ settings.container_lg_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
        alt="{{ product_card_product.featured_media.alt | escape }}"
        loading="lazy"
        class="motion-reduce"
@@ -23,12 +25,14 @@
 
   {%- if product_card_product.media[second_img_position] != nil and show_secondary_image -%}
   <img
-       srcset="{%- if product_card_product.media[second_img_position].width >= 100 -%}{{ product_card_product.media[second_img_position] | image_url: width: 100, format: 'webp' }} 100w,{%- endif -%}
-            {%- if product_card_product.media[second_img_position].width >= 165 -%}{{ product_card_product.media[second_img_position] | image_url: width: 165, format: 'webp' }} 165w,{%- endif -%}
-            {%- if product_card_product.media[second_img_position].width >= 240 -%}{{ product_card_product.media[second_img_position] | image_url: width: 240, format: 'webp' }} 240w,{%- endif -%}
-            {%- if product_card_product.media[second_img_position].width >= 300 -%}{{ product_card_product.media[second_img_position] | image_url: width: 300, format: 'webp' }} 300w{%- endif -%}"
-       src="{{ product_card_product.media[second_img_position] | image_url: width: 100, format: 'webp' }}"
-       sizes="(min-width: 990px) 300px, 100px"
+       srcset="{%- if product_card_product.media[second_img_position].width >= 165 -%}{{ product_card_product.media[second_img_position] | image_url: width: 165, format: 'webp' }} 165w,{%- endif -%}
+               {%- if product_card_product.media[second_img_position].width >= 240 -%}{{ product_card_product.media[second_img_position] | image_url: width: 240, format: 'webp' }} 240w,{%- endif -%}
+               {%- if product_card_product.media[second_img_position].width >= 320 -%}{{ product_card_product.media[second_img_position] | image_url: width: 320, format: 'webp' }} 320w,{%- endif -%}
+               {%- if product_card_product.media[second_img_position].width >= 400 -%}{{ product_card_product.media[second_img_position] | image_url: width: 400, format: 'webp' }} 400w,{%- endif -%}
+               {%- if product_card_product.media[second_img_position].width >= 550 -%}{{ product_card_product.media[second_img_position] | image_url: width: 550, format: 'webp' }} 550w,{%- endif -%}
+               {%- if product_card_product.media[second_img_position].width >= 800 -%}{{ product_card_product.media[second_img_position] | image_url: width: 800, format: 'webp' }} 800w{%- endif -%}"
+       src="{{ product_card_product.media[second_img_position] | image_url: width: 400, format: 'webp' }}"
+       sizes="(min-width: {{ settings.container_lg_width }}px) {{ settings.container_lg_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
        alt="{{ product_card_product.media[second_img_position].alt | escape }}"
        loading="lazy"
        class="motion-reduce secondary__img"

@@ -49,19 +49,3 @@
 .accordion__content img {
   max-width: 100%;
 }
-
-.product .accordion__content img {
-  width: min(100%, 300px) !important;
-  max-width: 300px !important;
-  height: auto !important;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media screen and (max-width: 989px) {
-  .product .accordion__content img {
-    width: min(100%, 100px) !important;
-    max-width: 100px !important;
-  }
-}
