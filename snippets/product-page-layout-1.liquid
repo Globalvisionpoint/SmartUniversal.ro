@@ -16,14 +16,6 @@
   endif
 -%}
 
-{%- assign lcp_featured = product.selected_or_first_available_variant.featured_media -%}
-{%- if lcp_featured != null and lcp_featured.media_type == 'image' -%}
-  <link rel="preload" as="image"
-    href="{{ lcp_featured | image_url: width: 800, format: 'webp' }}"
-    imagesrcset="{{ lcp_featured | image_url: width: 400, format: 'webp' }} 493w, {{ lcp_featured | image_url: width: 800, format: 'webp' }} 900w"
-    imagesizes="(min-width: 990px) 50vw, 100vw"
-    fetchpriority="high">
-{%- endif -%}
 <media-gallery
   id="MediaGallery-{{ section.id }}"
   role="region"
