@@ -61,7 +61,6 @@
 
     <script src="{{ 'slideshow.js' | asset_url }}" defer="defer"></script>
 
-    <script src="{{ 'tab-active.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'counter-up.js' | asset_url }}" defer="defer"></script>
 
     {%- unless template.name == 'product' -%}
@@ -350,8 +349,10 @@
       }
     {% endstyle %}
 
-    {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
-    {{ 'glightbox.min.css' | asset_url | stylesheet_tag }}
+    <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}" media="print" onload="this.media='all'">
+    <noscript>{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}</noscript>
+    <link rel="stylesheet" href="{{ 'glightbox.min.css' | asset_url }}" media="print" onload="this.media='all'">
+    <noscript>{{ 'glightbox.min.css' | asset_url | stylesheet_tag }}</noscript>
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {%- if theme_rtl -%}
       {{ 'rtl.css' | asset_url | stylesheet_tag }}

@@ -783,9 +783,12 @@
                       {%- endif -%}
                     </div>
                   </aside>
-                  {{ 'product-card.css' | asset_url | stylesheet_tag }}
-                  {{ 'slideshow-controls.css' | asset_url | stylesheet_tag }}
-                  {{ 'complementary-product.css' | asset_url | stylesheet_tag }}
+                  <link rel="stylesheet" href="{{ 'product-card.css' | asset_url }}" media="print" onload="this.media='all'">
+                  <noscript>{{ 'product-card.css' | asset_url | stylesheet_tag }}</noscript>
+                  <link rel="stylesheet" href="{{ 'slideshow-controls.css' | asset_url }}" media="print" onload="this.media='all'">
+                  <noscript>{{ 'slideshow-controls.css' | asset_url | stylesheet_tag }}</noscript>
+                  <link rel="stylesheet" href="{{ 'complementary-product.css' | asset_url }}" media="print" onload="this.media='all'">
+                  <noscript>{{ 'complementary-product.css' | asset_url | stylesheet_tag }}</noscript>
                 </product-recommendations>
               </div>
           {%- endcase -%}
