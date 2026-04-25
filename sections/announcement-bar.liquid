@@ -13,8 +13,22 @@
     endfor
   endif
 %}
-{%- if false and section.settings.announcement_enable and section.blocks.size >= 1 -%}
+{%- if section.settings.announcement_enable and section.blocks.size >= 1 -%}
   <script src="{{ 'announcement-bar.js' | asset_url }}" defer="defer"></script>
+  <style>
+    #shopify-section-announcement-bar {
+      visibility: hidden;
+    }
+    html.announcement-ready #shopify-section-announcement-bar {
+      visibility: visible;
+    }
+  </style>
+  <script>
+    window.addEventListener('load', function () {
+      document.documentElement.classList.add('announcement-ready');
+    });
+  </script>
+  <noscript><style>#shopify-section-announcement-bar{visibility:visible}</style></noscript>
   <link rel="stylesheet" href="{{ 'announcement-bar.css' | asset_url }}" media="print" onload="this.media='all'">
   <noscript>{{ 'announcement-bar.css' | asset_url | stylesheet_tag }}</noscript>
   <link rel="stylesheet" href="{{ 'announcement-timer.css' | asset_url }}" media="print" onload="this.media='all'">
