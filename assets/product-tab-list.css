@@ -75,10 +75,28 @@
   border-radius: 2rem;
 }
 
+.tab_content .youtube-lite-wrapper {
+  display: block;
+  width: min(100%, 96rem) !important;
+  max-width: 100% !important;
+  padding-top: 56.25% !important;
+  margin: 0 auto 2.4rem;
+  border-radius: 2rem !important;
+}
+
+.tab_content .youtube-lite-wrapper iframe,
+.tab_content .youtube-lite-wrapper .youtube-lite-play {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
 @media only screen and (max-width: 749px) {
   .tab_content iframe[src*="youtube.com"],
   .tab_content iframe[src*="youtube-nocookie.com"],
-  .tab_content iframe[src*="youtu.be"] {
+  .tab_content iframe[src*="youtu.be"],
+  .tab_content .youtube-lite-wrapper {
     border-radius: 1.5rem;
   }
 }
