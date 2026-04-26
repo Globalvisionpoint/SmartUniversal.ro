@@ -146,7 +146,7 @@ predictive-search.search-modal__form {
 @media only screen and (min-width: 992px) {
   .header__menu--bar .header__menu_ul {
     gap: 0.7rem;
-    padding: 0.08rem 0;
+    padding: 0.05rem 0;
   }
 
   .header__menu--bar .header__menu_li,
@@ -160,8 +160,8 @@ predictive-search.search-modal__form {
     align-items: center;
     gap: 0.45rem;
     justify-content: center;
-    padding: 0.32rem 1.12rem;
-    min-height: 3.2rem;
+    padding: 0.24rem 1.12rem;
+    min-height: 3.05rem;
     border-radius: 0 0 1.5rem 1.5rem;
     border: 0;
     background: rgb(var(--color-button));
