@@ -4,19 +4,14 @@ theme.footerSection = (function () {
     const mobileNavigateBar = document.querySelector(
       ".mobile__navigation--bar"
     );
-    if (mobileNavigateBar) {
+    const updateMobileNavigateBarHeight = function () {
+      if (!mobileNavigateBar) return;
+
       document.documentElement.style.setProperty(
         "--mobile-navigation-bar-height",
         `${mobileNavigateBar.clientHeight}px`
       );
-
-      window.addEventListener("resize", function () {
-        document.documentElement.style.setProperty(
-          "--mobile-navigation-bar-height",
-          `${mobileNavigateBar.clientHeight}px`
-        );
-      });
-    }
+    };
     // Footer widget column collapsible
     const isMobileFooterViewport = function () {
       return window.matchMedia("(max-width: 989px)").matches;
@@ -103,8 +98,11 @@ theme.footerSection = (function () {
       footerWidgetAccordion();
     }
     keepNewsletterOpen();
-    // On resize, re-apply always-open for newsletter on mobile/tablet
-    window.addEventListener("resize", function () {
+
+    const onFooterResize = function () {
+      updateMobileNavigateBarHeight();
+
+      // Re-apply always-open for newsletter on mobile/tablet.
       document.querySelectorAll('.footer__widget--newsletter').forEach(function (item) {
         if (isMobileFooterViewport()) {
           item.classList.add('active');
@@ -119,18 +117,25 @@ theme.footerSection = (function () {
           if (toggle) toggle.style.display = '';
         }
       });
-    });
-    window.addEventListener("resize", function () {
+
       document.querySelectorAll(".footer__widget").forEach(function (item) {
         if (!isMobileFooterViewport()) {
           item.classList.remove("active");
           item.querySelector(".footer__widget_inner").style.display = "";
         }
       });
+
       if (accordion) {
         footerWidgetAccordion();
       }
-    });
+    };
+
+    updateMobileNavigateBarHeight();
+    if (window.__themeFooterResizeHandler) {
+      window.removeEventListener("resize", window.__themeFooterResizeHandler);
+    }
+    window.__themeFooterResizeHandler = onFooterResize;
+    window.addEventListener("resize", window.__themeFooterResizeHandler);
   }
   return footer;
 })();

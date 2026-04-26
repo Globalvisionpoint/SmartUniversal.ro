@@ -92,12 +92,18 @@ theme.headerSection = (function () {
       });
 
       /* Remove Mobile Menu Open Class & Hide Mobile Menu When Window Width in More Than 991 */
-      window.addEventListener("resize", function () {
+      const onMobileMenuResize = function () {
         if (window.outerWidth >= 992) {
           offcanvasHeader.classList.remove("open");
           body.style.overflowY = null;
         }
-      });
+      };
+
+      if (window.__themeMobileMenuResizeHandler) {
+        window.removeEventListener("resize", window.__themeMobileMenuResizeHandler);
+      }
+      window.__themeMobileMenuResizeHandler = onMobileMenuResize;
+      window.addEventListener("resize", window.__themeMobileMenuResizeHandler);
     };
     /* Mobile Menu Active */
     MobileMenu();

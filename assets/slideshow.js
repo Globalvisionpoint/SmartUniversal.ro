@@ -76,10 +76,17 @@ theme.SlideShow = (function () {
         );
       }
     };
-    slideThumbHeight();
-    window.addEventListener("resize", () => {
+
+    const onSlideShowResize = () => {
       slideThumbHeight();
-    });
+    };
+
+    slideThumbHeight();
+    if (e._slideShowResizeHandler) {
+      window.removeEventListener("resize", e._slideShowResizeHandler);
+    }
+    e._slideShowResizeHandler = onSlideShowResize;
+    window.addEventListener("resize", e._slideShowResizeHandler);
   }
   return Slider;
 })();
