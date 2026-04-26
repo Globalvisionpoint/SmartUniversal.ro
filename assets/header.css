@@ -146,7 +146,7 @@ predictive-search.search-modal__form {
 @media only screen and (min-width: 992px) {
   .header__menu--bar .header__menu_ul {
     gap: 0.7rem;
-    padding: 0.3rem 0;
+    padding: 0.16rem 0;
   }
 
   .header__menu--bar .header__menu_li,
@@ -160,14 +160,14 @@ predictive-search.search-modal__form {
     align-items: center;
     gap: 0.45rem;
     justify-content: center;
-    padding: 0.62rem 1.35rem;
-    min-height: 4rem;
+    padding: 0.45rem 1.22rem;
+    min-height: 3.55rem;
     border-radius: 0 0 1.5rem 1.5rem;
     border: 0;
     background: rgb(var(--color-button));
     color: rgb(var(--color-button-text));
     font-family: var(--font-heading-family);
-    font-size: 1.05rem;
+    font-size: 0.98rem;
     font-weight: 700;
     line-height: 1.1;
     text-transform: uppercase;
