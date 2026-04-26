@@ -119,29 +119,18 @@ predictive-search.search-modal__form {
   .header__right--info .welcome--text-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
-    padding: 0.45rem 1.1rem;
-    border-radius: 0 0 1rem 1rem;
-    background: rgba(var(--color-button), var(--alpha-button-background));
-    color: rgb(var(--color-button-text)) !important;
+    gap: 0.5rem;
+    color: rgba(var(--color-button), var(--alpha-button-background)) !important;
     font-family: var(--font-heading-family);
     font-size: 0.95rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     text-decoration: none;
-    transition: filter 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
-  }
-
-  .header__right--info .welcome--text-link:hover {
-    filter: brightness(1.08);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    color: rgb(var(--color-button-text)) !important;
   }
 
   .header__right--info .welcome--text-icon svg {
-    fill: currentColor;
+    fill: rgba(var(--color-button), var(--alpha-button-background));
     width: 1.4rem;
     height: 1.4rem;
   }
