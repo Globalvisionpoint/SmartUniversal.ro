@@ -140,3 +140,71 @@ span.social-links {
     display: flex;
     flex-wrap: wrap;
 }
+
+/* Product page share button redesign */
+.product__info-container .social__share_box .share-button {
+  margin-left: 0.6rem;
+  padding: 0;
+}
+
+.product__info-container .social__share_box .share-button details {
+  width: auto;
+}
+
+.product__info-container .social__share_box .share-button .share-button__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--color-foreground), 0.2);
+  background: linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%);
+  color: #1f2937;
+  font-weight: 700;
+  font-size: 1.35rem;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.product__info-container .social__share_box .share-button .share-button__button:hover,
+.product__info-container .social__share_box details[open] > .share-button__button {
+  transform: translateY(-1px);
+  border-color: rgba(220, 38, 38, 0.35);
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.18);
+  color: #111827;
+}
+
+.product__info-container .social__share_box .share-button .share-button__button .icon-share {
+  margin-right: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.product__info-container .social__share_box .share-button__fallback {
+  top: calc(100% + 0.7rem);
+  left: 0;
+  min-width: 30rem;
+  border-radius: 12px;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.2);
+  border: 1px solid rgba(var(--color-foreground), 0.16);
+  overflow: hidden;
+}
+
+@media screen and (max-width: 749px) {
+  .product__info-container .social__share_box .share-button {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .product__info-container .social__share_box .share-button .share-button__button {
+    width: 100%;
+    justify-content: center;
+    font-size: 1.25rem;
+  }
+
+  .product__info-container .social__share_box .share-button__fallback {
+    min-width: min(92vw, 30rem);
+  }
+}
