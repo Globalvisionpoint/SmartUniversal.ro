@@ -160,7 +160,7 @@ predictive-search.search-modal__form {
     align-items: center;
     gap: 0.45rem;
     padding: 0.78rem 1.35rem;
-    border-radius: 1.4rem;
+    border-radius: 0 0 1.4rem 1.4rem;
     border: 1px solid #b91c1c;
     background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
     color: #ffffff;
