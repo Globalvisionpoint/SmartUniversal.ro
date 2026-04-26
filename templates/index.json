@@ -97,7 +97,7 @@
             "content_alignment": "start",
             "button_label": "Accesează categoria!",
             "button_icon": true,
-            "button_link": "shopify://collections/auto-moto-copie",
+            "button_link": "shopify://collections/decoratiuni",
             "enble_entire_link": false,
             "button_type": "primary",
             "button_size": "small",
@@ -240,7 +240,7 @@
         "template--14647252844657__17a17a4f-546e-45d1-a0ef-66ae411bd989-featured_collection-3": {
           "type": "featured_collection",
           "settings": {
-            "collection": "auto-moto-copie",
+            "collection": "decoratiuni",
             "image": "shopify://shop_images/genereaza-o-imagine-cu-3-produse-din-categoria-decoratiuni-fara-decor-pentru-magazinul-meu-online-sa-pun-ca-iconita-la-categorie.png"
           }
         }
@@ -431,7 +431,7 @@
             "title": "",
             "text": "",
             "link_label": "Decoratiuni",
-            "link": "shopify://collections/auto-moto-copie",
+            "link": "shopify://collections/decoratiuni",
             "enble_entire_link": true,
             "button_type": "primary",
             "button_size": "small",
@@ -801,7 +801,7 @@
           "type": "product_tab",
           "settings": {
             "title": "Decoratiuni",
-            "collection": "auto-moto-copie",
+            "collection": "decoratiuni",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
