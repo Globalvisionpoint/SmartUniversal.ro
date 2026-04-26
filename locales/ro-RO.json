@@ -272,8 +272,8 @@
       "preorder": "Comandă în avans",
       "out_of_stock": "Indisponibil în stoc",
       "type": "Tip",
-      "barcode": "Cod de bare",
-      "sku": "Cod de bare",
+      "barcode": "Cod de produs",
+      "sku": "Cod de produs",
       "availability": "Disponibilitate",
       "discount_label": "Salvare"
     },
