@@ -141,7 +141,7 @@
             "content_alignment": "start",
             "button_label": "Accesează categoria!",
             "button_icon": true,
-            "button_link": "shopify://collections/casa-copie",
+            "button_link": "shopify://collections/jucarii",
             "enble_entire_link": false,
             "button_type": "primary",
             "button_size": "small",
@@ -233,7 +233,7 @@
         "f13d088a-3e0a-4f8c-8ad2-dd1602b646e9": {
           "type": "featured_collection",
           "settings": {
-            "collection": "casa-copie",
+            "collection": "jucarii",
             "image": "shopify://shop_images/genereaza-o-imagine-cu-3-produse-din-categoria-jucarii-pentru-copii-fara-decor-pentru-magazinul-meu-online-sa-pun-ca-iconita-la-categorie.png"
           }
         },
@@ -371,7 +371,7 @@
             "title": "",
             "text": "",
             "link_label": "Jucarii",
-            "link": "shopify://collections/casa-copie",
+            "link": "shopify://collections/jucarii",
             "enble_entire_link": true,
             "button_type": "primary",
             "button_size": "small",
@@ -827,7 +827,7 @@
           "type": "product_tab",
           "settings": {
             "title": "Jucarii",
-            "collection": "casa-copie",
+            "collection": "jucarii",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
