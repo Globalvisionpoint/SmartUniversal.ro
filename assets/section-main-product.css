@@ -605,7 +605,7 @@ variant-selects {
 }
 
 .product .price__box_wrapper .price--on-sale .price-item--regular {
-  color: #595959;
+  color: #000000;
   font-size: clamp(2rem, 3vw, 2.7rem);
   font-weight: 500;
   line-height: 1;
@@ -651,6 +651,8 @@ variant-selects {
 
   .product .price__box_wrapper .price--on-sale .price-item--regular {
     font-size: 1.8rem;
+    color: #000000;
+    text-decoration-color: #e21c23;
   }
 }
 

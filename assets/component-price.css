@@ -83,7 +83,8 @@
 
 .price--on-sale .price-item--regular {
   text-decoration: line-through;
-  color: rgba(var(--color-foreground), 0.65);
+  color: #000000;
+  text-decoration-color: #e21c23;
 }
 .unit-price {
   font-size: 13px;

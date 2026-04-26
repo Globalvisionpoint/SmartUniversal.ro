@@ -169,54 +169,6 @@
           font-display: swap;
           unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+20A0-20AB, U+20AD-20C0;
         }
-
-        @font-face {
-          font-family: 'DM Sans';
-          src: url('{{ 'magazin-manrope-latin.woff2' | asset_url }}') format('woff2');
-          font-weight: 400;
-          font-style: normal;
-          font-display: swap;
-        }
-
-        @font-face {
-          font-family: 'Inter';
-          src: url('{{ 'magazin-manrope-latin.woff2' | asset_url }}') format('woff2');
-          font-weight: 400;
-          font-style: normal;
-          font-display: swap;
-        }
-
-        @font-face {
-          font-family: 'Questrial';
-          src: url('{{ 'magazin-outfit-latin.woff2' | asset_url }}') format('woff2');
-          font-weight: 700;
-          font-style: normal;
-          font-display: swap;
-        }
-
-        @font-face {
-          font-family: 'Be Vietnam Pro';
-          src: url('{{ 'magazin-outfit-latin.woff2' | asset_url }}') format('woff2');
-          font-weight: 700;
-          font-style: normal;
-          font-display: swap;
-        }
-
-        @font-face {
-          font-family: 'Playfair Display';
-          src: url('{{ 'magazin-outfit-latin.woff2' | asset_url }}') format('woff2');
-          font-weight: 700;
-          font-style: normal;
-          font-display: swap;
-        }
-
-        @font-face {
-          font-family: 'Antic Slab';
-          src: url('{{ 'magazin-manrope-latin.woff2' | asset_url }}') format('woff2');
-          font-weight: 400;
-          font-style: normal;
-          font-display: swap;
-        }
          {%- if settings.use_custom_body_font and settings.custom_body_font != blank -%}
         {{ body_font_face }}
         {%- endif -%}
