@@ -308,6 +308,18 @@ theme.collectionSlider = (function () {
         var videoId = extractYoutubeId(noCookieSrc);
         if (!videoId) return;
 
+        var width = parseInt(frame.getAttribute('width') || '0', 10);
+        var height = parseInt(frame.getAttribute('height') || '0', 10);
+        var inferredAspectRatio = '16 / 9';
+
+        if (width > 0 && height > 0) {
+          if (height > width) {
+            inferredAspectRatio = width + ' / ' + height;
+          } else if (width === height) {
+            inferredAspectRatio = '1 / 1';
+          }
+        }
+
         if (!frame.getAttribute('title')) {
           frame.setAttribute('title', 'Video produs');
         }
@@ -358,7 +370,7 @@ theme.collectionSlider = (function () {
         wrapper.className = 'youtube-lite-wrapper';
         wrapper.style.position = 'relative';
         wrapper.style.width = '100%';
-        wrapper.style.setProperty('--youtube-aspect-ratio', '16 / 9');
+        wrapper.style.setProperty('--youtube-aspect-ratio', inferredAspectRatio);
         wrapper.style.aspectRatio = 'var(--youtube-aspect-ratio)';
         wrapper.style.backgroundSize = 'cover';
         wrapper.style.backgroundPosition = 'center';
