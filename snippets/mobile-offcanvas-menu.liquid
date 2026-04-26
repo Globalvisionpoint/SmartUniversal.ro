@@ -122,6 +122,43 @@
             word-break: break-word;
           }
 
+          /* Mobile MAIN menu items as full-width buttons */
+          .mobile__main-menu--list .offcanvas__menu_ul {
+            padding: 1.2rem;
+          }
+
+          .mobile__main-menu--list .offcanvas__menu_li,
+          .mobile__main-menu--list .offcanvas__menu_li:first-child {
+            border: 0;
+            margin: 0 0 0.9rem;
+          }
+
+          .mobile__main-menu--list .offcanvas__menu_li > a.offcanvas__menu_item:not(.header__actions_btn) {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            width: 100%;
+            min-height: 4.2rem;
+            padding: 0.9rem 1.4rem;
+            border: 0;
+            border-radius: 0 0 1.2rem 1.2rem;
+            background: rgba(var(--color-button), var(--alpha-button-background));
+            color: rgb(var(--color-button-text)) !important;
+            font-family: var(--font-heading-family);
+            font-size: 1.45rem;
+            font-weight: 700;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+          }
+
+          .mobile__main-menu--list .offcanvas__menu_li > a.offcanvas__menu_item:not(.header__actions_btn):hover {
+            filter: brightness(1.08);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          }
+
           /* Mobile categories menu as full-width buttons */
           .mobile__categories--list .offcanvas__menu_ul {
             padding: 1.2rem;
