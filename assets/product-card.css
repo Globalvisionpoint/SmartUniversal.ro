@@ -301,7 +301,7 @@
 }
 
 .product__card__price.price--on-sale .price-item--regular {
-  color: #000000;
+  color: rgba(var(--color-foreground), 0.65);
   font-weight: 400;
   text-decoration-line: line-through;
   text-decoration-color: #e21c23;
@@ -883,7 +883,7 @@ button.product__card__actions__btn.loading {
 
 .product__card .product__card__price.price--on-sale .price-item--regular {
   font-size: 1.15rem;
-  color: #000000;
+  color: rgba(var(--color-foreground), 0.65);
   text-decoration-color: #e21c23;
 }
 
