@@ -93,14 +93,14 @@
         assign seo_description = shop.description | strip_html
       endif
 
-      if seo_description != blank
-        assign seo_description = seo_description | strip_newlines | replace: '  ', ' ' | strip | truncate: 160
+      if seo_description == blank
+        assign seo_description = shop.name | default: 'Smart Universal'
       endif
+
+      assign seo_description = seo_description | strip_newlines | replace: '  ', ' ' | strip | truncate: 160
     -%}
 
-    {% if seo_description != blank %}
-      <meta name="description" content="{{ seo_description | escape }}">
-    {% endif %}
+    <meta name="description" content="{{ seo_description | escape }}">
 
     {% render 'meta-tags' %}
 
