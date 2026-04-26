@@ -218,6 +218,10 @@ theme.collectionSlider = (function () {
     };
 
     slideThumbHeight();
+    if (e._slideThumbResizeHandler) {
+      window.removeEventListener("resize", e._slideThumbResizeHandler);
+    }
+    e._slideThumbResizeHandler = onResizeSlideThumbHeight;
     window.addEventListener("resize", onResizeSlideThumbHeight);
   }
   return sliderProduct;
