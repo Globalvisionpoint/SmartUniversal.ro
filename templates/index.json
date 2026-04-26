@@ -119,7 +119,7 @@
             "content_alignment": "start",
             "button_label": "Accesează categoria!",
             "button_icon": true,
-            "button_link": "shopify://collections/animale-copie",
+            "button_link": "shopify://collections/gradina",
             "enble_entire_link": false,
             "button_type": "primary",
             "button_size": "small",
@@ -226,7 +226,7 @@
         "f13f12bf-4279-4bfa-a627-9399b14440ba": {
           "type": "featured_collection",
           "settings": {
-            "collection": "animale-copie",
+            "collection": "gradina",
             "image": "shopify://shop_images/genereaza-o-imagine-cu-3-produse-din-categoria-gradina-fara-decor-pentru-magazinul-meu-online-sa-pun-ca-iconita-la-categorie.png"
           }
         },
@@ -451,7 +451,7 @@
             "title": "",
             "text": "",
             "link_label": "Gradina",
-            "link": "shopify://collections/animale-copie",
+            "link": "shopify://collections/gradina",
             "enble_entire_link": true,
             "button_type": "primary",
             "button_size": "small",
@@ -670,7 +670,7 @@
         "desktop_content_position": "top_left",
         "collection_card_radius": false,
         "card_color_scheme": "accent-1",
-        "collection": "animale-copie",
+        "collection": "gradina",
         "products_to_show": 12,
         "product_column": "5",
         "product_column_laptop": "4",
@@ -814,7 +814,7 @@
           "type": "product_tab",
           "settings": {
             "title": "Gradina",
-            "collection": "animale-copie",
+            "collection": "gradina",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
