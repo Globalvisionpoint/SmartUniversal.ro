@@ -68,7 +68,7 @@
   display: block;
   width: min(100%, 96rem);
   max-width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: auto;
   height: auto;
   margin: 0 auto 2.4rem;
   border: 0;
@@ -79,7 +79,7 @@
   display: block;
   width: min(100%, 96rem) !important;
   max-width: 100% !important;
-  aspect-ratio: 16 / 9 !important;
+  aspect-ratio: var(--youtube-aspect-ratio, 16 / 9) !important;
   height: auto !important;
   min-height: 0 !important;
   padding-top: 0 !important;

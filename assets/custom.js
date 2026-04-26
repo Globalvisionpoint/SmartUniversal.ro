@@ -334,6 +334,13 @@ theme.collectionSlider = (function () {
                 return;
               }
 
+              if (image.naturalWidth > 0 && image.naturalHeight > 0) {
+                wrapper.style.setProperty(
+                  '--youtube-aspect-ratio',
+                  image.naturalWidth + ' / ' + image.naturalHeight
+                );
+              }
+
               wrapper.style.backgroundImage = "url('" + posterUrl + "')";
             };
 
@@ -351,7 +358,8 @@ theme.collectionSlider = (function () {
         wrapper.className = 'youtube-lite-wrapper';
         wrapper.style.position = 'relative';
         wrapper.style.width = '100%';
-        wrapper.style.aspectRatio = '16 / 9';
+        wrapper.style.setProperty('--youtube-aspect-ratio', '16 / 9');
+        wrapper.style.aspectRatio = 'var(--youtube-aspect-ratio)';
         wrapper.style.backgroundSize = 'cover';
         wrapper.style.backgroundPosition = 'center';
         wrapper.style.borderRadius = '10px';
