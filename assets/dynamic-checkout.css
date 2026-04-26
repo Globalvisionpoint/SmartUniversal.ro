@@ -80,7 +80,7 @@ button.button__notify--product {
   min-height: 5.3rem;
   padding: 0 1.5rem 0 5.3rem !important;
   border: 1px solid rgba(255, 255, 255, 0.14) !important;
-  border-radius: 1.5rem !important;
+  border-radius: 0 0 1.5rem 1.5rem !important;
   background: linear-gradient(135deg, #e22038 0%, #cf1d38 52%, #bb1732 100%) !important;
   color: #ffffff !important;
   font-size: 1.08rem;
