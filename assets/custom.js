@@ -212,10 +212,13 @@ theme.collectionSlider = (function () {
         );
       }
     };
-    slideThumbHeight();
-    window.addEventListener("resize", () => {
+
+    const onResizeSlideThumbHeight = () => {
       slideThumbHeight();
-    });
+    };
+
+    slideThumbHeight();
+    window.addEventListener("resize", onResizeSlideThumbHeight);
   }
   return sliderProduct;
 })();

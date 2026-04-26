@@ -124,8 +124,6 @@
 .product__review_inner .spr-summary-actions > a {
     background: rgba(var(--color-button),var(--alpha-button-background));
     color: rgba(var(--color-button-text));
-    box-shadow: ;
-    var(--duration-short) animation-timing-function: ease;
     font-size: calc(var(--button-font-size) * 1.8rem);
     letter-spacing: var(--button-letter-spacing);
     border-radius: 5px;
