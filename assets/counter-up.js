@@ -1,13 +1,12 @@
 theme.counterup = (function () {
   function funfact(e) {
-    let sectionID = e.dataset.sectionId;
     const wrapper = document.getElementById(`${e.id}`);
     if (wrapper) {
       const counters = wrapper.querySelectorAll(".js-counter");
       const duration = 1000;
 
       let isCounted = false;
-      document.addEventListener("scroll", function () {
+      const onScroll = function () {
         const wrapperPos = wrapper.offsetTop - window.innerHeight;
         if (!isCounted && window.scrollY > wrapperPos) {
           counters.forEach((counter) => {
@@ -25,8 +24,12 @@ theme.counterup = (function () {
             }, 1);
           });
           isCounted = true;
+          document.removeEventListener("scroll", onScroll);
         }
-      });
+      };
+
+      document.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
     }
   }
   return funfact;

@@ -3,21 +3,21 @@ theme.headerSticky = (function () {
     const headerStickyWrapper = document.querySelector("header");
     const headerStickyTargetList = document.querySelectorAll(".header__sticky");
 
-    if (headerStickyTargetList.length > 0) {
-      let headerHeight = headerStickyWrapper.clientHeight;
-      headerStickyTargetList.forEach((headerStickyTarget) => {
-        window.addEventListener("scroll", function () {
-          let StickyTargetElement = TopOffset(headerStickyWrapper);
-          let TargetElementTopOffset = StickyTargetElement.top;
-
-          if (window.scrollY > TargetElementTopOffset) {
-            headerStickyTarget.classList.add("sticky");
-          } else {
-            headerStickyTarget.classList.remove("sticky");
-          }
-        });
-      });
+    if (!headerStickyWrapper || headerStickyTargetList.length === 0) {
+      return;
     }
+
+    const updateStickyState = function () {
+      const targetElementTopOffset = TopOffset(headerStickyWrapper).top;
+      const shouldStick = window.scrollY > targetElementTopOffset;
+
+      headerStickyTargetList.forEach((headerStickyTarget) => {
+        headerStickyTarget.classList.toggle("sticky", shouldStick);
+      });
+    };
+
+    updateStickyState();
+    window.addEventListener("scroll", updateStickyState, { passive: true });
   }
   return ScrollSticky;
 })();
