@@ -316,18 +316,51 @@ theme.collectionSlider = (function () {
         frame.setAttribute('loading', 'lazy');
         frame.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
 
+        function applyBestYoutubePoster() {
+          var posterSources = [
+            'https://i.ytimg.com/vi/' + videoId + '/maxresdefault.jpg',
+            'https://i.ytimg.com/vi/' + videoId + '/hq720.jpg',
+            'https://i.ytimg.com/vi/' + videoId + '/mqdefault.jpg',
+            'https://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg'
+          ];
+
+          function tryPoster(index) {
+            if (index >= posterSources.length) return;
+
+            var posterUrl = posterSources[index];
+            var image = new Image();
+
+            image.onload = function () {
+              if (image.naturalWidth <= 120) {
+                tryPoster(index + 1);
+                return;
+              }
+
+              wrapper.style.backgroundImage = "url('" + posterUrl + "')";
+            };
+
+            image.onerror = function () {
+              tryPoster(index + 1);
+            };
+
+            image.src = posterUrl;
+          }
+
+          tryPoster(0);
+        }
+
         var wrapper = document.createElement('div');
         wrapper.className = 'youtube-lite-wrapper';
         wrapper.style.position = 'relative';
         wrapper.style.width = '100%';
         wrapper.style.paddingTop = ratio + '%';
-        wrapper.style.backgroundImage = "url('https://i.ytimg.com/vi/" + videoId + "/hqdefault.jpg')";
         wrapper.style.backgroundSize = 'cover';
         wrapper.style.backgroundPosition = 'center';
         wrapper.style.borderRadius = '10px';
         wrapper.style.overflow = 'hidden';
         wrapper.style.cursor = 'pointer';
         wrapper.style.maxWidth = '100%';
+        applyBestYoutubePoster();
 
         var play = document.createElement('button');
         play.type = 'button';
