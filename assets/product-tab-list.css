@@ -79,7 +79,10 @@
   display: block;
   width: min(100%, 96rem) !important;
   max-width: 100% !important;
-  padding-top: 56.25% !important;
+  aspect-ratio: 16 / 9 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding-top: 0 !important;
   margin: 0 auto 2.4rem;
   border-radius: 2rem !important;
 }

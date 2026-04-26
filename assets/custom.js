@@ -308,8 +308,6 @@ theme.collectionSlider = (function () {
         var videoId = extractYoutubeId(noCookieSrc);
         if (!videoId) return;
 
-        var ratio = 56.25;
-
         if (!frame.getAttribute('title')) {
           frame.setAttribute('title', 'Video produs');
         }
@@ -353,7 +351,7 @@ theme.collectionSlider = (function () {
         wrapper.className = 'youtube-lite-wrapper';
         wrapper.style.position = 'relative';
         wrapper.style.width = '100%';
-        wrapper.style.paddingTop = ratio + '%';
+        wrapper.style.aspectRatio = '16 / 9';
         wrapper.style.backgroundSize = 'cover';
         wrapper.style.backgroundPosition = 'center';
         wrapper.style.borderRadius = '10px';
