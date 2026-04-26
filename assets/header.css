@@ -196,8 +196,9 @@ predictive-search.search-modal__form {
   .header__menu--bar .header__menu_li--active .header__menu_item {
     color: rgb(var(--color-button-text));
     background: rgb(var(--color-button));
-    box-shadow: none;
-    transform: none;
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.14);
+    transform: translateY(-1px) scale(1.01);
+    filter: brightness(1.04);
   }
 
   .header__menu--bar .header__menu_item .submenu__icon {

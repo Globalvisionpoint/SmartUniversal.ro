@@ -901,6 +901,62 @@ deferred-media {
   border-radius: var(--button-border-radius) !important;
 }
 
+/* Global hover animation for major button components */
+.button,
+.customer button,
+.shopify-challenge__button,
+.product__card--action-btn,
+.product__card-style2--action-btn,
+.share-button__button,
+.collection--button .button,
+#loadMoreBtn.button,
+.loadMoreWrapper .loadMoreBtn.button {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease, background-color 0.22s ease, color 0.22s ease;
+  will-change: transform;
+}
+
+.button:hover:not([disabled]):not(.disabled):not([aria-disabled="true"]),
+.customer button:hover:not([disabled]):not(.disabled):not([aria-disabled="true"]),
+.shopify-challenge__button:hover:not([disabled]):not(.disabled):not([aria-disabled="true"]),
+.product__card--action-btn:hover:not(.loading),
+.product__card-style2--action-btn:hover:not(.loading),
+.share-button__button:hover,
+.collection--button .button:hover,
+#loadMoreBtn.button:hover,
+.loadMoreWrapper .loadMoreBtn.button:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.14);
+  filter: brightness(1.04);
+}
+
+.button:active:not([disabled]):not(.disabled):not([aria-disabled="true"]),
+.customer button:active:not([disabled]):not(.disabled):not([aria-disabled="true"]),
+.shopify-challenge__button:active:not([disabled]):not(.disabled):not([aria-disabled="true"]),
+.product__card--action-btn:active,
+.product__card-style2--action-btn:active,
+.share-button__button:active,
+.collection--button .button:active,
+#loadMoreBtn.button:active,
+.loadMoreWrapper .loadMoreBtn.button:active {
+  transform: translateY(0) scale(0.995);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .customer button,
+  .shopify-challenge__button,
+  .product__card--action-btn,
+  .product__card-style2--action-btn,
+  .share-button__button,
+  .collection--button .button,
+  #loadMoreBtn.button,
+  .loadMoreWrapper .loadMoreBtn.button {
+    transition: none;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
 /* Button - other */
 
 .button:disabled,
