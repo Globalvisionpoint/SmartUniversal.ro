@@ -53,7 +53,7 @@
             "content_alignment": "start",
             "button_label": "Accesează categoria!",
             "button_icon": true,
-            "button_link": "shopify://collections/gradina-copie",
+            "button_link": "shopify://collections/auto-moto",
             "enble_entire_link": true,
             "button_type": "primary",
             "button_size": "small",
@@ -205,7 +205,7 @@
         "template--14647252844657__17a17a4f-546e-45d1-a0ef-66ae411bd989-featured_collection-2": {
           "type": "featured_collection",
           "settings": {
-            "collection": "gradina-copie",
+            "collection": "auto-moto",
             "image": "shopify://shop_images/categoria_auto.png"
           }
         },
@@ -471,7 +471,7 @@
             "title": "",
             "text": "",
             "link_label": "Auto-Moto",
-            "link": "shopify://collections/gradina-copie",
+            "link": "shopify://collections/auto-moto",
             "enble_entire_link": true,
             "button_type": "primary",
             "button_size": "small",
@@ -775,7 +775,7 @@
           "type": "product_tab",
           "settings": {
             "title": "Auto-Moto",
-            "collection": "gradina-copie",
+            "collection": "auto-moto",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
