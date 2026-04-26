@@ -72,8 +72,34 @@
       {%- unless page_title contains 'Smart Universal' %} &ndash; Smart Universal{% endunless -%}
     </title>
 
-    {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}">
+    {%- liquid
+      assign seo_description = page_description
+
+      if seo_description == blank and request.page_type == 'product' and product.description != blank
+        assign seo_description = product.description | strip_html
+      elsif seo_description == blank and request.page_type == 'collection' and collection.description != blank
+        assign seo_description = collection.description | strip_html
+      elsif seo_description == blank and request.page_type == 'article'
+        if article.excerpt != blank
+          assign seo_description = article.excerpt | strip_html
+        elsif article.content != blank
+          assign seo_description = article.content | strip_html
+        endif
+      elsif seo_description == blank and request.page_type == 'page' and page.content != blank
+        assign seo_description = page.content | strip_html
+      elsif seo_description == blank and request.page_type == 'index' and shop.description != blank
+        assign seo_description = shop.description | strip_html
+      elsif seo_description == blank and shop.description != blank
+        assign seo_description = shop.description | strip_html
+      endif
+
+      if seo_description != blank
+        assign seo_description = seo_description | strip_newlines | replace: '  ', ' ' | strip | truncate: 160
+      endif
+    -%}
+
+    {% if seo_description != blank %}
+      <meta name="description" content="{{ seo_description | escape }}">
     {% endif %}
 
     {% render 'meta-tags' %}
