@@ -61,6 +61,28 @@
   border-radius: 100%;
   background: rgba(var(--color-button), var(--alpha-button-background));
 }
+
+.tab_content iframe[src*="youtube.com"],
+.tab_content iframe[src*="youtube-nocookie.com"],
+.tab_content iframe[src*="youtu.be"] {
+  display: block;
+  width: min(100%, 96rem);
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  margin: 0 auto 2.4rem;
+  border: 0;
+  border-radius: 2rem;
+}
+
+@media only screen and (max-width: 749px) {
+  .tab_content iframe[src*="youtube.com"],
+  .tab_content iframe[src*="youtube-nocookie.com"],
+  .tab_content iframe[src*="youtu.be"] {
+    border-radius: 1.5rem;
+  }
+}
+
 .product__review_inner .spr-summary-actions > a {
     background: rgba(var(--color-button),var(--alpha-button-background));
     color: rgba(var(--color-button-text));
