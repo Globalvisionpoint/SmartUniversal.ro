@@ -66,7 +66,7 @@
 .tab_content iframe[src*="youtube-nocookie.com"],
 .tab_content iframe[src*="youtu.be"] {
   display: block;
-  width: min(100%, 96rem);
+  width: min(100%, 68rem);
   max-width: 100%;
   aspect-ratio: auto;
   height: auto;
@@ -77,7 +77,7 @@
 
 .tab_content .youtube-lite-wrapper {
   display: block;
-  width: min(100%, 96rem) !important;
+  width: min(100%, 68rem) !important;
   max-width: 100% !important;
   aspect-ratio: var(--youtube-aspect-ratio, 16 / 9) !important;
   height: auto !important;
@@ -95,12 +95,29 @@
   height: 100% !important;
 }
 
+.tab_content .youtube-lite-wrapper[data-youtube-shape="square"] {
+  width: min(100%, 46rem) !important;
+}
+
+.tab_content .youtube-lite-wrapper[data-youtube-shape="portrait"] {
+  width: min(100%, 34rem) !important;
+}
+
 @media only screen and (max-width: 749px) {
   .tab_content iframe[src*="youtube.com"],
   .tab_content iframe[src*="youtube-nocookie.com"],
   .tab_content iframe[src*="youtu.be"],
   .tab_content .youtube-lite-wrapper {
+    width: min(100%, 32rem) !important;
     border-radius: 1.5rem;
+  }
+
+  .tab_content .youtube-lite-wrapper[data-youtube-shape="square"] {
+    width: min(100%, 28rem) !important;
+  }
+
+  .tab_content .youtube-lite-wrapper[data-youtube-shape="portrait"] {
+    width: min(100%, 24rem) !important;
   }
 }
 

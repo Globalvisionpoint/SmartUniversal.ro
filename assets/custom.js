@@ -326,6 +326,15 @@ theme.collectionSlider = (function () {
           }
         }
 
+        var inferredShape = 'landscape';
+        if (width > 0 && height > 0) {
+          if (height > width) {
+            inferredShape = 'portrait';
+          } else if (width === height) {
+            inferredShape = 'square';
+          }
+        }
+
         if (!frame.getAttribute('title')) {
           frame.setAttribute('title', 'Video produs');
         }
@@ -374,6 +383,7 @@ theme.collectionSlider = (function () {
 
         var wrapper = document.createElement('div');
         wrapper.className = 'youtube-lite-wrapper';
+        wrapper.dataset.youtubeShape = inferredShape;
         wrapper.style.position = 'relative';
         wrapper.style.width = '100%';
         wrapper.style.setProperty('--youtube-aspect-ratio', inferredAspectRatio);
