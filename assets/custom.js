@@ -311,12 +311,18 @@ theme.collectionSlider = (function () {
         var width = parseInt(frame.getAttribute('width') || '0', 10);
         var height = parseInt(frame.getAttribute('height') || '0', 10);
         var inferredAspectRatio = '16 / 9';
+        var hasExplicitAspectRatio = false;
 
         if (width > 0 && height > 0) {
           if (height > width) {
             inferredAspectRatio = width + ' / ' + height;
+            hasExplicitAspectRatio = true;
           } else if (width === height) {
             inferredAspectRatio = '1 / 1';
+            hasExplicitAspectRatio = true;
+          } else {
+            inferredAspectRatio = width + ' / ' + height;
+            hasExplicitAspectRatio = true;
           }
         }
 
@@ -346,7 +352,7 @@ theme.collectionSlider = (function () {
                 return;
               }
 
-              if (image.naturalWidth > 0 && image.naturalHeight > 0) {
+              if (!hasExplicitAspectRatio && image.naturalWidth > 0 && image.naturalHeight > 0) {
                 wrapper.style.setProperty(
                   '--youtube-aspect-ratio',
                   image.naturalWidth + ' / ' + image.naturalHeight
