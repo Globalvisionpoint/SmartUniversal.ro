@@ -181,16 +181,12 @@ button.footer_localization_label {
   box-shadow: 0 0 10px -5px rgba(var(--color-foreground), 0.1);
   height: 48px;
   border: none;
-  padding: 0 4rem 0 4.4rem;
+  padding: 0 4.5rem 0 5rem;
   border: 0.1rem solid rgba(var(--color-foreground), 0.1);
-  font-size: 1.5rem;
-}
-.footer__widget_inner .newsletter-form__field-wrapper input[type="email"]::placeholder {
-  font-size: 1.5rem;
 }
 .newsletter__mail--icon {
   position: absolute;
-  left: 1.3rem;
+  left: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
   line-height: 0;
@@ -202,24 +198,6 @@ button.footer_localization_label {
 }
 .newsletter__subscribe--button {
   right: 0.5rem;
-}
-@media only screen and (max-width: 749px) {
-  .footer__widget_inner .newsletter-form__field-wrapper input[type="email"] {
-    padding: 0 3.7rem 0 4rem;
-    font-size: 1.4rem;
-  }
-
-  .footer__widget_inner .newsletter-form__field-wrapper input[type="email"]::placeholder {
-    font-size: 1.4rem;
-  }
-
-  .newsletter__mail--icon {
-    left: 1.2rem;
-  }
-
-  .newsletter__subscribe--button {
-    right: 0.4rem;
-  }
 }
 .footer {
   position: relative;
