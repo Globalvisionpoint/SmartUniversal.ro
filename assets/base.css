@@ -883,6 +883,24 @@ deferred-media {
 .button--icon-left {
   margin-right: 0.5rem;
 }
+
+/* Unified button shape across storefront */
+:root {
+  --button-border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.button,
+.customer button,
+.shopify-challenge__button,
+.product__card--action-btn,
+.product__card-style2--action-btn,
+.share-button__button,
+.collection--button .button,
+#loadMoreBtn.button,
+.loadMoreWrapper .loadMoreBtn.button {
+  border-radius: var(--button-border-radius) !important;
+}
+
 /* Button - other */
 
 .button:disabled,
