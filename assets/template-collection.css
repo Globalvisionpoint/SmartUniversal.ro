@@ -626,7 +626,7 @@ button.gird__column_icon.active {
   align-items: flex-end;
 }
 
-.template-search[data-section-type="collection-product"] .product__card__price .price__regular,
+.template-search[data-section-type="collection-product"] .product__card__price:not(.price--on-sale) .price__regular,
 .template-search[data-section-type="collection-product"] .product__card__price.price--on-sale .price__sale {
   min-height: 5.4rem;
   display: flex;
@@ -645,7 +645,7 @@ button.gird__column_icon.active {
 }
 
 @media only screen and (max-width: 749px) {
-  .template-search[data-section-type="collection-product"] .product__card__price .price__regular,
+  .template-search[data-section-type="collection-product"] .product__card__price:not(.price--on-sale) .price__regular,
   .template-search[data-section-type="collection-product"] .product__card__price.price--on-sale .price__sale {
     min-height: 5rem;
   }
