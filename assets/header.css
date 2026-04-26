@@ -122,7 +122,7 @@ predictive-search.search-modal__form {
     gap: 0.5rem;
     color: rgba(var(--color-button), var(--alpha-button-background)) !important;
     font-family: var(--font-heading-family);
-    font-size: 0.95rem;
+    font-size: 1.25rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -131,8 +131,8 @@ predictive-search.search-modal__form {
 
   .header__right--info .welcome--text-icon svg {
     fill: rgba(var(--color-button), var(--alpha-button-background));
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.8rem;
+    height: 1.8rem;
   }
 
   .header__right--info .suport__contact img {
