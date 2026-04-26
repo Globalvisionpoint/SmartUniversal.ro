@@ -121,6 +121,70 @@
             padding: 15px 20px;
             word-break: break-word;
           }
+
+          /* Mobile categories menu as full-width buttons */
+          .mobile__categories--list .offcanvas__menu_ul {
+            padding: 1.2rem;
+          }
+
+          .mobile__categories--list .offcanvas__menu_li,
+          .mobile__categories--list .offcanvas__menu_li:first-child {
+            border: 0;
+            margin: 0 0 0.9rem;
+          }
+
+          .mobile__categories--list .mobile__catgory--mneu-link.offcanvas__menu_item {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            width: 100%;
+            min-height: 4.2rem;
+            padding: 0.9rem 1.4rem;
+            border: 0;
+            border-radius: 0 0 1.2rem 1.2rem;
+            background: rgba(var(--color-button), var(--alpha-button-background));
+            color: rgb(var(--color-button-text));
+            font-family: var(--font-heading-family);
+            font-size: 1.45rem;
+            font-weight: 700;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+          }
+
+          .mobile__categories--list .mobile__catgory--mneu-link.offcanvas__menu_item .categories__menu--label {
+            color: inherit;
+          }
+
+          .mobile__categories--list .mobile__catgory--mneu-link.offcanvas__menu_item .categories__menu--icon {
+            color: inherit;
+          }
+
+          .mobile__categories--list .offcanvas__sub_menu_toggle {
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3.2rem;
+            height: 3.2rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+          }
+
+          {% if theme_rtl %}
+          .mobile__categories--list .offcanvas__sub_menu_toggle {
+            left: 0.7rem;
+            right: auto;
+          }
+          {% else %}
+          .mobile__categories--list .offcanvas__sub_menu_toggle {
+            right: 0.7rem;
+            left: auto;
+          }
+          {% endif %}
+
+          .mobile__categories--list .offcanvas__sub_menu_toggle::before,
+          .mobile__categories--list .offcanvas__sub_menu_toggle::after {
+            background-color: rgb(var(--color-button-text));
+          }
           /* Mobile Sub Menu */
           .offcanvas__sub_menu {
             display: none;
