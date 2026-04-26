@@ -308,9 +308,7 @@ theme.collectionSlider = (function () {
         var videoId = extractYoutubeId(noCookieSrc);
         if (!videoId) return;
 
-        var width = parseInt(frame.getAttribute('width') || '16', 10);
-        var height = parseInt(frame.getAttribute('height') || '9', 10);
-        var ratio = width > 0 && height > 0 ? (height / width) * 100 : 56.25;
+        var ratio = 56.25;
 
         if (!frame.getAttribute('title')) {
           frame.setAttribute('title', 'Video produs');
@@ -329,7 +327,7 @@ theme.collectionSlider = (function () {
         wrapper.style.borderRadius = '10px';
         wrapper.style.overflow = 'hidden';
         wrapper.style.cursor = 'pointer';
-        wrapper.style.maxWidth = width > 16 ? width + 'px' : '100%';
+        wrapper.style.maxWidth = '100%';
 
         var play = document.createElement('button');
         play.type = 'button';
