@@ -172,9 +172,9 @@ predictive-search.search-modal__form {
     background: rgb(var(--color-button));
     color: rgb(var(--color-button-text));
     font-family: var(--font-heading-family);
-    font-size: 0.92rem;
+    font-size: 1.02rem;
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1;
     text-transform: uppercase;
     letter-spacing: 0.02em;
     box-shadow: none;
@@ -188,8 +188,8 @@ predictive-search.search-modal__form {
   .header__sticky.sticky .header__menu--bar a.header__menu_item {
     padding: 0.24rem 1.12rem !important;
     min-height: 3.05rem !important;
-    font-size: 0.92rem !important;
-    line-height: 1.1 !important;
+    font-size: 1.02rem !important;
+    line-height: 1 !important;
   }
 
   .header__menu--bar .header__menu_li:hover .header__menu_item,
