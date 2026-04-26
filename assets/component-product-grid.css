@@ -1,10 +1,5 @@
 .product-grid .grid__item {
   padding-bottom: 2rem;
-  display: flex;
-}
-
-.product-grid .grid__item > * {
-  width: 100%;
 }
 
 .product-grid.negative-margin {
