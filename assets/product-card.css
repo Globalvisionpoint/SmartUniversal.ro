@@ -927,6 +927,9 @@ button.product__card__actions__btn.loading {
   text-transform: uppercase;
   letter-spacing: 0.01em;
   transition: transform var(--duration-short) ease, box-shadow var(--duration-short) ease, filter var(--duration-short) ease;
+  will-change: auto;
+  -webkit-font-smoothing: auto;
+  text-rendering: geometricPrecision;
 }
 
 .product__card .product__card--cart-btn:hover {
@@ -957,6 +960,12 @@ button.product__card__actions__btn.loading {
   align-items: center;
   justify-content: center;
   padding: 0 1rem;
+  font-family: var(--font-body-family);
+  font-size: 1.14rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-shadow: none;
 }
 
 @media only screen and (max-width: 749px) {
