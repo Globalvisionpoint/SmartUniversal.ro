@@ -222,8 +222,8 @@
                     "
                     sizes="100vw"
                     src="{{ block.settings.image | image_url: width: 1500 }}"
-                    {%- unless lcp_image_done -%}{%- assign lcp_image_done = true -%}loading="eager" fetchpriority="high"{%- else -%}loading="lazy"{%- endunless -%}
                     alt="{{ block.settings.image.alt | escape }}"
+                      {%- if forloop.first -%}loading="eager" fetchpriority="high"{%- else -%}loading="lazy"{%- endif -%}
                     width="{{ block.settings.image.width }}"
                     height="{{ block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round }}"
                   >

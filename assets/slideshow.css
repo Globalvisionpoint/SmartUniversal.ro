@@ -236,7 +236,7 @@
   background: transparent;
   border: 0.2rem solid transparent;
   position: relative;
-  transition: var(--transition);
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .slider__pagination .swiper-pagination-bullet::before {
   position: absolute;
@@ -251,7 +251,8 @@
 }
 
 .slider__pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  border-color: rgba(var(--pagnation-color));
+  box-shadow: 0 0 0 0.2rem rgba(var(--pagnation-color));
+  transform: scale(1.05);
 }
 
 /* Slideshow 2 */
