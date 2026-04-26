@@ -158,24 +158,27 @@ span.social-links {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  padding: 0.85rem 1.15rem;
-  border-radius: 999px;
-  border: 1px solid #b91c1c;
-  background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
+  justify-content: center;
+  width: 100%;
+  min-height: 5.3rem;
+  padding: 0.9rem 1.5rem;
+  border-radius: var(--button-border-radius) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(135deg, #e22038 0%, #cf1d38 52%, #bb1732 100%);
   color: #ffffff;
   font-weight: 700;
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   line-height: 1;
   text-decoration: none;
-  box-shadow: 0 8px 18px rgba(220, 38, 38, 0.28);
+  box-shadow: 0 12px 24px rgba(201, 31, 57, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.14);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .product__info-container .social__share_box .share-button .share-button__button:hover,
 .product__info-container .social__share_box details[open] > .share-button__button {
   transform: translateY(-1px);
-  border-color: #991b1b;
-  box-shadow: 0 12px 24px rgba(185, 28, 28, 0.36);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 14px 28px rgba(185, 28, 28, 0.32);
   color: #ffffff;
 }
 
@@ -201,9 +204,9 @@ span.social-links {
   }
 
   .product__info-container .social__share_box .share-button .share-button__button {
-    width: 100%;
-    justify-content: center;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
+    min-height: 4.9rem;
+    padding: 0.8rem 1.2rem;
   }
 
   .product__info-container .social__share_box .share-button__fallback {
