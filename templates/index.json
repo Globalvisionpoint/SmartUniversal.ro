@@ -31,7 +31,7 @@
             "content_alignment": "start",
             "button_label": "Accesează categoria!",
             "button_icon": false,
-            "button_link": "shopify://collections/jucarii-copie",
+            "button_link": "shopify://collections/animale",
             "enble_entire_link": true,
             "button_type": "primary",
             "button_size": "small",
@@ -219,7 +219,7 @@
         "template--14647252844657__17a17a4f-546e-45d1-a0ef-66ae411bd989-featured_collection-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": "jucarii-copie",
+            "collection": "animale",
             "image": "shopify://shop_images/genereaza-o-imagine-fara-decor-cu-2-sau-3-produse-din-categoria-pet-animale-pentru-a-o-folosii-ca-iconita-la-categerie-in-magazinul-meu-online.png"
           }
         },
@@ -316,7 +316,7 @@
         "desktop_content_position": "middle_left",
         "collection_card_radius": true,
         "card_color_scheme": "background-2",
-        "collection": "jucarii-copie",
+        "collection": "animale",
         "products_to_show": 8,
         "product_column": "4",
         "product_column_laptop": "4",
@@ -391,7 +391,7 @@
             "title": "",
             "text": "",
             "link_label": "Animale",
-            "link": "shopify://collections/jucarii-copie",
+            "link": "shopify://collections/animale",
             "enble_entire_link": true,
             "button_type": "primary",
             "button_size": "small",
@@ -762,7 +762,7 @@
           "type": "product_tab",
           "settings": {
             "title": "Animale",
-            "collection": "jucarii-copie",
+            "collection": "animale",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
