@@ -41,6 +41,10 @@
           "type": "title",
           "settings": {}
         },
+        "sku_YfBLyt": {
+          "type": "sku",
+          "settings": {}
+        },
         "4add1bd5-3d4d-4c4e-9f65-5e23cc0e1ff4": {
           "type": "rating",
           "disabled": true,
@@ -132,6 +136,7 @@
       "block_order": [
         "d563cb6b-8466-4cf0-8cd4-34ce1b371973",
         "title",
+        "sku_YfBLyt",
         "4add1bd5-3d4d-4c4e-9f65-5e23cc0e1ff4",
         "0e3f7ebe-d784-4350-a83b-af960997d3d5",
         "price",
