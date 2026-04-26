@@ -94,6 +94,79 @@
         padding-bottom: {{ section.settings.padding_bottom }}px;
       }
     }
+
+    {%- if request.page_type == 'collection' -%}
+      [data-section-id="{{ section.id }}"][data-section-type="product-slider"] .productSlider .swiper-wrapper {
+        align-items: stretch;
+      }
+
+      [data-section-id="{{ section.id }}"][data-section-type="product-slider"] .swiper-slide {
+        height: auto;
+        display: flex;
+      }
+
+      [data-section-id="{{ section.id }}"][data-section-type="product-slider"] .swiper-slide > .product__card {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      [data-section-id="{{ section.id }}"][data-section-type="product-slider"] .product__card__content {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+      }
+
+      [data-section-id="{{ section.id }}"][data-section-type="product-slider"] .product__card__title {
+        min-height: 7.2rem !important;
+      }
+
+      [data-section-id="{{ section.id }}"][data-section-type="product-slider"] .product__card__title a {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+      }
+
+      [data-section-id="{{ section.id }}"][data-section-type="product-slider"] .product__card__price {
+        min-height: 6rem !important;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
+
+      [data-section-id="{{ section.id }}"][data-section-type="product-slider"] .product__card__price:not(.price--on-sale) .price__regular,
+      [data-section-id="{{ section.id }}"][data-section-type="product-slider"] .product__card__price.price--on-sale .price__sale {
+        min-height: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+      }
+
+      [data-section-id="{{ section.id }}"][data-section-type="product-slider"] .product__card__price:not(.price--on-sale) .price__regular {
+        padding-top: 1.4rem;
+      }
+
+      [data-section-id="{{ section.id }}"][data-section-type="product-slider"] .product--color-swatch-wrapper {
+        min-height: 3.4rem;
+      }
+
+      [data-section-id="{{ section.id }}"][data-section-type="product-slider"] .product-card-action-buttons {
+        margin-top: auto !important;
+      }
+
+      @media only screen and (max-width: 749px) {
+        [data-section-id="{{ section.id }}"][data-section-type="product-slider"] .product__card__title {
+          min-height: 5.8rem !important;
+        }
+
+        [data-section-id="{{ section.id }}"][data-section-type="product-slider"] .product__card__price {
+          min-height: 5.2rem !important;
+        }
+      }
+    {%- endif -%}
 </style>
 {% if theme_rtl %}
   {{ 'product-card-rtl.css' | asset_url | stylesheet_tag }}
