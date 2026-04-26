@@ -87,9 +87,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  window.addEventListener("scroll", updateStickyBar, { passive: true });
-  window.addEventListener("resize", updateStickyBar);
-  window.addEventListener("load", updateStickyBar);
+  if (window.__themeProductStickyListeners) {
+    window.removeEventListener("scroll", window.__themeProductStickyListeners.scroll);
+    window.removeEventListener("resize", window.__themeProductStickyListeners.resize);
+    window.removeEventListener("load", window.__themeProductStickyListeners.load);
+  }
+
+  window.__themeProductStickyListeners = {
+    scroll: updateStickyBar,
+    resize: updateStickyBar,
+    load: updateStickyBar,
+  };
+
+  window.addEventListener("scroll", window.__themeProductStickyListeners.scroll, { passive: true });
+  window.addEventListener("resize", window.__themeProductStickyListeners.resize);
+  window.addEventListener("load", window.__themeProductStickyListeners.load);
 
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(updateStickyBar, {
