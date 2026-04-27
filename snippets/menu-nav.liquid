@@ -736,20 +736,20 @@
           {%- if childlink.links != blank -%}
           <li class="header__sub_menu_li header__sub--has-children">
             <a href="{{ childlink.url }}" class="header__sub_menu_item">
-               <span> {{ childlink.title | escape }} </span>
+               <span class="header__sub_menu_text"> {{ childlink.title | escape }} </span>
                <span class="header__sub--has-children--icon"> {% render 'left-arrow-icon' %} </span>
             </a>
             <ul class="header__sub--children__menu color-{{ section.settings.color_scheme }}">
               {%- for grandchildlink in childlink.links -%}
               <li class="header__sub_menu_li">
-                <a class="header__sub_menu_item" href="{{ grandchildlink.url }}">{{ grandchildlink.title | escape }}</a>
+                <a class="header__sub_menu_item" href="{{ grandchildlink.url }}"><span class="header__sub_menu_text">{{ grandchildlink.title | escape }}</span></a>
               </li>
               {%- endfor -%}
             </ul>
           </li>
           {%- else -%}
           <li class="header__sub_menu_li">
-            <a href="{{ childlink.url }}" class="header__sub_menu_item">{{ childlink.title | escape }}</a>
+            <a href="{{ childlink.url }}" class="header__sub_menu_item"><span class="header__sub_menu_text">{{ childlink.title | escape }}</span></a>
           </li>
           {%- endif -%}
           {% endfor %}

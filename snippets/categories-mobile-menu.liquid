@@ -28,20 +28,20 @@
                 <li class="offcanvas__sub_menu_li">
                   {%- if link.links != blank -%}
                     <a class="offcanvas__sub_menu_item" href="{{ link.url }}">
-                      {{ link.title | escape }}
+                      <span class="offcanvas__sub_menu_text">{{ link.title | escape }}</span>
                     </a>
                     <ul class="offcanvas__sub_menu">
                       {%- for childlink in link.links -%}
                         <li class="offcanvas__sub_menu_li">
                           <a class="offcanvas__sub_menu_item" href="{{ childlink.url }}">
-                            {{- childlink.title | escape }}
+                            <span class="offcanvas__sub_menu_text">{{- childlink.title | escape }}</span>
                           </a>
                         </li>
                       {% endfor %}
                     </ul>
                   {%- else -%}
                     <a class="offcanvas__sub_menu_item" href="{{ link.url }}">
-                      {{- link.title | escape -}}
+                      <span class="offcanvas__sub_menu_text">{{- link.title | escape -}}</span>
                     </a>
                   {%- endif -%}
                 </li>

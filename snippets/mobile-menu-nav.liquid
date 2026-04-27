@@ -8,12 +8,12 @@
           {%- for childlink in link.links -%}
             {%- if childlink.links != blank -%}
               <li class="offcanvas__sub_menu_li">
-                <a href="{{ childlink.url }}" class="offcanvas__sub_menu_item">{{ childlink.title | escape }}</a>
+                <a href="{{ childlink.url }}" class="offcanvas__sub_menu_item"><span class="offcanvas__sub_menu_text">{{ childlink.title | escape }}</span></a>
                 <ul class="offcanvas__sub_menu">
                   {%- for grandchildlink in childlink.links -%}
                     <li class="offcanvas__sub_menu_li">
                       <a class="offcanvas__sub_menu_item" href="{{ grandchildlink.url }}">
-                        {{- grandchildlink.title | escape -}}
+                        <span class="offcanvas__sub_menu_text">{{- grandchildlink.title | escape -}}</span>
                       </a>
                     </li>
                   {%- endfor -%}
@@ -21,7 +21,7 @@
               </li>
             {%- else -%}
               <li class="offcanvas__sub_menu_li">
-                <a href="{{ childlink.url }}" class="offcanvas__sub_menu_item">{{ childlink.title | escape }}</a>
+                <a href="{{ childlink.url }}" class="offcanvas__sub_menu_item"><span class="offcanvas__sub_menu_text">{{ childlink.title | escape }}</span></a>
               </li>
             {%- endif -%}
           {% endfor %}
