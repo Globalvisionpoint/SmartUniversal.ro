@@ -83,15 +83,13 @@
         },
         "9f55674d-a34d-4e43-beaa-bafce50d02e0": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/pastreaza-elementele-da-scoate-scrisurile.png",
-            "image2": "shopify://shop_images/pastreaza-elementele-da-scoate-scrisurile.png",
+            "image": "shopify://shop_images/Climatizare_si_incalzire.webp",
             "heading": "Decoratiuni",
             "heading_size": "h2",
             "subheading": "",
             "subheading_color": "color-foreground-accent-1",
-            "text": "<p>Transformă-ți spațiul într-o oază de stil și eleganță cu colecția noastră de decorațiuni premium. </p>",
+            "text": "<p>Confort termic pentru fiecare sezon al anului</p>",
             "content_alignment": "start",
             "button_label": "Accesează categoria!",
             "button_icon": true,
