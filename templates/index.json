@@ -1048,6 +1048,19 @@
             "button_style": "primary",
             "button_size": "medium"
           }
+        },
+        "product_tab_gUqUxG": {
+          "type": "product_tab",
+          "settings": {
+            "title": "Mături și mopuri",
+            "collection": "articole-menaj-maturi-mopuri-si-galeti",
+            "products_to_show": 10,
+            "show_view_all": true,
+            "button_label": "Vezi tot",
+            "button_icon": true,
+            "button_style": "primary",
+            "button_size": "medium"
+          }
         }
       },
       "block_order": [
@@ -1056,7 +1069,8 @@
         "template--21082621673752__daf860e7-6857-48c6-aef9-42d67a6668ac-product_tab-1",
         "product_tab_FLM6Mx",
         "4ef04084-42a1-4360-80e6-f0b4adf3367c",
-        "7d5dcbee-5676-4558-84f8-489d3c60b38a"
+        "7d5dcbee-5676-4558-84f8-489d3c60b38a",
+        "product_tab_gUqUxG"
       ],
       "settings": {
         "container": "container-fluid",
