@@ -716,7 +716,7 @@
         "button_size": "large",
         "padding_top": 0,
         "padding_bottom": 0,
-        "mobile_padding_top": 0,
+        "mobile_padding_top": 20,
         "mobile_padding_bottom": 0,
         "color_scheme": "background-1"
       }
@@ -785,7 +785,7 @@
         "button_size": "large",
         "padding_top": 0,
         "padding_bottom": 0,
-        "mobile_padding_top": 0,
+        "mobile_padding_top": 20,
         "mobile_padding_bottom": 0,
         "color_scheme": "background-1"
       }
@@ -854,7 +854,7 @@
         "button_size": "large",
         "padding_top": 0,
         "padding_bottom": 0,
-        "mobile_padding_top": 0,
+        "mobile_padding_top": 20,
         "mobile_padding_bottom": 0,
         "color_scheme": "background-1"
       }
@@ -923,7 +923,7 @@
         "button_size": "large",
         "padding_top": 0,
         "padding_bottom": 0,
-        "mobile_padding_top": 0,
+        "mobile_padding_top": 20,
         "mobile_padding_bottom": 0,
         "color_scheme": "background-1"
       }
@@ -992,7 +992,7 @@
         "button_size": "large",
         "padding_top": 0,
         "padding_bottom": 0,
-        "mobile_padding_top": 0,
+        "mobile_padding_top": 20,
         "mobile_padding_bottom": 0,
         "color_scheme": "background-1"
       }
