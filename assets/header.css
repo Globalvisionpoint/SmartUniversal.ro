@@ -160,6 +160,16 @@ predictive-search.search-modal__form {
   .header__menu--bar .header__menu_ul {
     gap: 0.7rem;
     padding: 0.05rem 0;
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .header__menu--bar .header__menu_ul::-webkit-scrollbar {
+    display: none;
   }
 
   /* Lock sticky header menu to the same dimensions as default state */
@@ -192,6 +202,7 @@ predictive-search.search-modal__form {
     letter-spacing: 0.02em;
     box-shadow: none;
     overflow: hidden;
+    white-space: nowrap;
     transition: background 0.2s ease;
   }
 
@@ -226,5 +237,21 @@ predictive-search.search-modal__form {
   .header__menu--bar .header__menu_item .submenu__icon svg {
     width: 0.8rem;
     height: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1365px) {
+  .header__menu--bar .header__menu_ul {
+    gap: 0.5rem;
+  }
+
+  .header__menu--bar .header__menu_item,
+  .header__menu--bar.sticky .header__menu_item,
+  .header__menu--bar.sticky a.header__menu_item,
+  .header__sticky.sticky .header__menu--bar .header__menu_item,
+  .header__sticky.sticky .header__menu--bar a.header__menu_item {
+    padding: 0.22rem 0.95rem !important;
+    min-height: 2.95rem !important;
+    font-size: 0.94rem !important;
   }
 }
