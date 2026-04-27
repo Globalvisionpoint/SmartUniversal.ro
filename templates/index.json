@@ -316,7 +316,7 @@
         "desktop_content_position": "middle_left",
         "collection_card_radius": true,
         "card_color_scheme": "background-2",
-        "collection": "animale",
+        "collection": "articole-menaj-aspiratoare",
         "products_to_show": 8,
         "product_column": "4",
         "product_column_laptop": "4",
@@ -670,7 +670,7 @@
         "desktop_content_position": "top_left",
         "collection_card_radius": false,
         "card_color_scheme": "accent-1",
-        "collection": "gradina",
+        "collection": "articole-menaj-fiare-statii-aparate-de-calcat-cu-abur",
         "products_to_show": 12,
         "product_column": "5",
         "product_column_laptop": "4",
@@ -761,8 +761,8 @@
         "704679d4-73b9-4cb2-a3a5-8eceeb5a65bd": {
           "type": "product_tab",
           "settings": {
-            "title": "Animale",
-            "collection": "animale",
+            "title": "Oale și cratițe",
+            "collection": "bucatarie-si-servire-oale-si-cratite",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
@@ -773,9 +773,10 @@
         },
         "template--21082621673752__daf860e7-6857-48c6-aef9-42d67a6668ac-product_tab-2": {
           "type": "product_tab",
+          "disabled": true,
           "settings": {
-            "title": "Auto-Moto",
-            "collection": "auto-moto",
+            "title": "Ceainice",
+            "collection": "bucatarie-si-servire-ceainice-si-infuzoare",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
@@ -786,6 +787,7 @@
         },
         "template--21082621673752__daf860e7-6857-48c6-aef9-42d67a6668ac-product_tab-1": {
           "type": "product_tab",
+          "disabled": true,
           "settings": {
             "title": "Casa",
             "collection": "casa",
@@ -799,6 +801,7 @@
         },
         "product_tab_FLM6Mx": {
           "type": "product_tab",
+          "disabled": true,
           "settings": {
             "title": "Decoratiuni",
             "collection": "decoratiuni",
@@ -812,6 +815,7 @@
         },
         "4ef04084-42a1-4360-80e6-f0b4adf3367c": {
           "type": "product_tab",
+          "disabled": true,
           "settings": {
             "title": "Gradina",
             "collection": "gradina",
@@ -825,6 +829,7 @@
         },
         "7d5dcbee-5676-4558-84f8-489d3c60b38a": {
           "type": "product_tab",
+          "disabled": true,
           "settings": {
             "title": "Jucarii",
             "collection": "jucarii",
