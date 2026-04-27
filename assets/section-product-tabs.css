@@ -44,6 +44,8 @@
   }
   .product__tab--btn__list {
     font-size: 2rem;
+    white-space: nowrap;
+    word-break: normal;
   }
 }
 
