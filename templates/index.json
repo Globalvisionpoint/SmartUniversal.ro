@@ -20,6 +20,7 @@
       "blocks": {
         "template--14647252844657__a055a0f5-3975-4b2c-aba8-3eef332a0c8e-slide-1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Articole_menaj.webp",
             "heading": "Articole menaj",
@@ -41,6 +42,7 @@
         },
         "535d5fb0-da91-4126-8767-efc8d3407eac": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Bucatarie_si_servire.webp",
             "heading": "Bucatarie si servire",
@@ -62,6 +64,7 @@
         },
         "slide_Ekkikg": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Casa_si_gradina.webp",
             "heading": "Casa si gradina",
@@ -83,6 +86,7 @@
         },
         "9f55674d-a34d-4e43-beaa-bafce50d02e0": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Climatizare_si_incalzire.webp",
             "heading": "Climatizare si incalzire",
@@ -104,15 +108,13 @@
         },
         "slide_TdwFd8": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/mai-incearca-alta-varianta-si-nu-pune-texte.png",
-            "image2": "shopify://shop_images/mai-incearca-alta-varianta-si-nu-pune-texte.png",
-            "heading": "Gradina",
+            "image": "shopify://shop_images/Electrocasnice.webp",
+            "heading": "Electrocasnice",
             "heading_size": "h2",
             "subheading": "",
             "subheading_color": "color-foreground-accent-1",
-            "text": "<p>Transformă-ți grădina într-un paradis verde. Plante, flori și accesorii de grădină pentru fiecare sezon.</p>",
+            "text": "<p>Tehnologie care ușurează viața de zi cu zi</p>",
             "content_alignment": "start",
             "button_label": "Accesează categoria!",
             "button_icon": true,
