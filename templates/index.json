@@ -772,6 +772,19 @@
             "button_size": "large"
           }
         },
+        "product_tab_7ahL69": {
+          "type": "product_tab",
+          "settings": {
+            "title": "Tab",
+            "collection": "articole-menaj-aspiratoare",
+            "products_to_show": 8,
+            "show_view_all": true,
+            "button_label": "View all",
+            "button_icon": true,
+            "button_style": "primary",
+            "button_size": "medium"
+          }
+        },
         "template--21082621673752__daf860e7-6857-48c6-aef9-42d67a6668ac-product_tab-2": {
           "type": "product_tab",
           "settings": {
@@ -840,6 +853,7 @@
       },
       "block_order": [
         "704679d4-73b9-4cb2-a3a5-8eceeb5a65bd",
+        "product_tab_7ahL69",
         "template--21082621673752__daf860e7-6857-48c6-aef9-42d67a6668ac-product_tab-2",
         "template--21082621673752__daf860e7-6857-48c6-aef9-42d67a6668ac-product_tab-1",
         "product_tab_FLM6Mx",
