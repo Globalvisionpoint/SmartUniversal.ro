@@ -4,6 +4,17 @@
   {% endif %}
   class="{% if image != blank %} card--media{% else %}{% if media_aspect_ratio != 'adapt' %} card--stretch{% endif %}{% endif %} collection__card"
 >
+  {%- liquid
+    assign resolved_title = ''
+    if custom_title != blank
+      assign resolved_title = custom_title | strip
+    elsif collection != blank
+      assign resolved_title = collection.title
+    else
+      assign resolved_title = 'sections.collection_list.default_title' | t
+    endif
+  -%}
+
   {%- if image != blank -%}
     <div class="collection-card--media__wrapper {{ image_width }} card--client-height  {% if round_corner %}rounded--image-1 {% endif %}">
       <div
@@ -48,11 +59,7 @@
     "
   >
     <div class="product__categories--content__left">
-      {%- if collection != blank -%}
-        <h3 class="product__categories--content__maintitle h5">{{ collection.title }}</h3>
-      {%- else -%}
-        <h3 class="product__categories--content__maintitle h5">{{ 'sections.collection_list.default_title' | t }}</h3>
-      {%- endif -%}
+      <h3 class="product__categories--content__maintitle h5">{{ resolved_title }}</h3>
       {%- if show_product_items -%}
         <span class="product__categories--content__subtitle">
           {{- collection.products_count }}

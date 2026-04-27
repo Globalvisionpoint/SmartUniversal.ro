@@ -129,6 +129,7 @@ row row-cols-lg-{{ productShowLg }} row-cols-md-{{ productShowMd }} row-cols-{{ 
               {%- render 'collection-card',
                 image: block.settings.image,
                 collection: block.settings.collection,
+                custom_title: block.settings.custom_title,
                 media_aspect_ratio: section.settings.image_ratio,
                 show_icon: section.settings.show_icon,
                 show_product_items: section.settings.show_product_items,
@@ -185,6 +186,12 @@ row row-cols-lg-{{ productShowLg }} row-cols-md-{{ productShowMd }} row-cols-{{ 
           {
             "value": "container-fluid",
             "label": "Full width"
+           },
+           {
+             "type": "text",
+             "id": "custom_title",
+             "label": "Custom collection title",
+             "info": "Optional. If empty, the selected collection name is shown."
           }
         ]
       },
