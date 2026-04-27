@@ -1091,7 +1091,7 @@
         "subtitle": "",
         "heading": "Categorii de produse",
         "heading_position": "bottom",
-        "text_center": "left",
+        "text_center": "center",
         "border_line": true,
         "product_column": "5",
         "product_column_laptop": "4",
