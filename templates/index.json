@@ -20,14 +20,14 @@
       "blocks": {
         "template--14647252844657__a055a0f5-3975-4b2c-aba8-3eef332a0c8e-slide-1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/genereaza-o-imagine-pentur-magazinul-meu-online-fara-scrisuri-si-esene-doar-cu-produse-pet-shop-care-sa-exprime-categoria-de-animale-produse-pentru-animale-magazin-online.png",
-            "image2": "shopify://shop_images/genereaza-o-imagine-pentur-magazinul-meu-online-fara-scrisuri-si-esene-doar-cu-produse-pet-shop-care-sa-exprime-categoria-de-animale-produse-pentru-animale-magazin-online.png",
-            "heading": "Animale",
+            "heading": "Articole menaj",
             "heading_size": "h2",
             "subheading": "",
             "subheading_color": "color-foreground-accent-1",
-            "text": "<p>Grijă premium pentru prietenul tău.</p>",
+            "text": "<p>Curățenie perfectă, casă fericită</p>",
             "content_alignment": "start",
             "button_label": "Accesează categoria!",
             "button_icon": false,
@@ -64,6 +64,7 @@
         },
         "slide_Ekkikg": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/genereaz-ao-imagine-cu-produse-si-accesorii-pentur-casa-electrocasnice-produse-de-curatenie-etc.png",
             "image2": "shopify://shop_images/genereaz-ao-imagine-cu-produse-si-accesorii-pentur-casa-electrocasnice-produse-de-curatenie-etc.png",
@@ -86,6 +87,7 @@
         },
         "9f55674d-a34d-4e43-beaa-bafce50d02e0": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/pastreaza-elementele-da-scoate-scrisurile.png",
             "image2": "shopify://shop_images/pastreaza-elementele-da-scoate-scrisurile.png",
@@ -108,6 +110,7 @@
         },
         "slide_TdwFd8": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/mai-incearca-alta-varianta-si-nu-pune-texte.png",
             "image2": "shopify://shop_images/mai-incearca-alta-varianta-si-nu-pune-texte.png",
@@ -130,6 +133,7 @@
         },
         "slide_mCcgVT": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/elimina-textele.png",
             "image2": "shopify://shop_images/elimina-textele.png",
@@ -159,7 +163,6 @@
         "slide_TdwFd8",
         "slide_mCcgVT"
       ],
-      "disabled": true,
       "settings": {
         "container": "container-fluid",
         "show_offset": false,
