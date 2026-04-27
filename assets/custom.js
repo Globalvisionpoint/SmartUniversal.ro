@@ -227,6 +227,54 @@ theme.collectionSlider = (function () {
   return sliderProduct;
 })();
 
+theme.productTab = (function () {
+  function setActiveTab(container, trigger) {
+    var targetId = trigger.getAttribute("data-target");
+    if (!targetId) return;
+
+    var targetPane =
+      container.querySelector(targetId) || document.querySelector(targetId);
+    if (!targetPane) return;
+
+    var tabList = trigger.closest(".product__tab--btn") || trigger.parentElement;
+    if (tabList) {
+      tabList.querySelectorAll('[data-toggle="tab"]').forEach(function (item) {
+        item.classList.remove("active");
+      });
+    }
+    trigger.classList.add("active");
+
+    var paneContainer =
+      targetPane.closest(".tab_content") || container.querySelector(".tab_content");
+    if (paneContainer) {
+      paneContainer.querySelectorAll(".tab_pane").forEach(function (pane) {
+        if (pane !== targetPane) {
+          pane.classList.remove("show");
+          pane.classList.remove("active");
+        }
+      });
+    }
+
+    targetPane.classList.add("active");
+    targetPane.classList.add("show");
+  }
+
+  function productTab(container) {
+    if (!container) return;
+
+    container.querySelectorAll('[data-toggle="tab"]').forEach(function (trigger) {
+      if (trigger.dataset.tabBound === "true") return;
+
+      trigger.dataset.tabBound = "true";
+      trigger.addEventListener("click", function () {
+        setActiveTab(container, trigger);
+      });
+    });
+  }
+
+  return productTab;
+})();
+
 (function () {
   function normalizeProductTabHeadings(root) {
     (root || document).querySelectorAll('.tab_content').forEach(function (container) {
