@@ -31,7 +31,7 @@
             "content_alignment": "start",
             "button_label": "Accesează categoria!",
             "button_icon": false,
-            "button_link": "shopify://collections/animale",
+            "button_link": "shopify://collections/articole-menaj",
             "enble_entire_link": true,
             "button_type": "primary",
             "button_size": "small",
@@ -392,7 +392,7 @@
             "title": "",
             "text": "",
             "link_label": "Animale",
-            "link": "shopify://collections/animale",
+            "link": "shopify://collections/articole-menaj",
             "enble_entire_link": true,
             "button_type": "primary",
             "button_size": "small",
@@ -728,7 +728,7 @@
         "text_center": "center",
         "border_line": true,
         "collection_list": [
-          "animale"
+          "articole-menaj"
         ],
         "products_to_show": 8,
         "product_column": "4",
