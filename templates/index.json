@@ -155,7 +155,7 @@
       ],
       "settings": {
         "container": "container-fluid",
-        "show_offset": false,
+        "show_offset": true,
         "slide_height": "small",
         "round_corner": true,
         "show_pagination": true,
