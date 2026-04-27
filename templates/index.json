@@ -773,9 +773,8 @@
         },
         "template--21082621673752__daf860e7-6857-48c6-aef9-42d67a6668ac-product_tab-2": {
           "type": "product_tab",
-          "disabled": true,
           "settings": {
-            "title": "Ceainice",
+            "title": "Ceainice și infuzoare",
             "collection": "bucatarie-si-servire-ceainice-si-infuzoare",
             "products_to_show": 10,
             "show_view_all": true,
@@ -787,10 +786,9 @@
         },
         "template--21082621673752__daf860e7-6857-48c6-aef9-42d67a6668ac-product_tab-1": {
           "type": "product_tab",
-          "disabled": true,
           "settings": {
-            "title": "Casa",
-            "collection": "casa",
+            "title": "Termosuri",
+            "collection": "bucatarie-si-servire-termosuri-si-cani-termos",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
@@ -801,10 +799,9 @@
         },
         "product_tab_FLM6Mx": {
           "type": "product_tab",
-          "disabled": true,
           "settings": {
-            "title": "Decoratiuni",
-            "collection": "decoratiuni",
+            "title": "Climatizare",
+            "collection": "climatizare-si-incalzire-ventilatoare-si-racitoare-aer",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
@@ -815,10 +812,9 @@
         },
         "4ef04084-42a1-4360-80e6-f0b4adf3367c": {
           "type": "product_tab",
-          "disabled": true,
           "settings": {
-            "title": "Gradina",
-            "collection": "gradina",
+            "title": "Blendere & Tocatoare",
+            "collection": "electrocasnice-pentru-bucatarie-blendere-tocatoare",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
@@ -829,10 +825,9 @@
         },
         "7d5dcbee-5676-4558-84f8-489d3c60b38a": {
           "type": "product_tab",
-          "disabled": true,
           "settings": {
-            "title": "Jucarii",
-            "collection": "jucarii",
+            "title": "Aparate de calcat cu abur",
+            "collection": "articole-menaj-fiare-statii-aparate-de-calcat-cu-abur",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
