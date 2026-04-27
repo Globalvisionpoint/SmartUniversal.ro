@@ -267,7 +267,7 @@
         "heading_position": "top",
         "text_center": "center",
         "border_line": true,
-        "show_container": true,
+        "show_container": false,
         "show_navigation_topbar": true,
         "products_show_on_desktop": "6",
         "products_show_on_tablet": "4",
