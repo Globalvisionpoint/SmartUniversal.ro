@@ -1089,7 +1089,7 @@
       "settings": {
         "container": "container-fluid",
         "subtitle": "",
-        "heading": "Categorii principale",
+        "heading": "Categorii de produse",
         "heading_position": "bottom",
         "text_center": "left",
         "border_line": true,
