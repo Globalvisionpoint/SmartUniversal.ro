@@ -231,7 +231,7 @@ predictive-search.search-modal__form {
 
 @media only screen and (min-width: 992px) and (max-width: 1365px) {
   .header__menu--bar .header__menu_ul {
-    gap: 0.2rem;
+    gap: 0.1rem;
   }
 
   .header__menu--bar .header__menu_item,
@@ -239,7 +239,29 @@ predictive-search.search-modal__form {
   .header__menu--bar.sticky a.header__menu_item,
   .header__sticky.sticky .header__menu--bar .header__menu_item,
   .header__sticky.sticky .header__menu--bar a.header__menu_item {
-    padding-left: 0.88rem !important;
-    padding-right: 0.88rem !important;
+    padding-left: 0.7rem !important;
+    padding-right: 0.7rem !important;
+    font-size: 0.92rem !important;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .header__menu--bar .header__menu_ul {
+    gap: 0.05rem;
+  }
+
+  .header__menu--bar .header__menu_item,
+  .header__menu--bar.sticky .header__menu_item,
+  .header__menu--bar.sticky a.header__menu_item,
+  .header__sticky.sticky .header__menu--bar .header__menu_item,
+  .header__sticky.sticky .header__menu--bar a.header__menu_item {
+    padding-left: 0.55rem !important;
+    padding-right: 0.55rem !important;
+    font-size: 0.84rem !important;
+  }
+
+  .header__menu--bar .header__menu_item .submenu__icon svg {
+    width: 0.65rem;
+    height: 0.65rem;
   }
 }
