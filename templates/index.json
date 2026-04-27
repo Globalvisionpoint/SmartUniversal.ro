@@ -62,15 +62,13 @@
         },
         "slide_Ekkikg": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/genereaz-ao-imagine-cu-produse-si-accesorii-pentur-casa-electrocasnice-produse-de-curatenie-etc.png",
-            "image2": "shopify://shop_images/genereaz-ao-imagine-cu-produse-si-accesorii-pentur-casa-electrocasnice-produse-de-curatenie-etc.png",
-            "heading": "Casa",
+            "image": "shopify://shop_images/Casa_si_gradina.webp",
+            "heading": "Casa si gradina",
             "heading_size": "h2",
             "subheading": "",
             "subheading_color": "color-foreground-accent-1",
-            "text": "<p>Descoperă confortul și stilul în fiecare colț al casei tale. </p>",
+            "text": "<p>Transformă-ți casa în paradisul tău. Calitate și stil pentru fiecare colț al casei tale.</p>",
             "content_alignment": "start",
             "button_label": "Accesează categoria!",
             "button_icon": true,
