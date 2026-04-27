@@ -186,12 +186,6 @@ row row-cols-lg-{{ productShowLg }} row-cols-md-{{ productShowMd }} row-cols-{{ 
           {
             "value": "container-fluid",
             "label": "Full width"
-           },
-           {
-             "type": "text",
-             "id": "custom_title",
-             "label": "Custom collection title",
-             "info": "Optional. If empty, the selected collection name is shown."
           }
         ]
       },
@@ -615,6 +609,12 @@ row row-cols-lg-{{ productShowLg }} row-cols-md-{{ productShowMd }} row-cols-{{ 
           "id": "image",
           "label": "t:sections.image-with-text.settings.image.label",
            "info": "Optional! Instead of the collection's image, the selected image will be displayed."
+        },
+        {
+          "type": "text",
+          "id": "custom_title",
+          "label": "Custom collection title",
+          "info": "Optional. Leave blank to use the collection's default name."
         }
       ]
     }
