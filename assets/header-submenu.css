@@ -91,3 +91,79 @@ a.mega__menu--promo-link {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
+
+@media only screen and (min-width: 992px) {
+  .header__menu--bar .header__sub_menu {
+    width: 28rem;
+    margin-top: 0.9rem;
+    padding: 1rem 0.9rem;
+    border-radius: 0 0 1.3rem 1.3rem;
+    border: 1px solid rgba(var(--color-foreground), 0.1);
+    border-top: 0;
+    background: linear-gradient(180deg, #ffffff 0%, #fff7f7 100%);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.14);
+    backdrop-filter: blur(4px);
+  }
+
+  .header__menu--bar .header__sub_menu::before {
+    content: "";
+    position: absolute;
+    left: 1.2rem;
+    right: 1.2rem;
+    top: 0.5rem;
+    height: 0.2rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #d61f37 0%, #ee3b2a 100%);
+    opacity: 0.95;
+  }
+
+  .header__menu--bar .header__sub_menu_li {
+    margin: 0.2rem 0;
+  }
+
+  .header__menu--bar .header__sub_menu_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.95rem 1.1rem;
+    border-radius: 0.95rem;
+    font-size: 2rem;
+    line-height: 1.25;
+    font-weight: 600;
+    color: rgba(var(--color-foreground), 0.9);
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+
+  .header__menu--bar .header__sub_menu_li + .header__sub_menu_li .header__sub_menu_item {
+    border-top: 0;
+  }
+
+  .header__menu--bar .header__sub_menu_item:hover,
+  .header__menu--bar .header__sub--has-children:hover > .header__sub_menu_item {
+    background: rgba(214, 31, 55, 0.08);
+    color: #c71c34;
+    transform: translateX(2px);
+  }
+
+  .header__menu--bar .header__sub--has-children--icon > svg {
+    width: 1.35rem;
+    opacity: 0.85;
+  }
+
+  .header__menu--bar ul.header__sub--children__menu {
+    width: 25rem;
+    top: 0;
+    border-radius: 1.1rem;
+    border: 1px solid rgba(var(--color-foreground), 0.1);
+    background: #fff;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+    padding: 0.8rem;
+  }
+
+  .header__menu--bar ul.header__sub--children__menu .header__sub_menu_item {
+    font-size: 1.45rem;
+    font-weight: 500;
+    border-radius: 0.8rem;
+    padding: 0.8rem 1rem;
+  }
+}
