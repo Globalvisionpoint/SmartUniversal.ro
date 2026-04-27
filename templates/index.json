@@ -159,6 +159,7 @@
         "slide_TdwFd8",
         "slide_mCcgVT"
       ],
+      "disabled": true,
       "settings": {
         "container": "container-fluid",
         "show_offset": false,
