@@ -652,12 +652,12 @@
         "mobile_padding_bottom": 0
       }
     },
-    "48150c2d-4b27-47e7-acad-5390c4d1d488": {
+    "featured_collection_3TRnpp": {
       "type": "featured-collection",
       "settings": {
         "container": "container-fluid",
         "subtitle": "",
-        "heading": "Articole menaj",
+        "heading": "Bucătărie și servire",
         "heading_position": "bottom",
         "text_center": "center",
         "border_line": true,
@@ -676,7 +676,7 @@
         "desktop_content_position": "top_left",
         "collection_card_radius": false,
         "card_color_scheme": "accent-1",
-        "collection": "articole-menaj",
+        "collection": "bucatarie-si-servire",
         "products_to_show": 12,
         "product_column": "5",
         "product_column_laptop": "4",
@@ -721,12 +721,12 @@
         "color_scheme": "background-1"
       }
     },
-    "featured_collection_3TRnpp": {
+    "48150c2d-4b27-47e7-acad-5390c4d1d488": {
       "type": "featured-collection",
       "settings": {
         "container": "container-fluid",
         "subtitle": "",
-        "heading": "Bucătărie și servire",
+        "heading": "Articole menaj",
         "heading_position": "bottom",
         "text_center": "center",
         "border_line": true,
@@ -745,7 +745,7 @@
         "desktop_content_position": "top_left",
         "collection_card_radius": false,
         "card_color_scheme": "accent-1",
-        "collection": "bucatarie-si-servire",
+        "collection": "articole-menaj",
         "products_to_show": 12,
         "product_column": "5",
         "product_column_laptop": "4",
@@ -1097,8 +1097,8 @@
     "16504672629ef790da",
     "6fe148f8-4e52-4a0a-9452-f3b63bf8c0aa",
     "f3e2e88d-5f15-4991-8a35-a6362a460113",
-    "48150c2d-4b27-47e7-acad-5390c4d1d488",
     "featured_collection_3TRnpp",
+    "48150c2d-4b27-47e7-acad-5390c4d1d488",
     "c032a8c2-5620-49c4-9ceb-68e82cf4696e",
     "daf860e7-6857-48c6-aef9-42d67a6668ac",
     "4eb76b08-892e-42d9-b64b-7cd97fd58f8c",
