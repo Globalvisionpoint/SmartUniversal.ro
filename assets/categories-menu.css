@@ -261,3 +261,84 @@
   .dropdown__categories--menu {
   margin-top: 0.1rem;
 }
+
+/* Refined desktop subcategory dropdown design */
+@media only screen and (min-width: 992px) {
+  .dropdown__categories--menu {
+    border: 1px solid rgba(var(--color-foreground), 0.08);
+    border-top: 0;
+    backdrop-filter: blur(4px);
+  }
+
+  .categories__menu--items {
+    padding: 0 1.4rem;
+  }
+
+  .categories__menu--link {
+    border-radius: 1rem;
+    padding: 1rem 1.1rem;
+    gap: 1.1rem;
+    transition: background-color 0.22s ease, color 0.22s ease, transform 0.22s ease;
+  }
+
+  .categories__menu--items + .categories__menu--items .categories__menu--link {
+    border-top: 0;
+  }
+
+  .categories__menu--items:hover .categories__menu--link {
+    background: rgba(var(--color-foreground), 0.05);
+    transform: translateX(3px);
+  }
+
+  .categories__submenu,
+  .categories__submenu--child {
+    border: 1px solid rgba(var(--color-foreground), 0.1);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 1.2rem;
+    padding: 1.2rem 0;
+    min-height: 0;
+  }
+
+  .categories__submenu::before,
+  .categories__submenu--child::before {
+    content: "";
+    position: absolute;
+    left: 1.2rem;
+    right: 1.2rem;
+    top: 0.8rem;
+    height: 0.2rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #d61f37 0%, #ee3b2a 100%);
+    opacity: 0.85;
+  }
+
+  .categories__submenu--items__text,
+  .categories__submenu--child__items--link {
+    padding: 0.7rem 2rem;
+    border-radius: 0.8rem;
+    margin: 0 0.9rem;
+    line-height: 1.35;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+
+  .categories__submenu--items__text {
+    font-weight: 600;
+  }
+
+  .categories__submenu--items:hover .categories__submenu--items__text,
+  .categories__submenu--child__items--link:hover {
+    background: rgba(var(--color-foreground), 0.06);
+    color: rgba(var(--text-link-hover-color));
+    padding-left: 2rem;
+    transform: translateX(2px);
+  }
+
+  .categories__submenu--child {
+    min-width: 25rem;
+  }
+
+  .cat__has--submenu-icon > svg {
+    width: 1.6rem;
+    opacity: 0.9;
+  }
+}
