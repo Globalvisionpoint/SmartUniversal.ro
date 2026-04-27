@@ -20,7 +20,6 @@
       "blocks": {
         "template--14647252844657__a055a0f5-3975-4b2c-aba8-3eef332a0c8e-slide-1": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Articole_menaj.webp",
             "heading": "Articole menaj",
@@ -40,31 +39,8 @@
             "color_scheme_2": "background-1"
           }
         },
-        "535d5fb0-da91-4126-8767-efc8d3407eac": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Bucatarie_si_servire.webp",
-            "heading": "Bucatarie si servire",
-            "heading_size": "h2",
-            "subheading": "",
-            "subheading_color": "color-foreground-accent-1",
-            "text": "<p>Gătit cu pasiune, servit cu plăcere</p>",
-            "content_alignment": "start",
-            "button_label": "Accesează categoria!",
-            "button_icon": true,
-            "button_link": "shopify://collections/bucatarie-si-servire",
-            "enble_entire_link": true,
-            "button_type": "primary",
-            "button_size": "small",
-            "color_scheme": "background-1",
-            "color_scheme_enable": true,
-            "color_scheme_2": ""
-          }
-        },
         "slide_Ekkikg": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Casa_si_gradina.webp",
             "heading": "Casa si gradina",
@@ -84,9 +60,29 @@
             "color_scheme_2": "background-1"
           }
         },
+        "535d5fb0-da91-4126-8767-efc8d3407eac": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Bucatarie_si_servire.webp",
+            "heading": "Bucatarie si servire",
+            "heading_size": "h2",
+            "subheading": "",
+            "subheading_color": "color-foreground-accent-1",
+            "text": "<p>Gătit cu pasiune, servit cu plăcere</p>",
+            "content_alignment": "start",
+            "button_label": "Accesează categoria!",
+            "button_icon": true,
+            "button_link": "shopify://collections/bucatarie-si-servire",
+            "enble_entire_link": true,
+            "button_type": "primary",
+            "button_size": "small",
+            "color_scheme": "background-1",
+            "color_scheme_enable": true,
+            "color_scheme_2": ""
+          }
+        },
         "9f55674d-a34d-4e43-beaa-bafce50d02e0": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Climatizare_si_incalzire.webp",
             "heading": "Climatizare si incalzire",
@@ -129,15 +125,13 @@
         },
         "slide_mCcgVT": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/elimina-textele.png",
-            "image2": "shopify://shop_images/elimina-textele.png",
-            "heading": "Jucarii",
+            "image": "shopify://shop_images/Ingrijire_Personala.webp",
+            "heading": "Ingrijire Personala",
             "heading_size": "h2",
             "subheading": "",
             "subheading_color": "color-foreground-accent-1",
-            "text": "<p>Descoperă lumea jucăriilor care inspiră și divertisează. </p>",
+            "text": "<p>Frumusețe naturală, îngrijire inteligentă</p>",
             "content_alignment": "start",
             "button_label": "Accesează categoria!",
             "button_icon": true,
@@ -153,8 +147,8 @@
       },
       "block_order": [
         "template--14647252844657__a055a0f5-3975-4b2c-aba8-3eef332a0c8e-slide-1",
-        "535d5fb0-da91-4126-8767-efc8d3407eac",
         "slide_Ekkikg",
+        "535d5fb0-da91-4126-8767-efc8d3407eac",
         "9f55674d-a34d-4e43-beaa-bafce50d02e0",
         "slide_TdwFd8",
         "slide_mCcgVT"
