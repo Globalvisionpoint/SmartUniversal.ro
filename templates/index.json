@@ -205,53 +205,53 @@
         "template--14647252844657__17a17a4f-546e-45d1-a0ef-66ae411bd989-featured_collection-2": {
           "type": "featured_collection",
           "settings": {
-            "collection": "auto-moto",
-            "image": "shopify://shop_images/categoria_auto.png"
-          }
-        },
-        "eea2dda5-ab2a-4274-ab2a-630bb6578f27": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "casa",
-            "image": "shopify://shop_images/genereaza-o-imagine-cu-3-produse-din-categoria-casa-fara-decor-pentru-magazinul-meu-online-sa-pun-ca-iconita-la-categorie.png"
-          }
-        },
-        "template--14647252844657__17a17a4f-546e-45d1-a0ef-66ae411bd989-featured_collection-1": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "animale",
-            "image": "shopify://shop_images/genereaza-o-imagine-fara-decor-cu-2-sau-3-produse-din-categoria-pet-animale-pentru-a-o-folosii-ca-iconita-la-categerie-in-magazinul-meu-online.png"
+            "collection": "articole-menaj-aspiratoare",
+            "image": "shopify://shop_images/HB-2020AU-logolu_square.webp"
           }
         },
         "f13f12bf-4279-4bfa-a627-9399b14440ba": {
           "type": "featured_collection",
           "settings": {
-            "collection": "gradina",
-            "image": "shopify://shop_images/genereaza-o-imagine-cu-3-produse-din-categoria-gradina-fara-decor-pentru-magazinul-meu-online-sa-pun-ca-iconita-la-categorie.png"
+            "collection": "bucatarie-si-servire-oale-si-cratite",
+            "image": "shopify://shop_images/499-2-1000x1000_square_square.jpg"
           }
         },
-        "f13d088a-3e0a-4f8c-8ad2-dd1602b646e9": {
+        "eea2dda5-ab2a-4274-ab2a-630bb6578f27": {
           "type": "featured_collection",
           "settings": {
-            "collection": "jucarii",
-            "image": "shopify://shop_images/genereaza-o-imagine-cu-3-produse-din-categoria-jucarii-pentru-copii-fara-decor-pentru-magazinul-meu-online-sa-pun-ca-iconita-la-categorie.png"
+            "collection": "articole-menaj-fiare-statii-aparate-de-calcat-cu-abur",
+            "image": "shopify://shop_images/21-2_square.png"
           }
         },
         "template--14647252844657__17a17a4f-546e-45d1-a0ef-66ae411bd989-featured_collection-3": {
           "type": "featured_collection",
           "settings": {
-            "collection": "decoratiuni",
-            "image": "shopify://shop_images/genereaza-o-imagine-cu-3-produse-din-categoria-decoratiuni-fara-decor-pentru-magazinul-meu-online-sa-pun-ca-iconita-la-categorie.png"
+            "collection": "electrocasnice-pentru-bucatarie-blendere-tocatoare",
+            "image": "shopify://shop_images/428491719_BIG.jpg"
+          }
+        },
+        "template--14647252844657__17a17a4f-546e-45d1-a0ef-66ae411bd989-featured_collection-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "articole-menaj-maturi-mopuri-si-galeti",
+            "image": "shopify://shop_images/11967888_BIG.jpg"
+          }
+        },
+        "f13d088a-3e0a-4f8c-8ad2-dd1602b646e9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "electrocasnice-incorporabile-cuptoare-cu-microunde-incorporabile",
+            "image": "shopify://shop_images/HB9260-9_square.jpg"
           }
         }
       },
       "block_order": [
         "template--14647252844657__17a17a4f-546e-45d1-a0ef-66ae411bd989-featured_collection-2",
-        "eea2dda5-ab2a-4274-ab2a-630bb6578f27",
-        "template--14647252844657__17a17a4f-546e-45d1-a0ef-66ae411bd989-featured_collection-1",
         "f13f12bf-4279-4bfa-a627-9399b14440ba",
-        "f13d088a-3e0a-4f8c-8ad2-dd1602b646e9",
-        "template--14647252844657__17a17a4f-546e-45d1-a0ef-66ae411bd989-featured_collection-3"
+        "eea2dda5-ab2a-4274-ab2a-630bb6578f27",
+        "template--14647252844657__17a17a4f-546e-45d1-a0ef-66ae411bd989-featured_collection-3",
+        "template--14647252844657__17a17a4f-546e-45d1-a0ef-66ae411bd989-featured_collection-1",
+        "f13d088a-3e0a-4f8c-8ad2-dd1602b646e9"
       ],
       "custom_css": [],
       "settings": {
