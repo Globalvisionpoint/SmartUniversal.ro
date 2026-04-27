@@ -20,6 +20,7 @@
       "blocks": {
         "template--14647252844657__a055a0f5-3975-4b2c-aba8-3eef332a0c8e-slide-1": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/genereaza-o-imagine-pentur-magazinul-meu-online-fara-scrisuri-si-esene-doar-cu-produse-pet-shop-care-sa-exprime-categoria-de-animale-produse-pentru-animale-magazin-online.png",
             "heading": "Articole menaj",
@@ -42,7 +43,7 @@
         "535d5fb0-da91-4126-8767-efc8d3407eac": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/generea-o-imagine-16-9-cu-produse-din-categoria-bucatarie-si-servire.png",
+            "image": "shopify://shop_images/Bucatarie_si_servire.webp",
             "heading": "Bucatarie si servire",
             "heading_size": "h2",
             "subheading": "",
