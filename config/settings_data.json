@@ -230,6 +230,23 @@
           "card_warning_color": "#922c2c",
           "tex_link_hover_color": "#0c52ba"
         }
+      },
+      "scheme-95fa1942-f0a4-4f51-88d1-e2e797ae651d": {
+        "settings": {
+          "background": "#c93131",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "button": "#c93131",
+          "button_label": "#ffffff",
+          "primary_button_hover_bg": "#000000",
+          "primary_button_hover_text": "#ffffff",
+          "secondary_button_label": "#000000",
+          "secondary_button_hover_bg": "#000000",
+          "secondary_button_hover_text": "#ffffff",
+          "card_success_color": "#337239",
+          "card_warning_color": "#922c2c",
+          "tex_link_hover_color": "#c93131"
+        }
       }
     }
   },
