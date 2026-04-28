@@ -1035,6 +1035,19 @@
     "daf860e7-6857-48c6-aef9-42d67a6668ac": {
       "type": "product-tabs",
       "blocks": {
+        "product_tab_FyrbfC": {
+          "type": "product_tab",
+          "settings": {
+            "title": "Aspiratoare",
+            "collection": "articole-menaj-aspiratoare",
+            "products_to_show": 10,
+            "show_view_all": true,
+            "button_label": "Vezi tot",
+            "button_icon": false,
+            "button_style": "secondary",
+            "button_size": "large"
+          }
+        },
         "704679d4-73b9-4cb2-a3a5-8eceeb5a65bd": {
           "type": "product_tab",
           "settings": {
@@ -1232,6 +1245,7 @@
         }
       },
       "block_order": [
+        "product_tab_FyrbfC",
         "704679d4-73b9-4cb2-a3a5-8eceeb5a65bd",
         "template--21082621673752__daf860e7-6857-48c6-aef9-42d67a6668ac-product_tab-2",
         "template--21082621673752__daf860e7-6857-48c6-aef9-42d67a6668ac-product_tab-1",
