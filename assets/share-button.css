@@ -163,22 +163,22 @@ span.social-links {
   min-height: 5.3rem;
   padding: 0.9rem 1.5rem;
   border-radius: var(--button-border-radius) !important;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: linear-gradient(135deg, #e22038 0%, #cf1d38 52%, #bb1732 100%);
+  border: 1px solid rgba(201, 31, 57, 0.22);
+  background: linear-gradient(135deg, rgba(226, 32, 56, 0.88) 0%, rgba(207, 29, 56, 0.84) 52%, rgba(187, 23, 50, 0.82) 100%);
   color: #ffffff;
   font-weight: 700;
   font-size: 1.45rem;
   line-height: 1;
   text-decoration: none;
-  box-shadow: 0 12px 24px rgba(201, 31, 57, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 20px rgba(201, 31, 57, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .product__info-container .social__share_box .share-button .share-button__button:hover,
 .product__info-container .social__share_box details[open] > .share-button__button {
   transform: translateY(-1px);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 14px 28px rgba(185, 28, 28, 0.32);
+  border-color: rgba(201, 31, 57, 0.3);
+  box-shadow: 0 12px 24px rgba(185, 28, 28, 0.18);
   color: #ffffff;
 }
 
