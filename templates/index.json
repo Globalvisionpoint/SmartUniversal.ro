@@ -1037,6 +1037,7 @@
       "blocks": {
         "704679d4-73b9-4cb2-a3a5-8eceeb5a65bd": {
           "type": "product_tab",
+          "disabled": true,
           "settings": {
             "title": "Oale și cratițe",
             "collection": "bucatarie-si-servire-oale-si-cratite",
@@ -1050,6 +1051,7 @@
         },
         "template--21082621673752__daf860e7-6857-48c6-aef9-42d67a6668ac-product_tab-2": {
           "type": "product_tab",
+          "disabled": true,
           "settings": {
             "title": "Ceainice și infuzoare",
             "collection": "bucatarie-si-servire-ceainice-si-infuzoare",
@@ -1063,6 +1065,7 @@
         },
         "template--21082621673752__daf860e7-6857-48c6-aef9-42d67a6668ac-product_tab-1": {
           "type": "product_tab",
+          "disabled": true,
           "settings": {
             "title": "Termosuri",
             "collection": "bucatarie-si-servire-termosuri-si-cani-termos",
@@ -1076,6 +1079,7 @@
         },
         "product_tab_FLM6Mx": {
           "type": "product_tab",
+          "disabled": true,
           "settings": {
             "title": "Climatizare",
             "collection": "climatizare-si-incalzire-ventilatoare-si-racitoare-aer",
@@ -1089,6 +1093,7 @@
         },
         "4ef04084-42a1-4360-80e6-f0b4adf3367c": {
           "type": "product_tab",
+          "disabled": true,
           "settings": {
             "title": "Blendere & Tocătoare",
             "collection": "electrocasnice-pentru-bucatarie-blendere-tocatoare",
@@ -1102,6 +1107,7 @@
         },
         "7d5dcbee-5676-4558-84f8-489d3c60b38a": {
           "type": "product_tab",
+          "disabled": true,
           "settings": {
             "title": "Aparate de călcat",
             "collection": "articole-menaj-fiare-statii-aparate-de-calcat-cu-abur",
@@ -1115,6 +1121,7 @@
         },
         "product_tab_gUqUxG": {
           "type": "product_tab",
+          "disabled": true,
           "settings": {
             "title": "Mături și mopuri",
             "collection": "articole-menaj-maturi-mopuri-si-galeti",
@@ -1128,9 +1135,23 @@
         },
         "product_tab_AFk4j7": {
           "type": "product_tab",
+          "disabled": true,
           "settings": {
             "title": "Cântare de bucătărie",
             "collection": "bucatarie-si-servire-cantare-de-bucatarie",
+            "products_to_show": 10,
+            "show_view_all": true,
+            "button_label": "Vezi tot",
+            "button_icon": true,
+            "button_style": "primary",
+            "button_size": "medium"
+          }
+        },
+        "product_tab_XGrmTD": {
+          "type": "product_tab",
+          "settings": {
+            "title": "Aparate de preparat desert",
+            "collection": "electrocasnice-pentru-bucatarie-aparate-de-preparat-desert",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
@@ -1148,7 +1169,8 @@
         "4ef04084-42a1-4360-80e6-f0b4adf3367c",
         "7d5dcbee-5676-4558-84f8-489d3c60b38a",
         "product_tab_gUqUxG",
-        "product_tab_AFk4j7"
+        "product_tab_AFk4j7",
+        "product_tab_XGrmTD"
       ],
       "settings": {
         "container": "container-fluid",
