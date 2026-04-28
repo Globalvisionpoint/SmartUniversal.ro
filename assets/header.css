@@ -169,6 +169,7 @@ predictive-search.search-modal__form {
 
   .header__menu--bar .header__menu_li,
   .header__menu--bar .header__menu_li + .header__menu_li {
+    padding: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
