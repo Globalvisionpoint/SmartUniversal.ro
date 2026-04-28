@@ -61,10 +61,10 @@
             "button_size": "extra--small",
             "text": "Ofertele de reducere expiră în...",
             "enable_close_btn": true,
-            "color_scheme": "scheme-7409ae75-7200-41c9-953d-b1d134c8d4a3",
+            "color_scheme": "accent-1",
             "custom_colors": false,
-            "foreground": "#121212",
-            "background": "#f7f8fc"
+            "foreground": "#e5ff21",
+            "background": "#c93131"
           }
         }
       },
