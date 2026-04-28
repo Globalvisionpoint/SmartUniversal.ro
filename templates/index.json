@@ -1191,9 +1191,23 @@
         },
         "product_tab_wNbiQG": {
           "type": "product_tab",
+          "disabled": true,
           "settings": {
             "title": "Prăjitoare de pâine",
             "collection": "electrocasnice-pentru-bucatarie-prajitoare-de-paine",
+            "products_to_show": 10,
+            "show_view_all": true,
+            "button_label": "Vezi tot",
+            "button_icon": true,
+            "button_style": "primary",
+            "button_size": "medium"
+          }
+        },
+        "product_tab_CibjMc": {
+          "type": "product_tab",
+          "settings": {
+            "title": "Epilatoare",
+            "collection": "ingrijire-personala-epilatoare",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
@@ -1215,7 +1229,8 @@
         "product_tab_XGrmTD",
         "product_tab_37Ri9w",
         "product_tab_CFchhM",
-        "product_tab_wNbiQG"
+        "product_tab_wNbiQG",
+        "product_tab_CibjMc"
       ],
       "settings": {
         "container": "container-fluid",
