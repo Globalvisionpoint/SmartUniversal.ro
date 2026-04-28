@@ -286,7 +286,7 @@
       "settings": {
         "container": "container-fluid",
         "show_offset": false,
-        "logo": "shopify://shop_images/logo_scris_1200_x_628_px.png",
+        "logo": "shopify://shop_images/logo_alb.png",
         "logo_width": 120,
         "menu": "categorii",
         "header_design": "logo__left--menu-bottom",
