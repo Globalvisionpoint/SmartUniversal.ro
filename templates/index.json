@@ -1177,9 +1177,23 @@
         },
         "product_tab_CFchhM": {
           "type": "product_tab",
+          "disabled": true,
           "settings": {
             "title": "Sandwich maker",
             "collection": "electrocasnice-pentru-bucatarie-sandwich-maker",
+            "products_to_show": 10,
+            "show_view_all": true,
+            "button_label": "Vezi tot",
+            "button_icon": true,
+            "button_style": "primary",
+            "button_size": "medium"
+          }
+        },
+        "product_tab_wNbiQG": {
+          "type": "product_tab",
+          "settings": {
+            "title": "Prăjitoare de pâine",
+            "collection": "electrocasnice-pentru-bucatarie-prajitoare-de-paine",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
@@ -1200,7 +1214,8 @@
         "product_tab_AFk4j7",
         "product_tab_XGrmTD",
         "product_tab_37Ri9w",
-        "product_tab_CFchhM"
+        "product_tab_CFchhM",
+        "product_tab_wNbiQG"
       ],
       "settings": {
         "container": "container-fluid",
