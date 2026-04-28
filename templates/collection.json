@@ -64,19 +64,22 @@
         "template--14622392025201__8b9093a5-9657-4483-bab5-1ad4c44cdc72-1688492641eea7d4ae-0": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "",
+            "custom_title": ""
           }
         },
         "template--14622392025201__8b9093a5-9657-4483-bab5-1ad4c44cdc72-1688492641eea7d4ae-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "",
+            "custom_title": ""
           }
         },
         "template--14622392025201__8b9093a5-9657-4483-bab5-1ad4c44cdc72-1688492641eea7d4ae-2": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "",
+            "custom_title": ""
           }
         }
       },
@@ -189,7 +192,7 @@
         "desktop_content_position": "top_left",
         "collection_card_radius": false,
         "card_color_scheme": "",
-        "collection": "climatizare-si-incalzire2",
+        "collection": "bucatarie-si-servire",
         "products_to_show": 8,
         "product_column": "5",
         "product_column_laptop": "4",
