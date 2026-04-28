@@ -1561,7 +1561,7 @@ button.product-form__submit.loading:after {
   background: linear-gradient(135deg, #c91f39 0%, #d92d2f 100%);
   color: #fff !important;
   font-family: var(--font-heading-family);
-  font-size: 1.22rem;
+  font-size: 1.3rem;
   font-weight: 800;
   gap: 0;
   padding: 0;
@@ -1602,7 +1602,7 @@ button.product-form__submit.loading:after {
   align-items: center;
   justify-content: center;
   padding: 0 1rem;
-  font-size: 1.28rem;
+  font-size: 1.36rem;
   font-weight: 800;
   line-height: 1.12;
   color: #fff !important;
@@ -1611,11 +1611,11 @@ button.product-form__submit.loading:after {
 
 @media screen and (max-width: 749px) {
   .product_buy_button_form .product-form__submit.button {
-    font-size: 1.08rem;
+    font-size: 1.14rem;
   }
 
   .product_buy_button_form .product-form__submit.button .cart--button-text {
-    font-size: 1.14rem;
+    font-size: 1.2rem;
   }
 }
 
