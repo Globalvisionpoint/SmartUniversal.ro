@@ -61,7 +61,7 @@
             "button_size": "extra--small",
             "text": "Ofertele de reducere expiră în...",
             "enable_close_btn": true,
-            "color_scheme": "accent-1",
+            "color_scheme": "background-2",
             "custom_colors": false,
             "foreground": "#121212",
             "background": "#f7f8fc"
@@ -315,7 +315,7 @@
         "welcome_text_with_icon": "price_tag",
         "welcome_text_link": "shopify://collections",
         "menu_position": "between",
-        "color_scheme": "background-2",
+        "color_scheme": "accent-1",
         "color_scheme_3": "",
         "color_scheme_2": "background-2"
       }
