@@ -316,8 +316,8 @@
         "welcome_text_link": "shopify://collections",
         "menu_position": "between",
         "color_scheme": "accent-1",
-        "color_scheme_3": "",
-        "color_scheme_2": "background-2"
+        "color_scheme_3": "accent-1",
+        "color_scheme_2": "accent-1"
       }
     }
   },
