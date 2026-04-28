@@ -286,8 +286,8 @@
       "settings": {
         "container": "container-fluid",
         "show_offset": false,
-        "logo": "shopify://shop_images/logo_alb.png",
-        "logo_width": 120,
+        "logo": "shopify://shop_images/logo_scris.png",
+        "logo_width": 130,
         "menu": "categorii",
         "header_design": "logo__left--menu-bottom",
         "border_hide_on_home_page": false,
@@ -315,7 +315,7 @@
         "welcome_text_with_icon": "price_tag",
         "welcome_text_link": "shopify://collections",
         "menu_position": "between",
-        "color_scheme": "accent-1",
+        "color_scheme": "background-1",
         "color_scheme_3": "background-1",
         "color_scheme_2": "background-1"
       }
