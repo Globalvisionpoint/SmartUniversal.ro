@@ -1205,9 +1205,37 @@
         },
         "product_tab_CibjMc": {
           "type": "product_tab",
+          "disabled": true,
           "settings": {
             "title": "Epilatoare",
             "collection": "ingrijire-personala-epilatoare",
+            "products_to_show": 10,
+            "show_view_all": true,
+            "button_label": "Vezi tot",
+            "button_icon": true,
+            "button_style": "primary",
+            "button_size": "medium"
+          }
+        },
+        "product_tab_fLjQet": {
+          "type": "product_tab",
+          "disabled": true,
+          "settings": {
+            "title": "Ondulatoare de păr",
+            "collection": "ingrijire-personala-ondulatoare",
+            "products_to_show": 10,
+            "show_view_all": true,
+            "button_label": "Vezi tot",
+            "button_icon": true,
+            "button_style": "primary",
+            "button_size": "medium"
+          }
+        },
+        "product_tab_jw9Pig": {
+          "type": "product_tab",
+          "settings": {
+            "title": "Climatizare",
+            "collection": "climatizare-si-incalzire-ventilatoare-si-racitoare-aer",
             "products_to_show": 10,
             "show_view_all": true,
             "button_label": "Vezi tot",
@@ -1230,7 +1258,9 @@
         "product_tab_37Ri9w",
         "product_tab_CFchhM",
         "product_tab_wNbiQG",
-        "product_tab_CibjMc"
+        "product_tab_CibjMc",
+        "product_tab_fLjQet",
+        "product_tab_jw9Pig"
       ],
       "settings": {
         "container": "container-fluid",
