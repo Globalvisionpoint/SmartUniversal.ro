@@ -35,7 +35,9 @@
       class="product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile"
       role="list"
     >
-      {%- if product.selected_or_first_available_variant.featured_media != null -%}
+      {%- if product.featured_media != null -%}
+        {%- assign featured_media = product.featured_media -%}
+      {%- elsif product.selected_or_first_available_variant.featured_media != null -%}
         {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
         <li
           id="Slide-{{ section.id }}-{{ featured_media.id }}"
@@ -57,10 +59,10 @@
         </li>
       {%- endif -%}
       {%- for media in product.media -%}
-        {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+        {%- unless media.id == featured_media.id -%}
           <li
             id="Slide-{{ section.id }}-{{ media.id }}"
-            class="product__media-item grid__item slider__slide{% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}"
+            class="product__media-item grid__item slider__slide{% if featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}"
             data-media-id="{{ section.id }}-{{ media.id }}"
           >
             {%- assign media_position = media_position | default: 0 | plus: 1 -%}
@@ -176,7 +178,7 @@
           </li>
         {%- endif -%}
         {%- for media in product.media -%}
-          {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+          {%- unless media.id == featured_media.id -%}
             {%- liquid
               capture media_index
                 if media.media_type == 'model'
@@ -207,8 +209,8 @@
               <button
                 class="thumbnail global-media-settings global-media-settings--no-shadow {% if media.preview_image.aspect_ratio > 1 %}thumbnail--wide{% else %}thumbnail--narrow{% endif %}"
                 aria-label="{%- if media.media_type == 'image' -%}{{ 'products.product.media.load_image' | t: index: media_index }}{%- elsif media.media_type == 'model' -%}{{ 'products.product.media.load_model' | t: index: media_index }}{%- elsif media.media_type == 'video' or media.media_type == 'external_video' -%}{{ 'products.product.media.load_video' | t: index: media_index }}{%- endif -%}"
-                {% if media == product.selected_or_first_available_variant.featured_media
-                  or product.selected_or_first_available_variant.featured_media == null
+                {% if media == featured_media
+                  or featured_media == null
                   and forloop.index == 1
                 %}
                   aria-current="true"
