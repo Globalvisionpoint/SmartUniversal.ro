@@ -13,7 +13,8 @@
     endfor
   endif
 %}
-{{ 'share-button.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'share-button.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'share-button.css' | asset_url | stylesheet_tag }}</noscript>
 {% if theme_rtl %}
   {{ 'share-button-rtl.css' | asset_url | stylesheet_tag }}
 {% endif %}
