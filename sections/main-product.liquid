@@ -45,13 +45,24 @@
 
   @media screen and (min-width: 750px) {
     .main--product__media--small.media {
-      height: 50rem;
+      height: 38rem;
     }
     .main--product__media--medium.media {
-      height: 60rem;
+      height: 44rem;
     }
     .main--product__media--large.media {
-      height: 70rem;
+      height: 50rem;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .product__media_container {
+      max-width: 480px;
+    }
+    .product__media_container img {
+      max-height: 480px;
+      width: 100%;
+      object-fit: contain;
     }
   }
 
