@@ -17,6 +17,13 @@
   %}
 {% endcomment %}
 
+{%- liquid
+  assign media_render_width = 973
+  if media.preview_image.width < media_render_width
+    assign media_render_width = media.preview_image.width
+  endif
+-%}
+
 <noscript>
   {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
     <span class="product__media-icon motion-reduce quick-add-hidden">{% render 'icon-play' %}</span>
@@ -28,17 +35,13 @@
     >
       <img
         srcset="
-          {% if media.preview_image.width >= 493 %}{{ media.preview_image | image_url: width: 240, format: 'webp' }} 493w,{% endif %}
-          {% if media.preview_image.width >= 600 %}{{ media.preview_image | image_url: width: 320, format: 'webp' }} 600w,{% endif %}
-          {% if media.preview_image.width >= 713 %}{{ media.preview_image | image_url: width: 400, format: 'webp' }} 713w,{% endif %}
-          {% if media.preview_image.width >= 823 %}{{ media.preview_image | image_url: width: 550, format: 'webp' }} 823w,{% endif %}
-          {% if media.preview_image.width >= 990 %}{{ media.preview_image | image_url: width: 700, format: 'webp' }} 990w,{% endif %}
-          {% if media.preview_image.width >= 1100 %}{{ media.preview_image | image_url: width: 900, format: 'webp' }} 1100w,{% endif %}
-          {% if media.preview_image.width >= 1206 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1206w,{% endif %}
-          {% if media.preview_image.width >= 1346 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1346w,{% endif %}
-          {% if media.preview_image.width >= 1426 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1426w,{% endif %}
-          {% if media.preview_image.width >= 1646 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1646w,{% endif %}
-          {% if media.preview_image.width >= 1946 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1946w,{% endif %}
+          {% if media.preview_image.width >= 240 %}{{ media.preview_image | image_url: width: 240, format: 'webp' }} 240w,{% endif %}
+          {% if media.preview_image.width >= 320 %}{{ media.preview_image | image_url: width: 320, format: 'webp' }} 320w,{% endif %}
+          {% if media.preview_image.width >= 400 %}{{ media.preview_image | image_url: width: 400, format: 'webp' }} 400w,{% endif %}
+          {% if media.preview_image.width >= 550 %}{{ media.preview_image | image_url: width: 550, format: 'webp' }} 550w,{% endif %}
+          {% if media.preview_image.width >= 700 %}{{ media.preview_image | image_url: width: 700, format: 'webp' }} 700w,{% endif %}
+          {% if media.preview_image.width >= 900 %}{{ media.preview_image | image_url: width: 900, format: 'webp' }} 900w,{% endif %}
+          {% if media.preview_image.width >= 1100 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1100w,{% endif %}
           {{ media.preview_image | image_url: format: 'webp' }} {{ media.preview_image.width }}w
         "
         src="{{ media | image_url: width: 900, format: 'webp' }}"
@@ -55,8 +58,9 @@
         {% else %}
           loading="lazy"
         {% endif %}
-        width="973"
-        height="{{ 973 | divided_by: media.preview_image.aspect_ratio | ceil }}"
+        width="{{ media_render_width }}"
+        height="{{ media_render_width | divided_by: media.preview_image.aspect_ratio | ceil }}"
+        style="max-width: {{ media.preview_image.width }}px; width: 100%; height: auto;"
         alt="{{ media.preview_image.alt | escape }}"
       >
     </div>
@@ -77,17 +81,13 @@
     >
       <img
         srcset="
-          {% if media.preview_image.width >= 493 %}{{ media.preview_image | image_url: width: 240, format: 'webp' }} 493w,{% endif %}
-          {% if media.preview_image.width >= 600 %}{{ media.preview_image | image_url: width: 320, format: 'webp' }} 600w,{% endif %}
-          {% if media.preview_image.width >= 713 %}{{ media.preview_image | image_url: width: 400, format: 'webp' }} 713w,{% endif %}
-          {% if media.preview_image.width >= 823 %}{{ media.preview_image | image_url: width: 550, format: 'webp' }} 823w,{% endif %}
-          {% if media.preview_image.width >= 990 %}{{ media.preview_image | image_url: width: 700, format: 'webp' }} 990w,{% endif %}
-          {% if media.preview_image.width >= 1100 %}{{ media.preview_image | image_url: width: 900, format: 'webp' }} 1100w,{% endif %}
-          {% if media.preview_image.width >= 1206 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1206w,{% endif %}
-          {% if media.preview_image.width >= 1346 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1346w,{% endif %}
-          {% if media.preview_image.width >= 1426 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1426w,{% endif %}
-          {% if media.preview_image.width >= 1646 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1646w,{% endif %}
-          {% if media.preview_image.width >= 1946 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1946w,{% endif %}
+          {% if media.preview_image.width >= 240 %}{{ media.preview_image | image_url: width: 240, format: 'webp' }} 240w,{% endif %}
+          {% if media.preview_image.width >= 320 %}{{ media.preview_image | image_url: width: 320, format: 'webp' }} 320w,{% endif %}
+          {% if media.preview_image.width >= 400 %}{{ media.preview_image | image_url: width: 400, format: 'webp' }} 400w,{% endif %}
+          {% if media.preview_image.width >= 550 %}{{ media.preview_image | image_url: width: 550, format: 'webp' }} 550w,{% endif %}
+          {% if media.preview_image.width >= 700 %}{{ media.preview_image | image_url: width: 700, format: 'webp' }} 700w,{% endif %}
+          {% if media.preview_image.width >= 900 %}{{ media.preview_image | image_url: width: 900, format: 'webp' }} 900w,{% endif %}
+          {% if media.preview_image.width >= 1100 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1100w,{% endif %}
           {{ media.preview_image | image_url: format: 'webp' }} {{ media.preview_image.width }}w
         "
         src="{{ media | image_url: width: 900, format: 'webp' }}"
@@ -98,8 +98,9 @@
         {% else %}
           loading="lazy"
         {% endif %}
-        width="973"
-        height="{{ 973 | divided_by: media.preview_image.aspect_ratio | ceil }}"
+        width="{{ media_render_width }}"
+        height="{{ media_render_width | divided_by: media.preview_image.aspect_ratio | ceil }}"
+        style="max-width: {{ media.preview_image.width }}px; width: 100%; height: auto;"
         alt="{{ media.preview_image.alt | escape }}"
       >
     </div>
@@ -133,17 +134,13 @@
   >
     <img
       srcset="
-        {% if media.preview_image.width >= 493 %}{{ media.preview_image | image_url: width: 240, format: 'webp' }} 493w,{% endif %}
-        {% if media.preview_image.width >= 600 %}{{ media.preview_image | image_url: width: 320, format: 'webp' }} 600w,{% endif %}
-        {% if media.preview_image.width >= 713 %}{{ media.preview_image | image_url: width: 400, format: 'webp' }} 713w,{% endif %}
-        {% if media.preview_image.width >= 823 %}{{ media.preview_image | image_url: width: 550, format: 'webp' }} 823w,{% endif %}
-        {% if media.preview_image.width >= 990 %}{{ media.preview_image | image_url: width: 700, format: 'webp' }} 990w,{% endif %}
-        {% if media.preview_image.width >= 1100 %}{{ media.preview_image | image_url: width: 900, format: 'webp' }} 1100w,{% endif %}
-        {% if media.preview_image.width >= 1206 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1206w,{% endif %}
-        {% if media.preview_image.width >= 1346 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1346w,{% endif %}
-        {% if media.preview_image.width >= 1426 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1426w,{% endif %}
-        {% if media.preview_image.width >= 1646 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1646w,{% endif %}
-        {% if media.preview_image.width >= 1946 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1946w,{% endif %}
+        {% if media.preview_image.width >= 240 %}{{ media.preview_image | image_url: width: 240, format: 'webp' }} 240w,{% endif %}
+        {% if media.preview_image.width >= 320 %}{{ media.preview_image | image_url: width: 320, format: 'webp' }} 320w,{% endif %}
+        {% if media.preview_image.width >= 400 %}{{ media.preview_image | image_url: width: 400, format: 'webp' }} 400w,{% endif %}
+        {% if media.preview_image.width >= 550 %}{{ media.preview_image | image_url: width: 550, format: 'webp' }} 550w,{% endif %}
+        {% if media.preview_image.width >= 700 %}{{ media.preview_image | image_url: width: 700, format: 'webp' }} 700w,{% endif %}
+        {% if media.preview_image.width >= 900 %}{{ media.preview_image | image_url: width: 900, format: 'webp' }} 900w,{% endif %}
+        {% if media.preview_image.width >= 1100 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1100w,{% endif %}
         {{ media.preview_image | image_url: format: 'webp' }} {{ media.preview_image.width }}w
       "
       src="{{ media | image_url: width: 900, format: 'webp' }}"
@@ -154,8 +151,9 @@
       {% else %}
         loading="lazy"
       {% endif %}
-      width="973"
-      height="{{ 973 | divided_by: media.preview_image.aspect_ratio | ceil }}"
+      width="{{ media_render_width }}"
+      height="{{ media_render_width | divided_by: media.preview_image.aspect_ratio | ceil }}"
+      style="max-width: {{ media.preview_image.width }}px; width: 100%; height: auto;"
       alt="{{ media.preview_image.alt | escape }}"
     >
 
@@ -199,17 +197,13 @@
     </span>
     <img
       srcset="
-        {% if media.preview_image.width >= 493 %}{{ media.preview_image | image_url: width: 240, format: 'webp' }} 493w,{% endif %}
-        {% if media.preview_image.width >= 600 %}{{ media.preview_image | image_url: width: 320, format: 'webp' }} 600w,{% endif %}
-        {% if media.preview_image.width >= 713 %}{{ media.preview_image | image_url: width: 400, format: 'webp' }} 713w,{% endif %}
-        {% if media.preview_image.width >= 823 %}{{ media.preview_image | image_url: width: 550, format: 'webp' }} 823w,{% endif %}
-        {% if media.preview_image.width >= 990 %}{{ media.preview_image | image_url: width: 700, format: 'webp' }} 990w,{% endif %}
-        {% if media.preview_image.width >= 1100 %}{{ media.preview_image | image_url: width: 900, format: 'webp' }} 1100w,{% endif %}
-        {% if media.preview_image.width >= 1206 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1206w,{% endif %}
-        {% if media.preview_image.width >= 1346 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1346w,{% endif %}
-        {% if media.preview_image.width >= 1426 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1426w,{% endif %}
-        {% if media.preview_image.width >= 1646 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1646w,{% endif %}
-        {% if media.preview_image.width >= 1946 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1946w,{% endif %}
+        {% if media.preview_image.width >= 240 %}{{ media.preview_image | image_url: width: 240, format: 'webp' }} 240w,{% endif %}
+        {% if media.preview_image.width >= 320 %}{{ media.preview_image | image_url: width: 320, format: 'webp' }} 320w,{% endif %}
+        {% if media.preview_image.width >= 400 %}{{ media.preview_image | image_url: width: 400, format: 'webp' }} 400w,{% endif %}
+        {% if media.preview_image.width >= 550 %}{{ media.preview_image | image_url: width: 550, format: 'webp' }} 550w,{% endif %}
+        {% if media.preview_image.width >= 700 %}{{ media.preview_image | image_url: width: 700, format: 'webp' }} 700w,{% endif %}
+        {% if media.preview_image.width >= 900 %}{{ media.preview_image | image_url: width: 900, format: 'webp' }} 900w,{% endif %}
+        {% if media.preview_image.width >= 1100 %}{{ media.preview_image | image_url: width: 1100, format: 'webp' }} 1100w,{% endif %}
         {{ media.preview_image | image_url: format: 'webp' }} {{ media.preview_image.width }}w
       "
       src="{{ media | image_url: width: 900, format: 'webp' }}"
@@ -226,8 +220,9 @@
       {% else %}
         loading="lazy"
       {% endif %}
-      width="973"
-      height="{{ 973 | divided_by: media.preview_image.aspect_ratio | ceil }}"
+      width="{{ media_render_width }}"
+      height="{{ media_render_width | divided_by: media.preview_image.aspect_ratio | ceil }}"
+      style="max-width: {{ media.preview_image.width }}px; width: 100%; height: auto;"
       alt="{{ media.preview_image.alt | escape }}"
     >
   </button>
